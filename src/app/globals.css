@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+
+:root {
+  /* Core Brand Colors */
+  --neon-green: #a3e635;  /* lime-400 */
+  --neon-glow: rgba(163, 230, 53, 0.5);
+  --dark-bg: #050505;
+  --dark-surface: #101010;
+  
+  /* Text */
+  --foreground: #ffffff;
+  --text-muted: #a3a3a3;
+
+  --background: var(--dark-bg);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-neon-green: var(--neon-green);
+  --color-dark-surface: var(--dark-surface);
+  --color-dark-bg: var(--dark-bg);
+  --color-text-muted: var(--text-muted);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Utilities for Glow Effects */
+.text-glow {
+  text-shadow: 0 0 10px var(--neon-glow);
+}
+
+.box-glow {
+  box-shadow: 0 0 20px -5px var(--neon-glow);
+}
+
+.border-neon {
+  border: 1px solid var(--neon-green);
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 40s linear infinite;
+}
+
+.mask-gradient {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
