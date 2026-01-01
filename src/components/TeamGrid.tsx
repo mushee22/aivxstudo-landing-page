@@ -1,0 +1,97 @@
+'use client';
+
+import Image from 'next/image';
+import { Linkedin } from 'lucide-react';
+
+const teamMembers = [
+    {
+        name: "Sarah Chen",
+        role: "Founder & CEO",
+        description: "Ex-Google AI researcher passionate about bridging technology and art.",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
+        linkedin: "#"
+    },
+    {
+        name: "David Miller",
+        role: "Head of Engineering",
+        description: "15+ years building scalable vision systems for ecommerce giants.",
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop",
+        linkedin: "#"
+    },
+    {
+        name: "Elena Rodriguez",
+        role: "Creative Director",
+        description: "Award-winning jewellery photographer turned digital artist.",
+        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
+        linkedin: "#"
+    },
+    {
+        name: "Michael Chang",
+        role: "Lead AI Scientist",
+        description: "Specializing in generative adversarial networks and material physics.",
+        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop",
+        linkedin: "#"
+    },
+    {
+        name: "Jessica Lee",
+        role: "Head of Product",
+        description: "Focusing on intuitive user experiences for complex AI tools.",
+        image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=600&auto=format&fit=crop",
+        linkedin: "#"
+    },
+    {
+        name: "Robert Taylor",
+        role: "Customer Success Lead",
+        description: "Dedicated to helping brands succeed with AIVX technology.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
+        linkedin: "#"
+    }
+];
+
+export default function TeamGrid() {
+    return (
+        <section className="bg-black pb-24 px-6 md:pb-32 border-b border-white/5 relative">
+            <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    {teamMembers.map((member, index) => (
+                        <div key={index} className="group flex flex-col items-center text-center space-y-6 p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-neon-green/30 transition-all duration-300 hover:-translate-y-1">
+                            {/* Image Container */}
+                            <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-neon-green/50 transition-colors duration-500">
+                                <Image
+                                    src={member.image}
+                                    alt={member.name}
+                                    fill
+                                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                                />
+
+                                {/* Overlay / Social Icon on Hover */}
+                                <a
+                                    href={member.linkedin}
+                                    className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                    aria-label={`LinkedIn profile for ${member.name}`}
+                                >
+                                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                                        <Linkedin className="w-5 h-5 text-black" />
+                                    </div>
+                                </a>
+                            </div>
+
+                            {/* Info */}
+                            <div className="space-y-2">
+                                <h3 className="text-xl font-bold text-white group-hover:text-neon-green transition-colors duration-300">
+                                    {member.name}
+                                </h3>
+                                <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
+                                    {member.role}
+                                </p>
+                                <p className="text-neutral-400 font-light text-sm pt-2 min-h-[40px]">
+                                    {member.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

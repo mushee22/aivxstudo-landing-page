@@ -1,71 +1,76 @@
+'use client';
 
-import { Upload, FolderOpen, Palette, Sparkles, ArrowRight } from 'lucide-react';
+import { Upload, Palette, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 const steps = [
     {
         icon: Upload,
-        title: "Upload",
-        desc: "Drop your raw product image."
-    },
-    {
-        icon: FolderOpen,
-        title: "Select",
-        desc: "Choose a campaign category."
+        title: "Upload Product Image",
+        desc: "Upload a simple jewellery product image. No studio, no photographer, no models required."
     },
     {
         icon: Palette,
-        title: "Style",
-        desc: "Pick an artistic theme."
+        title: "Choose Theme & Model",
+        desc: "Select jewellery themes, model type (Indian or International), and output type (image or video)."
     },
     {
         icon: Sparkles,
-        title: "Generate",
-        desc: "Get 4K results instantly."
+        title: "Generate Image & Video",
+        desc: "Get studio-quality images and 5s / 15s reel videos, ready for ecommerce and social media."
     }
 ];
 
 export default function HowItWorks() {
     return (
-        <section className="py-24 px-6 bg-dark-bg relative overflow-hidden">
-            {/* Background Grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+        <section className="py-24 px-6 bg-zinc-900 relative overflow-hidden">
+            {/* Background: Using zinc-900 for "neutral" contrast against the black hero, keeping dark theme consistency */}
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-                    <div className="space-y-4 max-w-2xl">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white">Streamlined Workflow</h2>
-                        <p className="text-text-muted text-lg">
-                            Go from zero to hero. We've simplified the professional design process into four intuitive steps.
-                        </p>
-                    </div>
+
+                {/* Header */}
+                <div className="text-center mb-16 space-y-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">How AIVX Works</h2>
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                        From simple product images to studio-quality jewellery visuals in minutes.
+                    </p>
                 </div>
 
-                <div className="relative grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {/* Connecting Line (Desktop) */}
-                    <div className="hidden md:block absolute top-[60px] left-0 w-full h-0.5 bg-linear-to-r from-neon-green/0 via-neon-green/50 to-neon-green/0 z-0" />
-
+                {/* Steps Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     {steps.map((step, index) => (
-                        <div key={index} className="relative group">
-                            {/* Step Number Watermark */}
-                            <div className="absolute -top-10 -right-4 text-9xl font-bold text-white/5 select-none -z-10 transition-colors group-hover:text-white/10">
-                                0{index + 1}
+                        <div key={index} className="relative group bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col items-center text-center">
+
+                            {/* Step Number */}
+                            <div className="absolute top-4 right-6 text-5xl font-bold text-white/5 group-hover:text-white/10 transition-colors pointer-events-none">
+                                {index + 1}
                             </div>
 
-                            <div className="pt-8">
-                                <div className="relative w-16 h-16 rounded-2xl bg-dark-surface border border-neon-green/30 flex items-center justify-center text-neon-green shadow-[0_0_20px_rgba(163,230,53,0.2)] group-hover:scale-110 group-hover:bg-neon-green group-hover:text-black transition-all duration-300 z-10 mx-auto md:mx-0">
-                                    <step.icon size={28} />
-                                </div>
+                            {/* Icon */}
+                            <div className="w-16 h-16 rounded-full bg-neon-green/10 flex items-center justify-center text-neon-green mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <step.icon size={32} />
                             </div>
 
-                            <div className="mt-8 relative p-6 rounded-2xl border border-transparent group-hover:border-white/5 group-hover:bg-white/[0.02] transition-colors text-center md:text-left">
-                                <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full h-8 w-px bg-gradient-to-b from-transparent to-neon-green/50" />
+                            {/* Content */}
+                            <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
+                            <p className="text-gray-400 leading-relaxed text-sm">
+                                {step.desc}
+                            </p>
 
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon-green transition-colors">{step.title}</h3>
-                                <p className="text-text-muted text-sm">{step.desc}</p>
-                            </div>
                         </div>
                     ))}
                 </div>
+
+                {/* CTA */}
+                {/* <div className="text-center">
+                    <Link
+                        href="/#pricing"
+                        className="inline-block bg-neon-green text-black px-8 py-3 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-[0_0_20px_rgba(163,230,53,0.3)] hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] hover:-translate-y-1"
+                    >
+                        Get Started
+                    </Link>
+                </div> */}
+
             </div>
         </section>
     );

@@ -1,0 +1,97 @@
+'use client';
+
+import Image from 'next/image';
+import { Linkedin } from 'lucide-react';
+
+const teamMembers = [
+    {
+        name: "Sarah Chen",
+        role: "Founder & CEO",
+        description: "Ex-Google AI researcher passionate about bridging technology and art.",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
+        linkedin: "#"
+    },
+    {
+        name: "David Miller",
+        role: "Head of Engineering",
+        description: "15+ years building scalable vision systems for ecommerce giants.",
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop",
+        linkedin: "#"
+    },
+    {
+        name: "Elena Rodriguez",
+        role: "Creative Director",
+        description: "Award-winning jewellery photographer turned digital artist.",
+        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
+        linkedin: "#"
+    }
+];
+
+export default function AboutTeam() {
+    return (
+        <section className="bg-black py-24 px-6 md:py-32 border-b border-white/5 relative overflow-hidden">
+            {/* Background Gradient */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl opacity-20 pointer-events-none">
+                <div className="absolute top-[20%] right-[10%] w-96 h-96 bg-purple-900/30 rounded-full blur-[100px]" />
+                <div className="absolute bottom-[20%] left-[10%] w-96 h-96 bg-blue-900/20 rounded-full blur-[100px]" />
+            </div>
+
+            <div className="max-w-7xl mx-auto relative z-10">
+                {/* 1. Section Header */}
+                <div className="text-center space-y-4 max-w-2xl mx-auto mb-20 md:mb-24">
+                    <span className="text-neon-green font-medium tracking-widest text-xs uppercase bg-white/5 px-3 py-1 rounded-full">
+                        Our Team
+                    </span>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
+                        People Behind AIVX
+                    </h2>
+                    <p className="text-xl text-neutral-400 font-light leading-relaxed">
+                        A small, focused team building the future of jewellery product visualization using AI.
+                    </p>
+                </div>
+
+                {/* 2. Team Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    {teamMembers.map((member, index) => (
+                        <div key={index} className="group flex flex-col items-center text-center space-y-6">
+                            {/* Image Container */}
+                            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-white/5 group-hover:border-neon-green/50 transition-colors duration-500">
+                                <Image
+                                    src={member.image}
+                                    alt={member.name}
+                                    fill
+                                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                                />
+
+                                {/* Overlay / Social Icon on Hover */}
+                                <a
+                                    href={member.linkedin}
+                                    className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                    aria-label={`LinkedIn profile for ${member.name}`}
+                                >
+                                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                                        <Linkedin className="w-5 h-5 text-black" />
+                                    </div>
+                                </a>
+                            </div>
+
+                            {/* Info */}
+                            <div className="space-y-2">
+                                <h3 className="text-xl font-bold text-white group-hover:text-neon-green transition-colors duration-300">
+                                    {member.name}
+                                </h3>
+                                <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider">
+                                    {member.role}
+                                </p>
+                                <p className="text-neutral-400 font-light text-sm max-w-xs mx-auto pt-2">
+                                    {member.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+        </section>
+    );
+}

@@ -1,54 +1,75 @@
-
 'use client';
 
-import { Check } from 'lucide-react';
+import { Image as ImageIcon, Video, Gem, Users, ShoppingBag, Zap } from 'lucide-react';
+
+const features = [
+    {
+        icon: ImageIcon,
+        title: "AI Image Generation",
+        desc: "Generate studio-quality jewellery images using AI."
+    },
+    {
+        icon: Video,
+        title: "AI Video Generation",
+        desc: "Create high-quality 5s and 15s product reel videos."
+    },
+    {
+        icon: Gem,
+        title: "Jewellery-Focused AI",
+        desc: "Optimized lighting, reflections, and detailing for jewellery."
+    },
+    {
+        icon: Users,
+        title: "Multiple Ethnicity Models",
+        desc: "Indian and international models available."
+    },
+    {
+        icon: ShoppingBag,
+        title: "Ecommerce-Ready Outputs",
+        desc: "Images optimized for websites, marketplaces, and ads."
+    },
+    {
+        icon: Zap,
+        title: "Low Cost & Fast Delivery",
+        desc: "Significantly cheaper and faster than traditional photoshoots."
+    }
+];
 
 export default function WhyAivx() {
     return (
-        <section className="py-24 px-6 bg-dark-bg relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-neon-green/5 rounded-full blur-[120px] pointer-events-none" />
+        <section className="py-24 px-6 bg-dark-bg relative overflow-hidden border-t border-white/5">
+            {/* Background Glow */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-green/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto relative z-10">
+                {/* Header */}
+                <div className="text-center mb-16 space-y-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">Why AIVX</h2>
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                        Built specifically for jewellery brands, ecommerce sellers, and marketers.
+                    </p>
+                </div>
 
-                {/* Main Card Container */}
-                <div className="bg-dark-surface border border-white/5 rounded-[2.5rem] p-8 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center shadow-2xl relative overflow-hidden">
-
-                    {/* Subtle Gradient Overlay inside card */}
-                    <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-neon-green via-blue-500 to-purple-500 opacity-50" />
-                    <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
-
-                    {/* Left Side: Headings */}
-                    <div className="space-y-6 relative z-10">
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
-                            Create Assets That <br />
-                            <span className="text-neon-green">Actually Convert.</span>
-                        </h2>
-                        <p className="text-xl font-medium text-white/90">
-                            Professional Grade. Production Ready.
-                        </p>
-                    </div>
-
-                    {/* Right Side: Checkmark List */}
-                    <div className="space-y-8 relative z-10">
-                        {[
-                            "Precision Control with Depth Maps & ControlNets.",
-                            "Train custom LoRAs for 100% Brand Consistency.",
-                            "Upscaled to 4K, ready for print and digital ads.",
-                            "No artifacts, no weird hands - just clean results.",
-                            "API-first architecture for batched processing."
-                        ].map((item, index) => (
-                            <div key={index} className="flex gap-4 items-start group">
-                                <div className="mt-1 w-6 h-6 rounded-full bg-neon-green/10 flex items-center justify-center text-neon-green shrink-0 group-hover:bg-neon-green group-hover:text-black transition-colors duration-300">
-                                    <Check size={14} strokeWidth={3} />
-                                </div>
-                                <p className="text-lg text-text-muted group-hover:text-white transition-colors duration-300">
-                                    {item}
-                                </p>
+                {/* Features Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className="group p-8 rounded-2xl bg-dark-surface border border-white/10 hover:border-neon-green/30 transition-all duration-300 hover:bg-white/5 h-full"
+                        >
+                            <div className="w-12 h-12 rounded-lg bg-neon-green/10 flex items-center justify-center text-neon-green mb-6 group-hover:bg-neon-green group-hover:text-black transition-colors duration-300">
+                                <feature.icon size={24} />
                             </div>
-                        ))}
-                    </div>
 
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon-green transition-colors">
+                                {feature.title}
+                            </h3>
+
+                            <p className="text-gray-400 leading-relaxed text-sm">
+                                {feature.desc}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

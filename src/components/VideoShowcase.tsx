@@ -1,148 +1,134 @@
-
 'use client';
 
-import { Play, Sparkles } from 'lucide-react';
-import { useState } from 'react';
-import MediaModal from './MediaModal';
+import { Play } from 'lucide-react';
+import Link from 'next/link';
+import { useRef, useEffect } from 'react';
 
-export default function VideoShowcase() {
-    const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+const videos = [
+    {
+        id: 1,
+        title: "Diamond Ring Showcase",
+        duration: "5s",
+        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4", // Sample video
+        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Ring+Preview"
+    },
+    {
+        id: 2,
+        title: "Gold Necklace Reveal",
+        duration: "15s",
+        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Necklace+Preview"
+    },
+    {
+        id: 3,
+        title: "Bangle 360 View",
+        duration: "10s",
+        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Bangle+Preview"
+    },
+    {
+        id: 4,
+        title: "Earring Model Shoot",
+        duration: "15s",
+        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Earring+Preview"
+    }
+];
 
-    // Placeholder video URL (using a reliable sample)
-    const SAMPLE_VIDEO = "https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4";
+function VideoCard({ video }: { video: typeof videos[0] }) {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        // Intersection Observer to play/pause when in viewport
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        videoRef.current?.play().catch(() => { });
+                    } else {
+                        videoRef.current?.pause();
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        if (videoRef.current) {
+            observer.observe(videoRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <section className="py-24 px-6 bg-dark-bg relative overflow-hidden">
-            <MediaModal
-                isOpen={!!selectedVideo}
-                onClose={() => setSelectedVideo(null)}
-                type="video"
-                src={selectedVideo || ''}
+        <div className="relative group aspect-[9/16] bg-dark-surface rounded-2xl overflow-hidden border border-white/5 hover:border-neon-green/30 transition-all duration-300 shadow-xl">
+            {/* Video Element */}
+            <video
+                ref={videoRef}
+                src={video.src}
+                poster={video.poster}
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
 
-            <div className="max-w-7xl mx-auto space-y-12 relative z-10">
-                <div className="text-center space-y-4">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-neon-green mb-4">
-                        <Sparkles size={14} />
-                        <span>Showcase</span>
-                    </div>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white">Made with AIVX</h2>
-                    <p className="text-text-muted text-lg max-w-2xl mx-auto">
-                        Explore what's possible. All videos generated from single image inputs.
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+
+            {/* Play Button Indicator (Center) */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
+                    <Play size={20} fill="currentColor" />
+                </div>
+            </div>
+
+            {/* Content Info (Bottom) */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[10px] font-bold bg-neon-green text-black px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                        {video.duration}
+                    </span>
+                    <span className="text-xs text-gray-300">AI Generated</span>
+                </div>
+                <h3 className="text-white font-bold leading-tight line-clamp-2">
+                    {video.title}
+                </h3>
+            </div>
+        </div>
+    );
+}
+
+export default function VideoShowcase() {
+    return (
+        <section className="py-24 px-6 bg-dark-bg border-t border-white/5 relative">
+            {/* Background Glow */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center mb-16 space-y-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">Product Reel Videos</h2>
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                        High-quality 5s and 15s AI-generated jewellery videos for reels, ads, and ecommerce.
                     </p>
                 </div>
 
-                {/* 3x3 Grid Pattern */}
-                <div className="grid grid-cols-1 md:grid-cols-3 aspect-auto md:aspect-3/2 w-full max-w-5xl mx-auto gap-1 bg-white/5 border border-white/5 p-1">
+                {/* Video Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    {videos.map((video) => (
+                        <VideoCard key={video.id} video={video} />
+                    ))}
+                </div>
 
-                    {/* Item 1: Video Placeholder */}
-                    <div
-                        className="relative group bg-dark-surface overflow-hidden min-h-[200px] flex items-center justify-center cursor-pointer"
-                        onClick={() => setSelectedVideo(SAMPLE_VIDEO)}
+                {/* CTA */}
+                <div className="text-center">
+                    <Link
+                        href="/"
+                        className="inline-flex items-center gap-2 text-white border-b border-neon-green/50 pb-1 hover:text-neon-green hover:border-neon-green transition-all font-medium group"
                     >
-                        <div className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-colors" />
-                        <div className="relative z-10 flex flex-col items-center gap-2">
-                            <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform bg-black/20 backdrop-blur">
-                                <Play size={20} fill="currentColor" />
-                            </div>
-                            <span className="text-xs font-mono text-white/50">SAMPLE 01</span>
-                        </div>
-                    </div>
-
-                    {/* Item 2: Video Placeholder */}
-                    <div
-                        className="relative group bg-dark-surface overflow-hidden min-h-[200px] flex items-center justify-center cursor-pointer"
-                        onClick={() => setSelectedVideo(SAMPLE_VIDEO)}
-                    >
-                        <div className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-colors" />
-                        <div className="relative z-10 flex flex-col items-center gap-2">
-                            <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform bg-black/20 backdrop-blur">
-                                <Play size={20} fill="currentColor" />
-                            </div>
-                            <span className="text-xs font-mono text-white/50">SAMPLE 02</span>
-                        </div>
-                    </div>
-
-                    {/* Item 3: Typography Card */}
-                    <div className="relative bg-white flex items-center justify-center p-8">
-                        <h3 className="text-3xl font-bold text-black tracking-tighter">
-                            Cinematic.
-                        </h3>
-                    </div>
-
-                    {/* Item 4: Video Placeholder (Visual Abstract) */}
-                    <div
-                        className="relative group bg-dark-surface overflow-hidden min-h-[200px] flex items-center justify-center cursor-pointer"
-                        onClick={() => setSelectedVideo(SAMPLE_VIDEO)}
-                    >
-                        <div className="absolute inset-0 bg-linear-to-br from-purple-900/20 to-blue-900/20" />
-                        <div className="relative z-10 flex flex-col items-center gap-2">
-                            <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform bg-black/20 backdrop-blur">
-                                <Play size={20} fill="currentColor" />
-                            </div>
-                            <span className="text-xs font-mono text-white/50">FASHION.MP4</span>
-                        </div>
-                    </div>
-
-                    {/* Item 5: Center Text/Brand Block */}
-                    <div className="relative bg-neon-green flex flex-col items-center justify-center p-6 text-center">
-                        <p className="text-2xl md:text-3xl font-bold text-black leading-tight">
-                            Your Brand <br /> in Motion.
-                        </p>
-                    </div>
-
-                    {/* Item 6: Video Placeholder */}
-                    <div
-                        className="relative group bg-dark-surface overflow-hidden min-h-[200px] flex items-center justify-center cursor-pointer"
-                        onClick={() => setSelectedVideo(SAMPLE_VIDEO)}
-                    >
-                        <div className="absolute inset-0 bg-linear-to-br from-emerald-900/20 to-teal-900/20" />
-                        <div className="relative z-10 flex flex-col items-center gap-2">
-                            <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform bg-black/20 backdrop-blur">
-                                <Play size={20} fill="currentColor" />
-                            </div>
-                            <span className="text-xs font-mono text-white/50">PRODUCT.MP4</span>
-                        </div>
-                    </div>
-
-                    {/* Item 7: Text/Info Card */}
-                    <div className="relative bg-[#1a1a1a] flex flex-col justify-end p-6">
-                        <p className="text-sm text-text-muted mb-2">Capabilities</p>
-                        <p className="text-lg font-medium text-white leading-snug">
-                            4K Resolution, <br />
-                            60 FPS Support, <br />
-                            Depth Control.
-                        </p>
-                    </div>
-
-                    {/* Item 8: Video Placeholder */}
-                    <div
-                        className="relative group bg-dark-surface overflow-hidden min-h-[200px] flex items-center justify-center cursor-pointer"
-                        onClick={() => setSelectedVideo(SAMPLE_VIDEO)}
-                    >
-                        <div className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-colors" />
-                        <div className="relative z-10 flex flex-col items-center gap-2">
-                            <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform bg-black/20 backdrop-blur">
-                                <Play size={20} fill="currentColor" />
-                            </div>
-                            <span className="text-xs font-mono text-white/50">SAMPLE 05</span>
-                        </div>
-                    </div>
-
-                    {/* Item 9: Video Placeholder or Abstract */}
-                    <div
-                        className="relative group bg-dark-surface overflow-hidden min-h-[200px] flex items-center justify-center cursor-pointer"
-                        onClick={() => setSelectedVideo(SAMPLE_VIDEO)}
-                    >
-                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
-                        <div className="relative z-10 flex flex-col items-center gap-2">
-                            <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform bg-black/20 backdrop-blur">
-                                <Play size={20} fill="currentColor" />
-                            </div>
-                            <span className="text-xs font-mono text-white/50">EXPERIMENTAL</span>
-                        </div>
-                    </div>
-
+                        View More Videos
+                        <Play size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
                 </div>
             </div>
         </section>

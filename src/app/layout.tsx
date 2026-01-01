@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description: "Create Winning Ads in Seconds with AI",
 };
 
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -16,8 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased bg-dark-bg text-white`}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

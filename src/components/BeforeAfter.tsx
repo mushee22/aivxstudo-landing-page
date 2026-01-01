@@ -1,185 +1,154 @@
-
 'use client';
 
-import { useState } from 'react';
-import { ArrowRight, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react';
-import MediaModal from './MediaModal';
+import { useState, useEffect, useCallback } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+
+const comparisons = [
+    {
+        title: "Ring",
+        category: "Jewellery",
+        before: "https://placehold.co/800x800/1a1a1a/ffffff?text=Raw+Ring",
+        after: "https://placehold.co/800x800/black/a3e635?text=Studio+Ring"
+    },
+    {
+        title: "Necklace",
+        category: "Jewellery",
+        before: "https://placehold.co/800x800/1a1a1a/ffffff?text=Raw+Necklace",
+        after: "https://placehold.co/800x800/black/a3e635?text=Studio+Necklace"
+    },
+    {
+        title: "Bangle",
+        category: "Jewellery",
+        before: "https://placehold.co/800x800/1a1a1a/ffffff?text=Raw+Bangle",
+        after: "https://placehold.co/800x800/black/a3e635?text=Studio+Bangle"
+    },
+    {
+        title: "Ear Ring",
+        category: "Jewellery",
+        before: "https://placehold.co/800x800/1a1a1a/ffffff?text=Raw+Earring",
+        after: "https://placehold.co/800x800/black/a3e635?text=Studio+Earring"
+    }
+];
 
 export default function BeforeAfter() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-    const slides = [
-        {
-            title: "Product Studio",
-            desc: "Turn simple product shots into professional marketing assets.",
-            color: "from-blue-500 to-cyan-500",
-            input: "https://picsum.photos/id/1/400/500",
-            outputs: [
-                "https://picsum.photos/id/11/400/400",
-                "https://picsum.photos/id/12/400/400",
-                "https://picsum.photos/id/13/400/400",
-                "https://picsum.photos/id/14/400/400"
-            ]
-        },
-        {
-            title: "Lifestyle Scenes",
-            desc: "Place your product in realistic AI-generated environments.",
-            color: "from-purple-500 to-pink-500",
-            input: "https://picsum.photos/id/20/400/500",
-            outputs: [
-                "https://picsum.photos/id/21/400/400",
-                "https://picsum.photos/id/22/400/400",
-                "https://picsum.photos/id/23/400/400",
-                "https://picsum.photos/id/24/400/400"
-            ]
-        },
-        {
-            title: "Creative Concepts",
-            desc: "Generate artistic and abstract concepts for brand awareness.",
-            color: "from-neon-green to-emerald-500",
-            input: "https://picsum.photos/id/30/400/500",
-            outputs: [
-                "https://picsum.photos/id/31/400/400",
-                "https://picsum.photos/id/32/400/400",
-                "https://picsum.photos/id/33/400/400",
-                "https://picsum.photos/id/34/400/400"
-            ]
-        },
-        {
-            title: "Seasonal Promo",
-            desc: "Instantly thematic backgrounds for holiday campaigns.",
-            color: "from-orange-500 to-red-500",
-            input: "https://picsum.photos/id/40/400/500",
-            outputs: [
-                "https://picsum.photos/id/41/400/400",
-                "https://picsum.photos/id/42/400/400",
-                "https://picsum.photos/id/43/400/400",
-                "https://picsum.photos/id/44/400/400"
-            ]
-        }
-    ];
+    const nextSlide = useCallback(() => {
+        setCurrentIndex((prev) => (prev + 1) % comparisons.length);
+    }, []);
 
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % slides.length);
-    };
+    const prevSlide = useCallback(() => {
+        setCurrentIndex((prev) => (prev - 1 + comparisons.length) % comparisons.length);
+    }, []);
 
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-    };
+    // Auto-play logic
+    useEffect(() => {
+        if (!isAutoPlaying) return;
+        const interval = setInterval(nextSlide, 5000); // 5s interval for smooth reading
+        return () => clearInterval(interval);
+    }, [isAutoPlaying, nextSlide]);
 
     return (
-        <section className="py-24 px-6 bg-dark-bg overflow-hidden">
-            <MediaModal
-                isOpen={!!selectedImage}
-                onClose={() => setSelectedImage(null)}
-                type="image"
-                src={selectedImage || ''}
-            />
-
-            <div className="max-w-7xl mx-auto space-y-12">
-                <div className="text-center space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white">Instant Transformation</h2>
-                    <p className="text-text-muted text-lg">See how AIVX transforms a single input into endless possibilities.</p>
+        <section
+            className="py-24 px-6 bg-dark-bg border-t border-white/5"
+            onMouseEnter={() => setIsAutoPlaying(false)}
+            onMouseLeave={() => setIsAutoPlaying(true)}
+        >
+            <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-12 space-y-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">Before & After</h2>
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                        See how AIVX transforms simple product images into studio-quality jewellery visuals.
+                    </p>
                 </div>
 
-                <div className="relative group/slider">
-                    {/* Slider Controls */}
-                    <div className="absolute top-1/2 -left-4 md:-left-12 -translate-y-1/2 z-20">
-                        <button
-                            onClick={prevSlide}
-                            className="p-3 rounded-full bg-dark-surface border border-white/10 text-white hover:text-neon-green hover:border-neon-green transition-all shadow-lg cursor-pointer"
-                        >
-                            <ChevronLeft size={24} />
-                        </button>
-                    </div>
-                    <div className="absolute top-1/2 -right-4 md:-right-12 -translate-y-1/2 z-20">
-                        <button
-                            onClick={nextSlide}
-                            className="p-3 rounded-full bg-dark-surface border border-white/10 text-white hover:text-neon-green hover:border-neon-green transition-all shadow-lg cursor-pointer"
-                        >
-                            <ChevronRight size={24} />
-                        </button>
-                    </div>
+                <div className="relative group">
+                    {/* Navigation Buttons (Desktop) */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute top-1/2 -left-4 md:-left-12 -translate-y-1/2 z-20 p-3 rounded-full bg-dark-surface border border-white/10 text-white hover:text-neon-green hover:border-neon-green transition-all shadow-lg hidden md:flex items-center justify-center opacity-0 group-hover:opacity-100"
+                        aria-label="Previous slide"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+
+                    <button
+                        onClick={nextSlide}
+                        className="absolute top-1/2 -right-4 md:-right-12 -translate-y-1/2 z-20 p-3 rounded-full bg-dark-surface border border-white/10 text-white hover:text-neon-green hover:border-neon-green transition-all shadow-lg hidden md:flex items-center justify-center opacity-0 group-hover:opacity-100"
+                        aria-label="Next slide"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
 
                     {/* Carousel Track */}
-                    <div className="overflow-hidden px-4 md:px-0">
+                    <div className="overflow-hidden rounded-2xl bg-dark-surface border border-white/10 shadow-2xl">
                         <div
-                            className="flex gap-6 transition-transform duration-500 ease-in-out"
-                            style={{
-                                transform: `translateX(-${currentIndex * 50}%)`
-                            }}
+                            className="flex transition-transform duration-500 ease-in-out"
+                            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                         >
-                            {slides.map((slide, index) => (
-                                <div
-                                    key={index}
-                                    className="min-w-full md:min-w-[calc(50%-12px)] bg-dark-surface border border-white/10 rounded-3xl p-6 shadow-2xl relative overflow-hidden group shrink-0"
-                                >
-                                    {/* Dynamic Accent Top Border */}
-                                    <div className={`absolute top-0 left-0 w-full h-1 bg-linear-to-r ${slide.color}`} />
+                            {comparisons.map((item, index) => (
+                                <div key={index} className="w-full flex-shrink-0">
+                                    <div className="flex flex-col md:flex-row h-[500px] md:h-[600px]">
 
-                                    <div className="flex flex-col gap-6">
-                                        {/* Transformation Row (More Compact) */}
-                                        <div className="flex items-center justify-between gap-4">
-                                            {/* Input */}
-                                            <div
-                                                className="relative w-1/3 aspect-[3/4] bg-black/40 rounded-xl border border-white/10 overflow-hidden flex items-center justify-center cursor-pointer hover:border-neon-green/50 transition-colors group/input"
-                                                onClick={() => setSelectedImage(slide.input)}
-                                            >
-                                                <img src={slide.input} alt="Input" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover/input:opacity-80 transition-opacity" />
-                                                <div className="relative z-10 text-center p-2 bg-black/30 backdrop-blur-sm rounded-lg">
-                                                    <p className="text-[10px] text-white font-bold uppercase tracking-wider">Input</p>
-                                                </div>
-                                                <div className="absolute top-2 right-2 text-white/50 group-hover/input:text-white transition-colors">
-                                                    <Maximize2 size={12} />
-                                                </div>
+                                        {/* Before Side */}
+                                        <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden border-b md:border-b-0 md:border-r border-white/10 p-2">
+                                            <div className="absolute top-4 left-4 z-10 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+                                                <span className="text-xs font-bold text-white uppercase tracking-wider">Before</span>
                                             </div>
-
-                                            {/* Arrow */}
-                                            <div className="text-neon-green shrink-0">
-                                                <ArrowRight size={24} className="animate-pulse" />
-                                            </div>
-
-                                            {/* Output Grid (2x2) */}
-                                            <div className="w-1/2 grid grid-cols-2 gap-2">
-                                                {slide.outputs.map((imgSrc, i) => (
-                                                    <div
-                                                        key={i}
-                                                        className="relative aspect-square bg-black/40 rounded-lg border border-white/10 overflow-hidden group-hover:border-neon-green/30 transition-colors cursor-pointer hover:scale-105 duration-200"
-                                                        onClick={() => setSelectedImage(imgSrc)}
-                                                    >
-                                                        <img src={imgSrc} alt={`Result ${i}`} className="absolute inset-0 w-full h-full object-cover" />
-                                                        <div className={`absolute inset-0 bg-linear-to-br ${slide.color} opacity-0 hover:opacity-10 transition-opacity`} />
-                                                    </div>
-                                                ))}
+                                            <div className="w-full h-full relative rounded-xl overflow-hidden">
+                                                <img
+                                                    src={item.before}
+                                                    alt={`Before ${item.title}`}
+                                                    className="absolute inset-0 w-full h-full object-cover grayscale opacity-80"
+                                                />
                                             </div>
                                         </div>
 
-                                        {/* Text Info */}
-                                        <div className="border-t border-white/5 pt-4">
-                                            <h3 className="text-lg font-bold text-white mb-1">{slide.title}</h3>
-                                            <p className="text-sm text-text-muted line-clamp-2">{slide.desc}</p>
+                                        {/* After Side */}
+                                        <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden p-2">
+                                            <div className="absolute top-4 right-4 z-10 bg-neon-green/90 backdrop-blur-md px-3 py-1 rounded-full border border-neon-green/20">
+                                                <span className="text-xs font-bold text-black uppercase tracking-wider">After</span>
+                                            </div>
+                                            <div className="w-full h-full relative rounded-xl overflow-hidden">
+                                                <img
+                                                    src={item.after}
+                                                    alt={`After ${item.title}`}
+                                                    className="absolute inset-0 w-full h-full object-cover"
+                                                />
+                                                {/* Subtle inner shadow for depth */}
+                                                <div className="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.5)] pointer-events-none" />
+                                            </div>
                                         </div>
+
+                                    </div>
+
+                                    {/* Caption/Title Bar */}
+                                    <div className="p-4 border-t border-white/10 bg-dark-surface flex justify-between items-center text-white">
+                                        <h3 className="text-xl font-bold">{item.title}</h3>
+                                        <span className="text-sm text-neon-green font-medium">
+                                            Slide {index + 1} / {comparisons.length}
+                                        </span>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    {/* Dots Indicator */}
-                    <div className="flex justify-center gap-2 mt-8">
-                        {slides.map((_, idx) => (
+                    {/* Mobile Dots */}
+                    <div className="flex justify-center gap-2 mt-6 md:hidden">
+                        {comparisons.map((_, idx) => (
                             <button
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
-                                className={`transition-all rounded-full ${idx === currentIndex ? 'w-8 h-2 bg-neon-green' : 'w-2 h-2 bg-white/20 hover:bg-white/40'}`}
+                                className={`transition-all rounded-full ${idx === currentIndex ? 'w-8 h-2 bg-neon-green' : 'w-2 h-2 bg-white/20'}`}
+                                aria-label={`Go to slide ${idx + 1}`}
                             />
                         ))}
                     </div>
-
                 </div>
             </div>
         </section>
     );
 }
-
