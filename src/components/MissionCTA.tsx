@@ -13,17 +13,11 @@ export default function MissionCTA() {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                     <Link
-                        href="/product-shoot"
+                        href="/contact"
                         className="inline-flex items-center justify-center px-8 py-4 bg-neon-green text-black font-bold rounded-full hover:bg-neon-green/90 transition-all transform hover:scale-105"
                     >
-                        Get Started
+                        Contact Sales
                         <ArrowRight className="ml-2 w-5 h-5" />
-                    </Link>
-                    <Link
-                        href="/contact"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white font-medium rounded-full hover:bg-white/20 transition-all backdrop-blur-sm"
-                    >
-                        Contact Us
                     </Link>
                 </div>
             </div>

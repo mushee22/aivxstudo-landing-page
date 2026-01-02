@@ -69,6 +69,9 @@ export default function Header() {
                         className="flex items-center gap-2 z-50 relative group"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
+                        <div className="w-8 h-8 rounded-lg overflow-hidden border border-neon-green/50 flex items-center justify-center bg-black">
+                            <img src="/logo.jpg" alt="AIVX Logo" className="w-full h-full object-cover" />
+                        </div>
                         <span className="text-xl lg:text-2xl font-bold tracking-tighter text-white group-hover:text-neon-green transition-colors duration-300">
                             AIVX
                         </span>
@@ -76,6 +79,9 @@ export default function Header() {
 
                     {/* 2. Desktop Navigation */}
                     <nav className="hidden lg:flex items-center gap-10">
+                        <Link href="/" className={`text-sm font-medium transition-colors duration-300 ${pathname === '/' ? 'text-neon-green' : 'text-neutral-300 hover:text-white'}`}>
+                            Studio
+                        </Link>
                         {/* Product Shoot Dropdown */}
                         <div
                             className="relative group"
@@ -209,6 +215,13 @@ export default function Header() {
                 {/* Scrollable Content */}
                 <div className="flex-1 overflow-y-auto pt-8 pb-32 px-6">
                     <nav className="flex flex-col space-y-6">
+                        <Link
+                            href="/"
+                            className={`text-2xl font-medium py-2 transition-colors ${pathname === '/' ? 'text-neon-green' : 'text-white hover:text-neon-green'}`}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            Studio
+                        </Link>
 
                         {/* 1. Product Shoot Accordion */}
                         <div>

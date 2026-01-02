@@ -10,10 +10,6 @@ export default function BlogHero() {
                 <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight">
                     Insights on AI, Jewellery & Ecommerce
                 </h1>
-                <div className="w-24 h-px bg-white/10 mx-auto my-8" />
-                <p className="text-xl text-neutral-400 font-light max-w-2xl mx-auto leading-relaxed">
-                    Articles, guides, and case studies on AI-powered jewellery product shoots, ecommerce visuals, and brand growth.
-                </p>
             </div>
         </section>
     );

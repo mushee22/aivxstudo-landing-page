@@ -123,10 +123,10 @@ export default function VideoShowcase() {
                 {/* CTA */}
                 <div className="text-center">
                     <Link
-                        href="/"
+                        href="/product-shoot/jewellery"
                         className="inline-flex items-center gap-2 text-white border-b border-neon-green/50 pb-1 hover:text-neon-green hover:border-neon-green transition-all font-medium group"
                     >
-                        View More Videos
+                        View More
                         <Play size={14} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>

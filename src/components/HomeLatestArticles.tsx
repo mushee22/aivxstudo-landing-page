@@ -1,11 +1,15 @@
-'use client';
+// ... imports
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { blogPosts } from '@/data/blogData';
-import { ArrowRight } from 'lucide-react';
+import { blogPosts } from "@/data/blogData";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function HomeLatestArticles() {
+interface HomeLatestArticlesProps {
+    showViewAllLink?: boolean;
+}
+
+export default function HomeLatestArticles({ showViewAllLink = true }: HomeLatestArticlesProps) {
     // 1. Get latest 3 articles
     const latestPosts = [...blogPosts]
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -75,16 +79,17 @@ export default function HomeLatestArticles() {
                 </div>
 
                 {/* Footer CTA */}
-                <div className="text-center pt-8">
-                    <Link
-                        href="/blog"
-                        className="inline-flex items-center gap-2 text-white font-medium hover:text-neon-green transition-colors duration-300"
-                    >
-                        View All Blogs
-                        <ArrowRight size={18} />
-                    </Link>
-                </div>
-
+                {showViewAllLink && (
+                    <div className="text-center pt-8">
+                        <Link
+                            href="/blog"
+                            className="inline-flex items-center gap-2 text-white font-medium hover:text-neon-green transition-colors duration-300"
+                        >
+                            View All Blogs
+                            <ArrowRight size={18} />
+                        </Link>
+                    </div>
+                )}
             </div>
         </section>
     );

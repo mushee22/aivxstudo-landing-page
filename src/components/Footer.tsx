@@ -16,9 +16,14 @@ export default function Footer() {
                     {/* Column 1: Branding */}
                     <div className="lg:col-span-1 space-y-8">
                         <Link href="/" className="inline-block">
-                            <span className="text-xl font-bold tracking-tighter text-white/90 hover:text-white transition-colors">
-                                AIVX
-                            </span>
+                            <div className="flex items-center gap-2">
+                                <div className="w-8 h-8 rounded-lg overflow-hidden border border-neon-green/50 flex items-center justify-center bg-black">
+                                    <img src="/logo.jpg" alt="AIVX Logo" className="w-full h-full object-cover" />
+                                </div>
+                                <span className="text-xl font-bold tracking-tighter text-white/90 hover:text-white transition-colors">
+                                    AIVX
+                                </span>
+                            </div>
                         </Link>
                         <p className="text-neutral-500 text-sm leading-relaxed font-light max-w-xs">
                             AI-powered studio for jewellery images and videos, built for ecommerce brands.

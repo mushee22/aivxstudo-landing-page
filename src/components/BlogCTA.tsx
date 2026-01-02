@@ -21,18 +21,11 @@ export default function BlogCTA() {
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
                     <Link
-                        href="/product-shoot"
+                        href="/contact"
                         className="group bg-neon-green text-black font-bold py-4 px-8 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-neon-green/20 flex items-center gap-2"
                     >
-                        Get Started
+                        Contact Sales
                         <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
-                    </Link>
-
-                    <Link
-                        href="/contact"
-                        className="text-white font-medium py-4 px-8 rounded-full border border-white/20 hover:bg-white/10 transition-colors duration-300"
-                    >
-                        Contact Us
                     </Link>
                 </div>
 

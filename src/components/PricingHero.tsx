@@ -28,17 +28,11 @@ export default function PricingHero() {
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                     <Link
-                        href="#plans"
+                        href="/contact"
                         className="bg-neon-green text-black px-8 py-3.5 rounded-full font-bold hover:bg-lime-300 transition-all shadow-[0_0_20px_rgba(163,230,53,0.3)] hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] flex items-center justify-center gap-2"
                     >
-                        Get Started
-                        <ArrowRight size={18} />
-                    </Link>
-                    <Link
-                        href="/contact"
-                        className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/10 transition-all flex items-center justify-center"
-                    >
                         Contact Sales
+                        <ArrowRight size={18} />
                     </Link>
                 </div>
             </div>

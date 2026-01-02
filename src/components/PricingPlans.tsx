@@ -14,10 +14,10 @@ const plans = [
             "52 Credits / Image Gen",
             "32 Credits / Regeneration",
             "102 Credits / Video Gen",
-            "Basic themes"
+            // "Basic themes"
         ],
-        cta: "Buy Credits",
-        href: "/dashboard",
+        cta: "Contact Sales",
+        href: "/contact",
         popular: false
     },
     {
@@ -33,8 +33,8 @@ const plans = [
             "All jewellery themes",
             "Priority support"
         ],
-        cta: "Buy Credits",
-        href: "/dashboard",
+        cta: "Contact Sales",
+        href: "/contact",
         popular: true
     },
     {
@@ -124,13 +124,6 @@ export default function PricingPlans() {
                             </Link>
                         </div>
                     ))}
-                </div>
-
-                {/* FAQ Link or Additional Note */}
-                <div className="mt-16 text-center">
-                    <p className="text-gray-500 text-sm">
-                        Need help choosing? <Link href="/contact" className="text-neon-green hover:underline">Chat with us</Link>
-                    </p>
                 </div>
             </div>
         </section>

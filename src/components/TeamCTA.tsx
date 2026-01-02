@@ -13,10 +13,11 @@ export default function TeamCTA() {
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                     <Link
-                        href="/contact"
+                        href="https://www.linkedin.com/company/aivx-studio/posts/?feedView=all"
+                        target="_blank"
                         className="inline-flex items-center justify-center px-8 py-4 bg-neon-green text-black font-bold rounded-full hover:bg-neon-green/90 transition-all transform hover:scale-105"
                     >
-                        Contact Us
+                        Join Our Team
                         <ArrowRight className="ml-2 w-5 h-5" />
                     </Link>
                     <Link

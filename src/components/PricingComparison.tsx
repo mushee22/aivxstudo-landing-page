@@ -74,7 +74,7 @@ export default function PricingComparison() {
                 {/* Metrics Highlight */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 pt-16 border-t border-white/5">
                     <div className="text-center">
-                        <div className="text-4xl md:text-5xl font-bold text-neon-green mb-2">70-80%</div>
+                        <div className="text-4xl md:text-5xl font-bold text-neon-green mb-2">90%</div>
                         <div className="text-gray-400">Cost Savings</div>
                     </div>
                     <div className="text-center border-l-0 border-r-0 sm:border-l sm:border-r border-white/5 py-4 sm:py-0">
@@ -82,7 +82,7 @@ export default function PricingComparison() {
                         <div className="text-gray-400">vs Days</div>
                     </div>
                     <div className="text-center">
-                        <div className="text-4xl md:text-5xl font-bold text-neon-green mb-2">10×</div>
+                        <div className="text-4xl md:text-5xl font-bold text-neon-green mb-2">20×</div>
                         <div className="text-gray-400">More Variations</div>
                     </div>
                 </div>
@@ -90,14 +90,8 @@ export default function PricingComparison() {
                 {/* CTAs */}
                 <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4">
                     <Link
-                        href="/dashboard"
-                        className="bg-neon-green text-black px-8 py-3.5 rounded-full font-bold hover:bg-lime-300 transition-colors shadow-lg text-center"
-                    >
-                        Switch to AIVX
-                    </Link>
-                    <Link
                         href="/contact"
-                        className="bg-transparent border border-white/20 text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/5 transition-colors text-center"
+                        className="bg-neon-green text-black px-8 py-3.5 rounded-full font-bold hover:bg-lime-300 transition-colors shadow-lg text-center"
                     >
                         Contact Sales
                     </Link>

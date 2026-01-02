@@ -1,7 +1,6 @@
 'use client';
 
 import { Upload, Palette, Sparkles } from 'lucide-react';
-import Link from 'next/link';
 
 const steps = [
     {
@@ -60,17 +59,6 @@ export default function HowItWorks() {
                         </div>
                     ))}
                 </div>
-
-                {/* CTA */}
-                {/* <div className="text-center">
-                    <Link
-                        href="/#pricing"
-                        className="inline-block bg-neon-green text-black px-8 py-3 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-[0_0_20px_rgba(163,230,53,0.3)] hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] hover:-translate-y-1"
-                    >
-                        Get Started
-                    </Link>
-                </div> */}
-
             </div>
         </section>
     );

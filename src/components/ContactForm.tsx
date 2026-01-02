@@ -73,6 +73,7 @@ export default function ContactForm() {
                         onChange={handleChange}
                         className={`w-full bg-dark-bg border ${errors.name ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 text-white focus:outline-hidden focus:border-neon-green/50 focus:ring-1 focus:ring-neon-green/50 transition-all`}
                         placeholder="John Doe"
+                        autoFocus
                     />
                     {errors.name && (
                         <p className="text-red-500 text-xs flex items-center gap-1">
@@ -144,8 +145,8 @@ export default function ContactForm() {
                     type="submit"
                     disabled={status === 'submitting' || status === 'success'}
                     className={`w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all duration-300 ${status === 'success'
-                            ? 'bg-green-500 text-white cursor-default'
-                            : 'bg-white text-black hover:bg-neon-green hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.1)]'
+                        ? 'bg-green-500 text-white cursor-default'
+                        : 'bg-white text-black hover:bg-neon-green hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.1)]'
                         } disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:bg-white`}
                 >
                     {status === 'submitting' ? (

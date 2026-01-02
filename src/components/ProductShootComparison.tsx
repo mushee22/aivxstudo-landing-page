@@ -72,11 +72,11 @@ export default function ProductShootComparison() {
                 {/* Metrics Highlight */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 pt-16 border-t border-white/5">
                     <div className="text-center">
-                        <div className="text-4xl md:text-5xl font-bold text-neon-green mb-2">70%</div>
+                        <div className="text-4xl md:text-5xl font-bold text-neon-green mb-2">90%</div>
                         <div className="text-gray-400">Cost Reduction</div>
                     </div>
                     <div className="text-center border-l border-r border-white/5">
-                        <div className="text-4xl md:text-5xl font-bold text-neon-green mb-2">10x</div>
+                        <div className="text-4xl md:text-5xl font-bold text-neon-green mb-2">20x</div>
                         <div className="text-gray-400">Faster Delivery</div>
                     </div>
                     <div className="text-center">
@@ -90,12 +90,6 @@ export default function ProductShootComparison() {
                     <Link
                         href="/contact"
                         className="bg-neon-green text-black px-8 py-3.5 rounded-full font-bold hover:bg-lime-300 transition-colors shadow-lg text-center"
-                    >
-                        Get Started with AIVX
-                    </Link>
-                    <Link
-                        href="/contact"
-                        className="bg-transparent border border-white/20 text-white px-8 py-3.5 rounded-full font-bold hover:bg-white/5 transition-colors text-center"
                     >
                         Contact Sales
                     </Link>

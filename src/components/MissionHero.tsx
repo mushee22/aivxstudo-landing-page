@@ -2,7 +2,7 @@
 
 export default function MissionHero() {
     return (
-        <section className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden bg-black/90">
+        <section className="relative w-full pt-12 md:pt-24 flex items-center justify-center overflow-hidden bg-black/90">
             {/* Background Texture/Gradient */}
             <div className="absolute inset-0 z-0 opacity-40">
                 <div className="absolute top-0 left-0 w-1/2 h-full bg-linear-to-r from-purple-900/20 to-transparent" />

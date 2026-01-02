@@ -23,9 +23,9 @@ export default function HeroSection() {
                 </video>
 
                 {/* Overlay Gradients */}
-                <div className="absolute inset-0 bg-black/40" /> {/* General darkening */}
-                <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" /> {/* Left-side text legibility */}
-                <div className="absolute inset-0 bg-linear-to-t from-dark-bg via-transparent to-transparent h-32 bottom-0" /> {/* Bottom fade */}
+                {/* <div className="absolute inset-0 bg-black/40" /> General darkening */}
+                <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" /> Left-side text legibility
+                {/* <div className="absolute inset-0 bg-linear-to-t from-dark-bg via-transparent to-transparent h-32 bottom-0" /> Bottom fade */}
             </div>
 
             {/* Content */}
@@ -36,7 +36,7 @@ export default function HeroSection() {
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1]">
                         AI Jewellery <br />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-green to-emerald-400">
-                            Product Shoot Studio
+                            Product Shoot
                         </span>
                     </h1>
 
@@ -48,14 +48,14 @@ export default function HeroSection() {
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
                         <Link
-                            href="/"
+                            href="/contact"
                             className="w-full sm:w-auto text-center bg-neon-green text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-1 transform duration-200"
                         >
-                            View Studio
+                            Contact Sales
                         </Link>
 
                         <Link
-                            href="/#pricing"
+                            href="/pricing"
                             className="w-full sm:w-auto text-center px-8 py-4 rounded-full text-lg font-bold text-white border border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all hover:-translate-y-1"
                         >
                             Get Pricing
@@ -71,7 +71,7 @@ export default function HeroSection() {
                                 </div>
                             ))}
                         </div>
-                        <p>Trusted by 200+ Jewellery Brands</p>
+                        <p>Trusted by 100+ Jewellery Brands</p>
                     </div>
 
                 </div>

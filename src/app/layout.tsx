@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "AIVX Studio",
   description: "Create Winning Ads in Seconds with AI",
+  icons: {
+    icon: '/logo.jpg',
+  },
 };
 
 import Header from '@/components/Header';
