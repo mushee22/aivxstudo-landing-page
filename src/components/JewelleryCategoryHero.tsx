@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, PlayCircle } from 'lucide-react';
+import { ArrowRight, Palette, PlayCircle } from 'lucide-react';
 
 interface JewelleryCategoryHeroProps {
     category: string;
@@ -48,13 +48,13 @@ export default function JewelleryCategoryHero({ category, backgroundImage }: Jew
                             </Link>
                             <button
                                 onClick={() => {
-                                    const gallerySection = document.getElementById('image-gallery');
+                                    const gallerySection = document.getElementById('theme-gallery');
                                     gallerySection?.scrollIntoView({ behavior: 'smooth' });
                                 }}
                                 className="flex items-center justify-center gap-2 bg-transparent border border-white/20 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition-all hover:-translate-y-1 cursor-pointer"
                             >
-                                View Gallery
-                                <PlayCircle size={20} />
+                                View Themes
+                                <Palette size={20} />
                             </button>
                         </div>
                     </div>

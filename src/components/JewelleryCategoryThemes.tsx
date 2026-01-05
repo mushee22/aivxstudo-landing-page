@@ -6,13 +6,14 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface JewelleryCategoryThemesProps {
     category: string;
+    themes?: { name: string; image: string }[];
 }
 
-export default function JewelleryCategoryThemes({ category }: JewelleryCategoryThemesProps) {
+export default function JewelleryCategoryThemes({ category, themes: customThemes }: JewelleryCategoryThemesProps) {
     const displayCategory = category.charAt(0).toUpperCase() + category.slice(1);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-    const themes = [
+    const defaultThemes = [
         { name: "Studio Light", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop" },
         { name: "Luxury Black", image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop" },
         { name: "Festive Gold", image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=800&auto=format&fit=crop" },
@@ -20,6 +21,10 @@ export default function JewelleryCategoryThemes({ category }: JewelleryCategoryT
         { name: "Minimal White", image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=800&auto=format&fit=crop" },
         { name: "Premium Editorial", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop" },
     ];
+
+
+
+    const themes = customThemes || defaultThemes;
 
     const scroll = (direction: 'left' | 'right') => {
         if (scrollContainerRef.current) {
@@ -33,7 +38,7 @@ export default function JewelleryCategoryThemes({ category }: JewelleryCategoryT
     };
 
     return (
-        <section className="py-24 bg-dark-bg border-b border-white/5 relative overflow-hidden">
+        <section id="theme-gallery" className="py-24 bg-dark-bg border-b border-white/5 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
@@ -87,9 +92,9 @@ export default function JewelleryCategoryThemes({ category }: JewelleryCategoryT
                             <h3 className="text-2xl font-bold text-white mb-2">
                                 {theme.name}
                             </h3>
-                            <span className="text-neon-green text-sm font-medium tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 block">
+                            {/* <span className="text-neon-green text-sm font-medium tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 block">
                                 View Theme
-                            </span>
+                            </span> */}
                         </div>
                     </div>
                 ))}

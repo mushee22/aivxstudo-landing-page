@@ -6,28 +6,28 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const comparisons = [
     {
-        title: "Ring",
-        category: "Jewellery",
-        before: "https://placehold.co/800x800/1a1a1a/ffffff?text=Raw+Ring",
-        after: "https://placehold.co/800x800/black/a3e635?text=Studio+Ring"
-    },
-    {
         title: "Necklace",
         category: "Jewellery",
-        before: "https://placehold.co/800x800/1a1a1a/ffffff?text=Raw+Necklace",
-        after: "https://placehold.co/800x800/black/a3e635?text=Studio+Necklace"
+        before: "/image/raw-input-image.png",
+        after: "/image/ai-generated-image.png"
+    },
+    {
+        title: "Ring",
+        category: "Jewellery",
+        before: "/image/ring-raw-input-image.png",
+        after: "/image/ring-ai-generated-image.png"
     },
     {
         title: "Bangle",
         category: "Jewellery",
-        before: "https://placehold.co/800x800/1a1a1a/ffffff?text=Raw+Bangle",
-        after: "https://placehold.co/800x800/black/a3e635?text=Studio+Bangle"
+        before: "/image/bangle-raw-input-image.png",
+        after: "/image/bangle-ai-generated-image.png"
     },
     {
         title: "Ear Ring",
         category: "Jewellery",
-        before: "https://placehold.co/800x800/1a1a1a/ffffff?text=Raw+Earring",
-        after: "https://placehold.co/800x800/black/a3e635?text=Studio+Earring"
+        before: "/image/earring-raw-input-image.png",
+        after: "/image/earring-ai-generated-image.png"
     }
 ];
 

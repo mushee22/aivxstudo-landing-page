@@ -45,12 +45,38 @@ export default function RingPage() {
     const category = 'ring';
     return (
         <main className="min-h-screen bg-dark-bg">
-            <JewelleryCategoryHero category={category} />
+            <JewelleryCategoryHero
+                category={category}
+                backgroundImage='/theme/ring/cream-theme.jpg'
+            />
             <JewelleryCategoryOverview category={category} />
-            <JewelleryCategoryThemes category={category} />
-            <JewelleryCategoryGallery category={category} />
-            <JewelleryCategoryVideoGallery category={category} />
-            <JewelleryCategoryModelVariations category={category} />
+            <JewelleryCategoryThemes
+                category={category}
+                themes={[
+                    { name: "BLUE", image: "/theme/ring/blue-theme.png" }, // Approximated Blue
+                    { name: "WHITE BG", image: "/theme/ring/white-theme.png" }, // Minimal White image
+                    { name: "DARK BLUE", image: "/theme/ring/dark-blue-theme.jpg" }, // Dark placeholder
+                    { name: "WHITE SAND", image: "/theme/ring/white-sand-theme.jpg" }, // Beige image
+                    { name: "CREAM", image: "/theme/ring/cream-theme.jpg" }, // Gold/Cream image
+                    { name: "PASTEL BLUE", image: "/theme/ring/pastel-blue.png" }, // Light Silver/Blueish
+                    { name: "BLACK", image: "/theme/ring/black.png" }, // Luxury Black
+                    { name: "BEIGE", image: "/theme/ring/beige-theme.jpeg" }, // Beige image
+                    { name: "GREEN", image: "/theme/ring/green-theme.jpg" }, // Approximated Green
+                ]}
+            />
+            {/* <JewelleryCategoryGallery category={category} /> */}
+            {/* <JewelleryCategoryVideoGallery
+                category={category}
+                videos={[
+                    {
+                        id: 1,
+                        src: "",
+                        poster: "",
+                        duration: ""
+                    }
+                ]}
+            /> */}
+            {/* <JewelleryCategoryModelVariations category={category} /> */}
             <JewelleryCategoryAspectRatios category={category} />
             <JewelleryCategoryEcommerce category={category} />
             <JewelleryCategoryFinalCTA category={category} />

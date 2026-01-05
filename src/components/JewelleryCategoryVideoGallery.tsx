@@ -5,38 +5,44 @@ import { Play } from 'lucide-react';
 
 interface JewelleryCategoryVideoGalleryProps {
     category: string;
+    videos?: {
+        id: number;
+        src: string;
+        poster: string;
+        duration: string;
+    }[];
 }
 
-export default function JewelleryCategoryVideoGallery({ category }: JewelleryCategoryVideoGalleryProps) {
+export default function JewelleryCategoryVideoGallery({ category, videos = [] }: JewelleryCategoryVideoGalleryProps) {
     const displayCategory = category.charAt(0).toUpperCase() + category.slice(1);
 
     // Placeholder video data (using standard sample videos cropped to vertical)
-    const videos = [
-        {
-            id: 1,
-            src: "https://videos.pexels.com/video-files/5350324/5350324-uhd_2160_3840_25fps.mp4", // Jewellery related if possible or generic vertical
-            poster: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=600&auto=format&fit=crop",
-            duration: "5s"
-        },
-        {
-            id: 2,
-            src: "https://videos.pexels.com/video-files/5350324/5350324-uhd_2160_3840_25fps.mp4",
-            poster: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600&auto=format&fit=crop",
-            duration: "15s"
-        },
-        {
-            id: 3,
-            src: "https://videos.pexels.com/video-files/5350324/5350324-uhd_2160_3840_25fps.mp4",
-            poster: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=600&auto=format&fit=crop",
-            duration: "15s"
-        },
-        {
-            id: 4,
-            src: "https://videos.pexels.com/video-files/5350324/5350324-uhd_2160_3840_25fps.mp4",
-            poster: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=600&auto=format&fit=crop",
-            duration: "5s"
-        }
-    ];
+    // const videos = [
+    //     {
+    //         id: 1,
+    //         src: "https://videos.pexels.com/video-files/5350324/5350324-uhd_2160_3840_25fps.mp4", // Jewellery related if possible or generic vertical
+    //         poster: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=600&auto=format&fit=crop",
+    //         duration: "5s"
+    //     },
+    //     {
+    //         id: 2,
+    //         src: "https://videos.pexels.com/video-files/5350324/5350324-uhd_2160_3840_25fps.mp4",
+    //         poster: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600&auto=format&fit=crop",
+    //         duration: "15s"
+    //     },
+    //     {
+    //         id: 3,
+    //         src: "https://videos.pexels.com/video-files/5350324/5350324-uhd_2160_3840_25fps.mp4",
+    //         poster: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=600&auto=format&fit=crop",
+    //         duration: "15s"
+    //     },
+    //     {
+    //         id: 4,
+    //         src: "https://videos.pexels.com/video-files/5350324/5350324-uhd_2160_3840_25fps.mp4",
+    //         poster: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=600&auto=format&fit=crop",
+    //         duration: "5s"
+    //     }
+    // ];
 
     return (
         <section className="py-24 px-6 bg-black border-b border-white/5">

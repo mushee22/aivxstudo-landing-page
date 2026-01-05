@@ -33,8 +33,8 @@ export default function LocationDetails() {
                         </div>
                     </div>
                     <h3 className="text-xl font-bold text-white">Contact Us</h3>
-                    <a href="mailto:support@aivx.in" className="text-lg text-neutral-400 font-light hover:text-neon-green transition-colors block">
-                        support@aivx.in
+                    <a href="mailto:aivxproductions@gmail.com" className="text-lg text-neutral-400 font-light hover:text-neon-green transition-colors block">
+                        aivxproductions@gmail.com
                     </a>
                 </div>
 

@@ -128,13 +128,13 @@ export default function Footer() {
                     <div className="space-y-8">
                         <h4 className="text-xs font-medium text-white tracking-[0.2em] uppercase">Social</h4>
                         <div className="flex gap-6">
-                            <Link href="https://instagram.com" target="_blank" className="text-neutral-500 hover:text-white transition-colors">
+                            <Link href="https://www.instagram.com/aivx.studio/" target="_blank" className="text-neutral-500 hover:text-white transition-colors">
                                 <Instagram size={20} strokeWidth={1.5} />
                             </Link>
-                            <Link href="https://linkedin.com" target="_blank" className="text-neutral-500 hover:text-white transition-colors">
+                            <Link href="https://www.linkedin.com/company/aivx-studio/" target="_blank" className="text-neutral-500 hover:text-white transition-colors">
                                 <Linkedin size={20} strokeWidth={1.5} />
                             </Link>
-                            <Link href="https://wa.me/919876543210" target="_blank" className="text-neutral-500 hover:text-white transition-colors">
+                            <Link href="https://wa.me/9072020601" target="_blank" className="text-neutral-500 hover:text-white transition-colors">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="20"
@@ -149,9 +149,9 @@ export default function Footer() {
                         </div>
 
                         <div className="pt-2 space-y-4">
-                            <a href="mailto:hello@aivx.ai" className="flex items-center gap-3 text-sm text-neutral-400 hover:text-white transition-colors group">
-                                <Mail size={16} className="text-neutral-500 group-hover:text-white transition-colors" />
-                                <span>hello@aivx.ai</span>
+                            <a href="mailto:aivxproductions@gmail.com" className="flex items-center gap-3 text-sm text-neutral-400 hover:text-white transition-colors group">
+                                <Mail size={16} className="group-hover:text-neon-green transition-colors" />
+                                <span>aivxproductions@gmail.com</span>
                             </a>
                         </div>
                     </div>

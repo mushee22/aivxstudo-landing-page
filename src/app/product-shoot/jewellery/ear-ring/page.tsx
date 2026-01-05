@@ -45,12 +45,26 @@ export default function EarRingPage() {
     const category = 'ear-ring';
     return (
         <main className="min-h-screen bg-dark-bg">
-            <JewelleryCategoryHero category={category} />
+            <JewelleryCategoryHero
+                category={category}
+                backgroundImage='/theme/earring/rose-amber-theme.png'
+            />
             <JewelleryCategoryOverview category={category} />
-            <JewelleryCategoryThemes category={category} />
-            <JewelleryCategoryGallery category={category} />
+            <JewelleryCategoryThemes
+                category={category}
+                themes={[
+                    { name: "PINK", image: "/theme/earring/pink-theme.png" },
+                    { name: "BLACK", image: "/theme/earring/black-theme.png" },
+                    { name: "WHITE", image: "/theme/earring/white-theme.png" },
+                    { name: "BEIGE", image: "/theme/earring/beige-theme.png" },
+                    { name: "ROSE AMBER", image: "/theme/earring/rose-amber-theme.png" },
+                    { name: "CREAM", image: "/theme/earring/cream-theme.png" },
+                    { name: "PASTEL BLUE", image: "/theme/earring/pastel-blue-theme.png" }
+                ]}
+            />
+            {/* <JewelleryCategoryGallery category={category} />
             <JewelleryCategoryVideoGallery category={category} />
-            <JewelleryCategoryModelVariations category={category} />
+            <JewelleryCategoryModelVariations category={category} /> */}
             <JewelleryCategoryAspectRatios category={category} />
             <JewelleryCategoryEcommerce category={category} />
             <JewelleryCategoryFinalCTA category={category} />

@@ -45,12 +45,26 @@ export default function NecklaceSetPage() {
     const category = 'necklace-set';
     return (
         <main className="min-h-screen bg-dark-bg">
-            <JewelleryCategoryHero category={category} />
+            <JewelleryCategoryHero
+                category={category}
+                backgroundImage='/theme/necklace-set/light-green-theme.png'
+            />
             <JewelleryCategoryOverview category={category} />
-            <JewelleryCategoryThemes category={category} />
-            <JewelleryCategoryGallery category={category} />
+            <JewelleryCategoryThemes
+                category={category}
+                themes={[
+                    { name: "LIGHT GREEN", image: "/theme/necklace-set/light-green-theme.png" },
+                    { name: "BEIGE", image: "/theme/necklace-set/beige-theme.png" },
+                    { name: "PASTEL BLUE", image: "/theme/necklace-set/pastel-blue-theme.png" },
+                    { name: "RED", image: "/theme/necklace-set/red-theme.png" },
+                    { name: "WHITE BG", image: "/theme/necklace-set/white-bg-theme.png" },
+                    { name: "BLACK", image: "/theme/necklace-set/black-theme.png" },
+                    { name: "GREEN", image: "/theme/necklace-set/green-theme.png" }
+                ]}
+            />
+            {/* <JewelleryCategoryGallery category={category} />
             <JewelleryCategoryVideoGallery category={category} />
-            <JewelleryCategoryModelVariations category={category} />
+            <JewelleryCategoryModelVariations category={category} /> */}
             <JewelleryCategoryAspectRatios category={category} />
             <JewelleryCategoryEcommerce category={category} />
             <JewelleryCategoryFinalCTA category={category} />

@@ -7,16 +7,16 @@ export default function ContactOptions() {
         {
             icon: Mail,
             label: "Email Us",
-            value: "support@aivx.in",
+            value: "aivxproductions@gmail.com",
             description: "For general inquiries, pricing, and support.",
-            action: "mailto:support@aivx.in"
+            action: "mailto:aivxproductions@gmail.com"
         },
         {
             icon: Phone,
             label: "Call Us",
-            value: "+91 98765 43210",
+            value: "+91 90720 20601",
             description: "Available during business hours (Mon-Fri).",
-            action: "tel:+919876543210"
+            action: "tel:+919072020601"
         }
     ];
 
@@ -82,9 +82,7 @@ export default function ContactOptions() {
                     />
 
                     {/* Overlay for better text readability if needed, usually map is distinct enough */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/80 to-transparent pointer-events-none">
-                        <p className="text-white text-xs font-medium">123 Creative Tech Park, Sector 4, Bangalore</p>
-                    </div>
+
                 </div>
             </div>
         </div>

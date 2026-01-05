@@ -45,12 +45,24 @@ export default function NecklacePage() {
     const category = 'necklace';
     return (
         <main className="min-h-screen bg-dark-bg">
-            <JewelleryCategoryHero category={category} />
+            <JewelleryCategoryHero
+                category={category}
+                backgroundImage='/theme/necklace/white-theme.png'
+            />
             <JewelleryCategoryOverview category={category} />
-            <JewelleryCategoryThemes category={category} />
-            <JewelleryCategoryGallery category={category} />
+            <JewelleryCategoryThemes
+                category={category}
+                themes={[
+                    { name: "RED", image: "/theme/necklace/red-theme.png" },
+                    { name: "BROWN", image: "/theme/necklace/brown-theme.png" },
+                    { name: "GREEN", image: "/theme/necklace/green-theme.png" },
+                    { name: "WHITE", image: "/theme/necklace/white-theme.png" },
+                    { name: "WHITE BG", image: "/theme/necklace/white-bg-theme.png" }
+                ]}
+            />
+            {/* <JewelleryCategoryGallery category={category} />
             <JewelleryCategoryVideoGallery category={category} />
-            <JewelleryCategoryModelVariations category={category} />
+            <JewelleryCategoryModelVariations category={category} /> */}
             <JewelleryCategoryAspectRatios category={category} />
             <JewelleryCategoryEcommerce category={category} />
             <JewelleryCategoryFinalCTA category={category} />

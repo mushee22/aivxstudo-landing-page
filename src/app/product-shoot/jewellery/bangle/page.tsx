@@ -45,12 +45,28 @@ export default function BanglePage() {
     const category = 'bangle';
     return (
         <main className="min-h-screen bg-dark-bg">
-            <JewelleryCategoryHero category={category} />
+            <JewelleryCategoryHero
+                category={category}
+                backgroundImage='/theme/bangle/brown-theme.png'
+            />
             <JewelleryCategoryOverview category={category} />
-            <JewelleryCategoryThemes category={category} />
-            <JewelleryCategoryGallery category={category} />
+            <JewelleryCategoryThemes
+                category={category}
+                themes={[
+                    { name: "BLUE", image: "/theme/bangle/blue-theme.png" },
+                    { name: "RUBY RED", image: "/theme/bangle/ruby-red-theme.png" },
+                    { name: "WHITE BG", image: "/theme/bangle/white-bg-theme.png" },
+                    { name: "SAND", image: "/theme/bangle/sand-theme.png" },
+                    { name: "BEIGE", image: "/theme/bangle/beige-theme.png" },
+                    { name: "BLACK", image: "/theme/bangle/black-theme.png" },
+                    { name: "BROWN", image: "/theme/bangle/brown-theme.png" },
+                    { name: "GREY", image: "/theme/bangle/grey-theme.png" },
+                    { name: "WHITE", image: "/theme/bangle/white-theme.png" },
+                ]}
+            />
+            {/* <JewelleryCategoryGallery category={category} />
             <JewelleryCategoryVideoGallery category={category} />
-            <JewelleryCategoryModelVariations category={category} />
+            <JewelleryCategoryModelVariations category={category} /> */}
             <JewelleryCategoryAspectRatios category={category} />
             <JewelleryCategoryEcommerce category={category} />
             <JewelleryCategoryFinalCTA category={category} />

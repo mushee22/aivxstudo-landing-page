@@ -1,6 +1,7 @@
 'use client';
 
 import { CheckCircle2, Wand2 } from 'lucide-react';
+import Image from 'next/image';
 
 const benefits = [
     {
@@ -70,9 +71,10 @@ export default function ProductShootSolution() {
                             {/* Main AI Result Card */}
                             <div className="bg-dark-surface rounded-2xl p-3 border border-white/10 shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
                                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden">
-                                    <img
-                                        src="https://placehold.co/800x1000/black/a3e635?text=AI-Generated+Model+Shot"
+                                    <Image
+                                        src="/image/ai-generated-image.png"
                                         alt="AI Generated Result"
+                                        fill
                                         className="w-full h-full object-cover"
                                     />
                                     <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-md p-4 rounded-xl border border-white/10">
@@ -85,9 +87,10 @@ export default function ProductShootSolution() {
                             {/* Floating Input Card (Simulating 'Before' state) */}
                             <div className="absolute -left-4 -bottom-4 md:-left-12 md:bottom-12 w-48 p-2 bg-dark-bg rounded-xl border border-white/10 shadow-xl transform rotate-[-5deg] hover:rotate-0 transition-transform duration-300">
                                 <div className="aspect-square rounded-lg overflow-hidden bg-white/5 relative">
-                                    <img
-                                        src="https://placehold.co/400x400/1a1a1a/ffffff?text=Raw+Input"
+                                    <Image
+                                        src="/image/raw-input-image.png"
                                         alt="Raw Product"
+                                        fill
                                         className="w-full h-full object-cover opacity-70"
                                     />
                                 </div>

@@ -45,12 +45,25 @@ export default function PendantSetPage() {
     const category = 'pendant-set';
     return (
         <main className="min-h-screen bg-dark-bg">
-            <JewelleryCategoryHero category={category} />
+            <JewelleryCategoryHero category={category}
+                backgroundImage='/theme/pendant-set/navy-blue-theme.png'
+            />
             <JewelleryCategoryOverview category={category} />
-            <JewelleryCategoryThemes category={category} />
-            <JewelleryCategoryGallery category={category} />
-            <JewelleryCategoryVideoGallery category={category} />
-            <JewelleryCategoryModelVariations category={category} />
+            <JewelleryCategoryThemes
+                category={category}
+                themes={[
+                    { name: "NAVY BLUE", image: "/theme/pendant-set/navy-blue-theme.png" },
+                    { name: "PASTEL BLUE", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop" },
+                    { name: "BLACK", image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop" },
+                    { name: "EMERALD GREEN", image: "/theme/pendant-set/emerald-green-theme.png" },
+                    { name: "WHITE BG", image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=800&auto=format&fit=crop" },
+                    { name: "BROWN", image: "https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=800&auto=format&fit=crop" },
+                    { name: "PINK", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop" }
+                ]}
+            />
+            {/* <JewelleryCategoryGallery category={category} /> */}
+            {/* <JewelleryCategoryVideoGallery category={category} /> */}
+            {/* <JewelleryCategoryModelVariations category={category} /> */}
             <JewelleryCategoryAspectRatios category={category} />
             <JewelleryCategoryEcommerce category={category} />
             <JewelleryCategoryFinalCTA category={category} />
