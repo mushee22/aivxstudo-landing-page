@@ -5,6 +5,22 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
     {
+        id: 7,
+        quote: "AIVX Studio delivers pure luxury in every frame. The craftsmanship, lighting, and detailing are exceptional — exactly what a premium jewellery brand expects. Their visuals add depth, brilliance, and an unmistakable international luxury appeal. Truly elite work.",
+        name: "Bhaavin Valah",
+        role: "Owner",
+        brand: "37 Corporation Jeweller",
+        location: "Andheri East, Mumbai"
+    },
+    {
+        id: 6,
+        quote: "I have a premium jewellery showroom in Pune, Maharastra. I have been using AIVX Studio for the past one month to generate images for my website which is going to launch soon, I must say this app is absolutely fantastic, user friendly, photorealistic, and with high resolution too. I highly recommend this app to each and every jewellery manufacturer/wholesaler/ retailer to enhance and boost their sale.",
+        name: "Sejal Parulekar",
+        role: "Owner",
+        brand: "Taksh Exclusive",
+        location: "Pune, Maharashtra"
+    },
+    {
         id: 1,
         quote: "Saved more than 70% of our photoshoot cost using AIVX. The quality is indistinguishable from real photography.",
         name: "Arjun Mehta",
@@ -25,20 +41,6 @@ const testimonials = [
         role: "Ecommerce Manager",
         brand: "Sparkle & Shine"
     },
-    {
-        id: 4,
-        quote: "AIVX has completely transformed our workflow. We can now test unlimited variations without breaking the bank.",
-        name: "Emily Chen",
-        role: "Creative Lead",
-        brand: "Modern Gold"
-    },
-    {
-        id: 5,
-        quote: "Finally, an AI tool that understands jewellery. The metal textures and diamond brilliance are spot on.",
-        name: "David Smith",
-        role: "Product Owner",
-        brand: "Elite Rings"
-    }
 ];
 
 export default function Testimonials() {
@@ -145,9 +147,18 @@ export default function Testimonials() {
                                         <div>
                                             <h4 className="text-white font-bold text-sm">{item.name}</h4>
                                             <div className="flex flex-col sm:flex-row sm:gap-2 text-xs text-text-muted">
-                                                <span>{item.role}</span>
-                                                <span className="hidden sm:block text-white/20">•</span>
+                                                {/* <span>{item.role}</span> */}
+                                                <span className="hidden sm:block text-white/20"></span>
+                                            </div>
+                                            <div className='flex flex-col text-xs text-text-muted'>
                                                 <span className="text-neon-green/80">{item.brand}</span>
+                                                {/* @ts-ignore */}
+                                                {item.location && (
+                                                    <>
+                                                        {/* <span className="hidden sm:block text-white/20">•</span> */}
+                                                        <span className="text-white/40">{item.location}</span>
+                                                    </>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

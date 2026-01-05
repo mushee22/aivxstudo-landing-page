@@ -125,7 +125,7 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
 
 export default function VideoShowcase() {
     return (
-        <section className="py-24 px-6 bg-dark-bg border-t border-white/5 relative">
+        <section className="py-24 px-6 bg-dark-bg border-t border-white/5 relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
 

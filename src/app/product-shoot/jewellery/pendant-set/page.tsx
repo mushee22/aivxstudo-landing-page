@@ -46,19 +46,19 @@ export default function PendantSetPage() {
     return (
         <main className="min-h-screen bg-dark-bg">
             <JewelleryCategoryHero category={category}
-                backgroundImage='/theme/pendant-set/navy-blue-theme.png'
+                backgroundImage='/theme/pendant-set/pink-theme.png'
             />
             <JewelleryCategoryOverview category={category} />
             <JewelleryCategoryThemes
                 category={category}
                 themes={[
                     { name: "NAVY BLUE", image: "/theme/pendant-set/navy-blue-theme.png" },
-                    { name: "PASTEL BLUE", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=800&auto=format&fit=crop" },
-                    { name: "BLACK", image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop" },
                     { name: "EMERALD GREEN", image: "/theme/pendant-set/emerald-green-theme.png" },
-                    { name: "WHITE BG", image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=800&auto=format&fit=crop" },
-                    { name: "BROWN", image: "https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=800&auto=format&fit=crop" },
-                    { name: "PINK", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop" }
+                    { name: "WHITE BG", image: "/theme/pendant-set/white-theme.png" },
+                    { name: "BROWN", image: "/theme/pendant-set/brown-theme.png" },
+                    { name: "PINK", image: "/theme/pendant-set/pink-theme.png" },
+                    { name: "BLACK", image: "/theme/pendant-set/black-new-theme.png" },
+                    { name: "PASTEL BLUE", image: "/theme/pendant-set/pastel-blue-new-theme.png" },
                 ]}
             />
             {/* <JewelleryCategoryGallery category={category} /> */}
