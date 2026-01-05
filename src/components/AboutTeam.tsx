@@ -5,25 +5,22 @@ import { Linkedin, User } from 'lucide-react';
 
 const teamMembers = [
     {
-        name: "Sarah Chen",
-        role: "Founder & CEO",
-        description: "Ex-Google AI researcher passionate about bridging technology and art.",
-
-        linkedin: "#"
+        name: "Manu Rashid",
+        role: "Founder",
+        description: "Visionary leader driving AIVX's mission to revolutionize product photography.",
+        linkedin: "https://www.linkedin.com/in/manu-rashid-39b1b7338/"
     },
     {
-        name: "David Miller",
-        role: "Head of Engineering",
-        description: "15+ years building scalable vision systems for ecommerce giants.",
-
-        linkedin: "#"
+        name: "Mubarak",
+        role: "Co-founder",
+        description: "Building the core technology and strategy for scalable AI solutions.",
+        linkedin: "https://www.linkedin.com/in/mubarak-k-k-9a790560/"
     },
     {
-        name: "Elena Rodriguez",
-        role: "Creative Director",
-        description: "Award-winning jewellery photographer turned digital artist.",
-
-        linkedin: "#"
+        name: "Risham KC",
+        role: "CFO",
+        description: "Managing financial strategy and sustainable growth for the studio.",
+        linkedin: "https://www.linkedin.com/in/risham-kc-67119724b/"
     }
 ];
 
@@ -63,6 +60,8 @@ export default function AboutTeam() {
                                 {/* Overlay / Social Icon on Hover */}
                                 <a
                                     href={member.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                     aria-label={`LinkedIn profile for ${member.name}`}
                                 >
