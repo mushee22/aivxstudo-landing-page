@@ -163,6 +163,7 @@ export default function Header() {
                             <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                                 <div className="bg-dark-surface border border-white/10 rounded-xl p-2 w-40 flex flex-col gap-1 shadow-xl">
                                     <Link href="/mission" className="block px-4 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg">Mission</Link>
+                                    <Link href="/vision" className="block px-4 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg">Vision</Link>
                                     <Link href="/team" className="block px-4 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg">Team</Link>
                                     <Link href="/location" className="block px-4 py-2 text-sm text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg">Location</Link>
                                 </div>
@@ -292,6 +293,7 @@ export default function Header() {
                                 }`}>
                                 <div className="flex flex-col gap-3 pl-4 border-l border-white/10 ml-2">
                                     <Link href="/mission" className="text-neutral-400 hover:text-neon-green text-lg py-1" onClick={() => setIsMobileMenuOpen(false)}>Mission</Link>
+                                    <Link href="/vision" className="text-neutral-400 hover:text-neon-green text-lg py-1" onClick={() => setIsMobileMenuOpen(false)}>Vision</Link>
                                     <Link href="/team" className="text-neutral-400 hover:text-neon-green text-lg py-1" onClick={() => setIsMobileMenuOpen(false)}>Team</Link>
                                     <Link href="/location" className="text-neutral-400 hover:text-neon-green text-lg py-1" onClick={() => setIsMobileMenuOpen(false)}>Location</Link>
                                 </div>

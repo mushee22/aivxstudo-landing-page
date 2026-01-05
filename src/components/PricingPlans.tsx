@@ -5,28 +5,29 @@ import Link from 'next/link';
 
 const plans = [
     {
-        name: "Starter",
-        price: "99",
-        credits: "100 Credits",
-        subtitle: "Perfect for testing",
+        name: "Base Plan",
+        price: "999",
+        credits: "Standard Credits",
+        subtitle: "Standard credits included",
         features: [
-            "100 Credits (No Expiry)",
+            "Standard credits included",
+            "(No bonus credits)",
             "52 Credits / Image Gen",
             "32 Credits / Regeneration",
-            "102 Credits / Video Gen",
-            // "Basic themes"
+            "102 Credits / Video Gen"
         ],
         cta: "Contact Sales",
         href: "/contact",
         popular: false
     },
     {
-        name: "Pro",
-        price: "999",
-        credits: "1250 Credits",
-        subtitle: "Best value for brands",
+        name: "Pro Plan",
+        price: "9,999",
+        credits: "Base + 30% Bonus",
+        subtitle: "Includes base credits",
         features: [
-            "1250 Credits (No Expiry)",
+            "Includes base credits",
+            "30% bonus credits",
             "52 Credits / Image Gen",
             "32 Credits / Regeneration",
             "102 Credits / Video Gen",
@@ -38,12 +39,13 @@ const plans = [
         popular: true
     },
     {
-        name: "Enterprise",
+        name: "Enterprise Plan",
         price: "Custom",
-        credits: "Unlimited",
-        subtitle: "For agencies & large catalogs",
+        credits: "Higher Usage",
+        subtitle: "Custom plans & details",
         features: [
-            "Custom Credit Volume",
+            "Custom plans and higher usage",
+            "Please connect with our team for details",
             "Dedicated support",
             "Custom workflows",
             "API access"

@@ -37,7 +37,7 @@ export default function ProductShootHero() {
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                         <Link
-                            href="#categories"
+                            href="/product-shoot/jewellery"
                             className="bg-neon-green text-black px-8 py-3.5 rounded-full font-bold hover:bg-lime-300 transition-all shadow-[0_0_20px_rgba(163,230,53,0.3)] hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] flex items-center justify-center gap-2"
                         >
                             Explore Jewellery

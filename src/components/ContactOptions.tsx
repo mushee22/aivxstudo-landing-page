@@ -65,8 +65,9 @@ export default function ContactOptions() {
                         <MapPin className="w-5 h-5 text-neon-green" />
                     </div>
                     <div>
-                        <h3 className="text-white font-bold text-lg">Visit Our Studio</h3>
-                        <p className="text-gray-400 text-sm">Bangalore, India</p>
+                        <h3 className="text-white font-bold text-lg">Our Office</h3>
+                        <p className="text-gray-400 text-sm">2nd Floor UL cyber Park, Nellikode</p>
+                        <p className="text-gray-400 text-sm">Kozhikode, Kerala, 673016</p>
                     </div>
                 </div>
 
@@ -74,7 +75,7 @@ export default function ContactOptions() {
                 <div className="relative w-full h-64 rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-dark-bg group">
                     <iframe
                         title="AIVX Studio Location Map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d77.4908526107381!3d12.953959988118836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1709400000000!5m2!1sen!2sin&maptype=satellite"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.086364600087!2d75.82563447605968!3d11.255056988924375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65bec9f0a11f3%3A0xcc58526bc982c22d!2sKerala%20Startup%20Mission%20kozhikode!5e0!3m2!1sen!2sin!4v1767592962259!5m2!1sen!2sin%22"
                         className="absolute inset-0 w-full h-full grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"

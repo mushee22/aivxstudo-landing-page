@@ -13,7 +13,7 @@ const categories = [
 
 export default function JewelleryCategories() {
     return (
-        <section className="py-24 px-6 bg-dark-bg border-t border-white/5">
+        <section id="categories" className="py-24 px-6 bg-dark-bg border-t border-white/5">
             <div className="max-w-7xl mx-auto">
 
                 {/* Section Header */}

@@ -5,6 +5,14 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export default function JewelleryHero() {
+
+    const handleViewCategories = () => {
+        const section = document.getElementById('categories');
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
         <section className="relative w-full bg-[#0A0A0A] text-white pt-32 lg:pt-40 pb-16 lg:pb-32 px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -32,13 +40,13 @@ export default function JewelleryHero() {
 
                     {/* Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                        <Link
-                            href="#categories"
-                            className="inline-flex items-center justify-center gap-2 bg-neon-green text-black px-8 py-4 rounded-full font-bold text-base hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:-translate-y-0.5"
+                        <button
+                            onClick={handleViewCategories}
+                            className="inline-flex cursor-pointer items-center justify-center gap-2 bg-neon-green text-black px-8 py-4 rounded-full font-bold text-base hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:-translate-y-0.5"
                         >
                             View Jewellery Categories
                             <ArrowRight size={18} />
-                        </Link>
+                        </button>
                         <Link
                             href="/pricing"
                             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-bold text-base border border-white/20 hover:bg-white hover:text-black transition-all"

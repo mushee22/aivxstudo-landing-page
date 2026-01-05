@@ -64,13 +64,13 @@ export default function HeroSection() {
 
                     {/* Trust Indicators / Social Proof (Optional Addition based on "Luxury feel") */}
                     <div className="pt-8 flex items-center gap-4 text-sm text-gray-400">
-                        <div className="flex -space-x-3">
+                        {/* <div className="flex -space-x-3">
                             {[1, 2, 3, 4].map((i) => (
                                 <div key={i} className="w-10 h-10 rounded-full bg-white/10 border border-black backdrop-blur-md flex items-center justify-center">
                                     <span className="text-xs">U{i}</span>
                                 </div>
                             ))}
-                        </div>
+                        </div> */}
                         <p>Trusted by 100+ Jewellery Brands</p>
                     </div>
 

@@ -1,28 +1,28 @@
 'use client';
 
-import Image from 'next/image';
-import { Linkedin } from 'lucide-react';
+
+import { Linkedin, User } from 'lucide-react';
 
 const teamMembers = [
     {
         name: "Sarah Chen",
         role: "Founder & CEO",
         description: "Ex-Google AI researcher passionate about bridging technology and art.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
+
         linkedin: "#"
     },
     {
         name: "David Miller",
         role: "Head of Engineering",
         description: "15+ years building scalable vision systems for ecommerce giants.",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop",
+
         linkedin: "#"
     },
     {
         name: "Elena Rodriguez",
         role: "Creative Director",
         description: "Award-winning jewellery photographer turned digital artist.",
-        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
+
         linkedin: "#"
     }
 ];
@@ -56,12 +56,9 @@ export default function AboutTeam() {
                         <div key={index} className="group flex flex-col items-center text-center space-y-6">
                             {/* Image Container */}
                             <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-2 border-white/5 group-hover:border-neon-green/50 transition-colors duration-500">
-                                <Image
-                                    src={member.image}
-                                    alt={member.name}
-                                    fill
-                                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
-                                />
+                                <div className="w-full h-full bg-neutral-900 flex items-center justify-center group-hover:bg-neutral-800 transition-colors duration-500">
+                                    <User className="w-1/2 h-1/2 text-neutral-600 group-hover:text-neutral-400 transition-colors duration-500" strokeWidth={1.5} />
+                                </div>
 
                                 {/* Overlay / Social Icon on Hover */}
                                 <a

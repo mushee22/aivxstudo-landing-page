@@ -1,13 +1,13 @@
 @import "tailwindcss";
-
+@plugin "@tailwindcss/typography";
 
 :root {
   /* Core Brand Colors */
-  --neon-green: #a3e635;  /* lime-400 */
+  --neon-green: #a3e635; /* lime-400 */
   --neon-glow: rgba(163, 230, 53, 0.5);
   --dark-bg: #050505;
   --dark-surface: #101010;
-  
+
   /* Text */
   --foreground: #ffffff;
   --text-muted: #a3a3a3;
@@ -27,7 +27,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -52,8 +52,12 @@ html {
 }
 
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-scroll {
@@ -61,5 +65,11 @@ html {
 }
 
 .mask-gradient {
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
 }

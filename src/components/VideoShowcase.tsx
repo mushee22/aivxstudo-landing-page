@@ -2,7 +2,7 @@
 
 import { Play } from 'lucide-react';
 import Link from 'next/link';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 const videos = [
     {
@@ -37,31 +37,46 @@ const videos = [
 
 function VideoCard({ video }: { video: typeof videos[0] }) {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const [isPlaying, setIsPlaying] = useState(false);
 
-    useEffect(() => {
-        // Intersection Observer to play/pause when in viewport
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        videoRef.current?.play().catch(() => { });
-                    } else {
-                        videoRef.current?.pause();
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
-
-        if (videoRef.current) {
-            observer.observe(videoRef.current);
+    // Desktop: Play on hover
+    const handleMouseEnter = () => {
+        if (window.innerWidth >= 768) { // md breakpoint
+            videoRef.current?.play().catch(() => { });
+            setIsPlaying(true);
         }
+    };
 
-        return () => observer.disconnect();
-    }, []);
+    // Desktop: Pause on leave
+    const handleMouseLeave = () => {
+        if (window.innerWidth >= 768) {
+            if (videoRef.current) {
+                videoRef.current.pause();
+                videoRef.current.currentTime = 0; // Reset to start
+            }
+            setIsPlaying(false);
+        }
+    };
+
+    // Mobile: Toggle play on click
+    const togglePlay = () => {
+        if (!videoRef.current) return;
+
+        if (isPlaying) {
+            videoRef.current.pause();
+            setIsPlaying(false);
+        } else {
+            videoRef.current.play().catch(() => { });
+            setIsPlaying(true);
+        }
+    };
 
     return (
-        <div className="relative group aspect-[9/16] bg-dark-surface rounded-2xl overflow-hidden border border-white/5 hover:border-neon-green/30 transition-all duration-300 shadow-xl">
+        <div
+            className="relative group aspect-9/16 bg-dark-surface rounded-2xl overflow-hidden border border-white/5 hover:border-neon-green/30 transition-all duration-300 shadow-xl"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             {/* Video Element */}
             <video
                 ref={videoRef}
@@ -71,20 +86,29 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
                 muted
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                // Sync state if video pauses/plays by other means (e.g. OS controls)
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
             />
 
             {/* Overlay Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+            <div className={`absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent transition-opacity ${isPlaying ? 'opacity-0' : 'opacity-60'}`} />
 
-            {/* Play Button Indicator (Center) */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
-                    <Play size={20} fill="currentColor" />
+            {/* Mobile Play Button (Visible only on Mobile AND when NOT playing) */}
+            <div
+                className={`absolute inset-0 flex items-center justify-center md:hidden ${isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                    } transition-opacity duration-300`}
+                onClick={togglePlay}
+            >
+                <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white shadow-lg">
+                    <Play size={24} fill="currentColor" className="ml-1" />
                 </div>
             </div>
 
-            {/* Content Info (Bottom) */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            {/* Content Info (Bottom) - Hide when playing on Desktop to mimic clean preview, or keep? 
+                Usually for reels, info stays. Let's keep it. 
+            */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-0 transition-transform duration-300 pointer-events-none">
                 <div className="flex items-center gap-2 mb-1">
                     <span className="text-[10px] font-bold bg-neon-green text-black px-2 py-0.5 rounded-sm uppercase tracking-wider">
                         {video.duration}

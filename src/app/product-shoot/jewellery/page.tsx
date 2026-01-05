@@ -42,11 +42,9 @@ export const metadata: Metadata = {
 export default function JewelleryPage() {
     return (
         <main className="bg-[#0A0A0A] min-h-screen flex flex-col">
-            <Header />
             <JewelleryHero />
             <JewelleryOverview />
             <JewelleryCategories />
-            <Footer />
         </main>
     );
 }

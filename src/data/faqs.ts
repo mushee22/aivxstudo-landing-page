@@ -59,14 +59,6 @@ export const faqs: FaqItem[] = [
         lastUpdated: 'October 2024'
     },
     {
-        id: '7',
-        slug: 'free-trial',
-        question: 'Is there a free trial?',
-        answer: 'Yes, we offer a free trial that gives you a limited number of credits to test the platform and see the quality of the results for yourself. No credit card is required to start.',
-        category: 'Pricing',
-        lastUpdated: 'November 2024'
-    },
-    {
         id: '8',
         slug: 'can-i-use-phone-photos',
         question: 'Can I use photos taken with my phone?',

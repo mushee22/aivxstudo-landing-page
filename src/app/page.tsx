@@ -61,17 +61,6 @@ export default function Home() {
       <Testimonials />
 
       <HomeLatestArticles />
-
-      {/* Floating Action Button */}
-      <div className="fixed bottom-6 right-6 z-40">
-        <Link
-          href="/contact"
-          className="inline-block bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full font-bold shadow-2xl transition-all hover:scale-105 cursor-pointer"
-        >
-          Contact Us
-        </Link>
-      </div>
-
     </main>
   );
 }

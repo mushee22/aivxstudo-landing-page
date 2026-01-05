@@ -16,9 +16,9 @@ export default function LocationDetails() {
                     </div>
                     <h3 className="text-2xl font-bold text-white">AIVX</h3>
                     <p className="text-lg text-neutral-400 font-light leading-relaxed">
-                        Street / Area<br />
-                        City, State<br />
-                        Country
+                        2nd Floor UL Cyberpark<br />
+                        Nellikode, Kozhikode<br />
+                        Kerala, 673016
                     </p>
                 </div>
 
@@ -50,7 +50,7 @@ export default function LocationDetails() {
                     </div>
                     <h3 className="text-xl font-bold text-white">Business Hours</h3>
                     <p className="text-lg text-neutral-400 font-light leading-relaxed">
-                        Monday – Friday<br />
+                        Monday – Saturday<br />
                         10:00 AM – 6:00 PM (IST)
                     </p>
                 </div>

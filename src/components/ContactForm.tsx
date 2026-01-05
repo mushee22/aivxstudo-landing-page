@@ -2,17 +2,20 @@
 
 import { useState } from 'react';
 import { ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
+import ContactSuccessModal from './ContactSuccessModal';
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         company: '',
+        phone: '',
         message: ''
     });
 
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
     const [errors, setErrors] = useState<Record<string, string>>({});
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     const validate = () => {
         const newErrors: Record<string, string> = {};
@@ -37,7 +40,13 @@ export default function ContactForm() {
         // Simulate API call
         setTimeout(() => {
             setStatus('success');
-            setFormData({ name: '', email: '', company: '', message: '' });
+            setShowSuccessModal(true);
+            setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+
+            // Reset status after a delay to allow re-submission if needed
+            setTimeout(() => {
+                setStatus('idle');
+            }, 5000);
         }, 1500);
     };
 
@@ -102,6 +111,26 @@ export default function ContactForm() {
                         </p>
                     )}
                 </div>
+                <div className="space-y-1.5">
+                    <label htmlFor="Phone" className="text-sm font-medium text-gray-300">
+                        Phone Number <span className="text-neon-green">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="Phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className={`w-full bg-dark-bg border ${errors.phone ? 'border-red-500' : 'border-white/10'} rounded-xl px-4 py-3 text-white focus:outline-hidden focus:border-neon-green/50 focus:ring-1 focus:ring-neon-green/50 transition-all`}
+                        placeholder="Enter your phone number (+91 1234567890)"
+                        autoFocus
+                    />
+                    {errors.phone && (
+                        <p className="text-red-500 text-xs flex items-center gap-1">
+                            <AlertCircle size={12} /> {errors.phone}
+                        </p>
+                    )}
+                </div>
 
                 {/* Company (Optional) */}
                 <div className="space-y-1.5">
@@ -161,13 +190,12 @@ export default function ContactForm() {
                         </>
                     )}
                 </button>
-
-                {status === 'success' && (
-                    <p className="text-green-400 text-center text-sm animate-fade-in">
-                        Thank you! We'll get back to you shortly.
-                    </p>
-                )}
             </form>
+
+            <ContactSuccessModal
+                isOpen={showSuccessModal}
+                onClose={() => setShowSuccessModal(false)}
+            />
         </div>
     );
 }
