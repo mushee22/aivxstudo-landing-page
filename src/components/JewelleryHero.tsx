@@ -56,18 +56,31 @@ export default function JewelleryHero() {
                     </div>
                 </div>
 
-                {/* Right Visual */}
-                <div className="relative h-[500px] lg:h-[700px] w-full rounded-3xl overflow-hidden border border-white/10 group order-1 lg:order-2">
-                    <div className="absolute inset-0 bg-neutral-900 animate-pulse" /> {/* Placeholder loading state */}
-                    <Image
-                        src="/images/jewellery-hero.jpg"
-                        alt="AI Jewellery Product Shoot"
-                        fill
-                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                        priority
-                    />
-                    {/* Subtle Vignette */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                {/* Right Visual - Grid of Categories */}
+                <div className="relative h-[350px] sm:h-[450px] md:h-[600px]  w-full grid grid-cols-2 gap-4 order-1 lg:order-2">
+                    {[
+                        { src: "/theme/ring/cream-theme.jpg", alt: "Ring", delay: "0" },
+                        { src: "/theme/earring/rose-amber-theme.png", alt: "Ear Ring", delay: "100" },
+                        { src: "/theme/pendant-set/navy-blue-theme.png", alt: "Pendant Set", delay: "200" },
+                        { src: "/theme/necklace/white-theme.png", alt: "Necklace", delay: "300" },
+                        { src: "/theme/necklace-set/light-green-theme.png", alt: "Necklace Set", delay: "400" },
+                        { src: "/theme/bangle/brown-theme.png", alt: "Bangle", delay: "500" },
+                    ].map((item, index) => (
+                        <div
+                            key={index}
+                            className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 group hover:border-neon-green/50 transition-all duration-500"
+                        >
+                            <Image
+                                src={item.src}
+                                alt={item.alt}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                sizes="(max-width: 768px) 50vw, 33vw"
+                            />
+                            {/* Overlay */}
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
+                        </div>
+                    ))}
                 </div>
             </div>
 
