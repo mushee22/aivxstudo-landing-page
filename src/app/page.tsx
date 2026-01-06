@@ -10,13 +10,13 @@ import HomeLatestArticles from '@/components/HomeLatestArticles';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'AI Jewellery Product Shoot | AIVX | Studio',
+  title: 'AI Jewellery Product Shoot & Video Services | AIVX Studio',
   description: 'Create studio-quality jewellery images and reel videos using AI. AIVX helps jewellery brands generate premium visuals faster and at lower cost.',
   alternates: {
     canonical: 'https://aivx.in/',
   },
   openGraph: {
-    title: 'AI Jewellery Product Shoot | AIVX | Studio',
+    title: 'AI Jewellery Product Shoot & Video Services | AIVX Studio',
     description: 'AI-powered jewellery product shoot platform for images and short videos, built for ecommerce brands.',
     url: 'https://aivx.in/',
     siteName: 'AIVX',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Jewellery Product Shoot | AIVX | Studio',
+    title: 'AI Jewellery Product Shoot & Video Services | AIVX Studio',
     description: 'Create high-quality jewellery images and videos using AI. Faster, scalable, and cost-effective.',
     images: ['/images/jewellery-hero.jpg'], // Consistent with OG image
   },

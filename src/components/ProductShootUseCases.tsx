@@ -1,5 +1,3 @@
-'use client';
-
 import { ShoppingBag, Instagram, Megaphone, Layout, Store, ArrowRight, Video } from 'lucide-react';
 import Link from 'next/link';
 

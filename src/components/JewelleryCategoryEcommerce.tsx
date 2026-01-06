@@ -1,5 +1,3 @@
-'use client';
-
 import { ShoppingBag, Store, Smartphone, Layout, BookOpen, Megaphone } from 'lucide-react';
 
 interface JewelleryCategoryEcommerceProps {

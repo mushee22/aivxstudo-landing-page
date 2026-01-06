@@ -1,5 +1,3 @@
-'use client';
-
 import { MapPin, Mail, Clock } from 'lucide-react';
 
 export default function LocationDetails() {

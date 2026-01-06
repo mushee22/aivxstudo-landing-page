@@ -1,9 +1,6 @@
-'use client';
-
 export default function LocationHero() {
     return (
         <section className="relative w-full h-[50vh] flex items-center justify-center overflow-hidden bg-black/90">
-            {/* Background Texture/Gradient */}
             <div className="absolute inset-0 z-0 opacity-40">
                 <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-neutral-900 to-transparent" />
             </div>

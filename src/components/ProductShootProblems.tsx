@@ -1,5 +1,3 @@
-'use client';
-
 import { DollarSign, UserX, Clock, CameraOff, BarChart3, ShoppingBag } from 'lucide-react';
 
 const problems = [

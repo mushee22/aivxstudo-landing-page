@@ -11,14 +11,12 @@ interface FaqPageProps {
     };
 }
 
-// 1. Generate Static Params at Build Time
 export async function generateStaticParams() {
     return faqs.map((faq) => ({
         slug: faq.slug,
     }));
 }
 
-// 2. Generate Metadata
 export async function generateMetadata({ params }: FaqPageProps): Promise<Metadata> {
     const { slug } = await params;
 
@@ -49,7 +47,6 @@ export async function generateMetadata({ params }: FaqPageProps): Promise<Metada
     };
 }
 
-// 3. Page Component
 export default async function FaqDetailPage({ params }: FaqPageProps) {
     const { slug } = await params;
     const faq = faqs.find((f) => f.slug === slug);
@@ -58,12 +55,10 @@ export default async function FaqDetailPage({ params }: FaqPageProps) {
         notFound();
     }
 
-    // Get related FAQs: Same category, exclude current, limit to 3
     const relatedFaqs = faqs
         .filter((f) => f.category === faq.category && f.id !== faq.id)
         .slice(0, 3);
 
-    // Schema for single FAQ
     const faqSchema = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',

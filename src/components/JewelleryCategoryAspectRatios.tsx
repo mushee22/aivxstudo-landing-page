@@ -1,5 +1,3 @@
-'use client';
-
 import { Square, Smartphone, Monitor } from 'lucide-react';
 
 interface JewelleryCategoryAspectRatiosProps {

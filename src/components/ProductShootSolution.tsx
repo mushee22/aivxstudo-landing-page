@@ -1,5 +1,3 @@
-'use client';
-
 import { CheckCircle2, Wand2 } from 'lucide-react';
 import Image from 'next/image';
 

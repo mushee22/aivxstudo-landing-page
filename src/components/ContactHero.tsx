@@ -1,12 +1,4 @@
-'use client';
-
-import { ArrowDown } from 'lucide-react';
-
 export default function ContactHero() {
-    const handleScrollToForm = () => {
-        const contactSection = document.getElementById('contact-section');
-        contactSection?.scrollIntoView({ behavior: 'smooth' });
-    };
 
     return (
         <section className="relative w-full pt-12 md:pt-20 bg-dark-bg flex flex-col items-center justify-center border-b border-white/5 overflow-hidden">

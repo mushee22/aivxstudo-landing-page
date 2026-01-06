@@ -1,5 +1,3 @@
-'use client';
-
 export default function JewelleryOverview() {
     return (
         <section className="bg-[#0A0A0A] py-24 px-6 border-b border-white/5">

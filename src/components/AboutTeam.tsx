@@ -1,5 +1,3 @@
-'use client';
-
 
 import { Linkedin, User } from 'lucide-react';
 

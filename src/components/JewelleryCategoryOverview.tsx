@@ -1,6 +1,4 @@
-'use client';
 
-import Image from 'next/image';
 import { Camera, Video, Layers, Users, ShoppingBag, Download } from 'lucide-react';
 
 interface JewelleryCategoryOverviewProps {
@@ -44,12 +42,6 @@ export default function JewelleryCategoryOverview({ category }: JewelleryCategor
     ];
 
     // Placeholder visuals for the strip
-    const visualStrip = [
-        "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=600&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=600&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1599643478518-17488fbbcd75?q=80&w=600&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=600&auto=format&fit=crop"
-    ];
 
     return (
         <section className="py-24 px-6 bg-dark-bg border-b border-white/5">

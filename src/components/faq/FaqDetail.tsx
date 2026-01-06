@@ -1,5 +1,3 @@
-'use client';
-
 import { FaqItem } from '@/data/faqs';
 
 interface FaqDetailProps {
@@ -9,7 +7,6 @@ interface FaqDetailProps {
 export default function FaqDetail({ faq }: FaqDetailProps) {
     return (
         <article className="max-w-3xl mx-auto px-6 py-12 md:py-20 space-y-8">
-            {/* Header */}
             <div className="space-y-6 text-center md:text-left">
                 <span className="inline-block text-xs font-bold text-neon-green uppercase tracking-wider bg-neon-green/10 px-3 py-1 rounded-full">
                     {faq.category}
@@ -23,13 +20,8 @@ export default function FaqDetail({ faq }: FaqDetailProps) {
                     </p>
                 )}
             </div>
-
-            {/* Content */}
             <div className="prose prose-invert prose-lg max-w-none text-neutral-300 font-light leading-relaxed">
                 <p>{faq.answer}</p>
-                {/* Note: In a real scenario, 'answer' might be rich text or HTML. 
-                    Since our data is string, we just render it. 
-                    If rich text is needed later, we can use a parser. */}
             </div>
         </article>
     );

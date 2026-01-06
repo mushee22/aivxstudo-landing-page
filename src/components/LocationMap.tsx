@@ -1,5 +1,3 @@
-'use client';
-
 export default function LocationMap() {
     return (
         <section className="bg-black pb-12 px-6">

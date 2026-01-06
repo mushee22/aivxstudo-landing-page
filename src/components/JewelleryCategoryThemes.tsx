@@ -22,8 +22,6 @@ export default function JewelleryCategoryThemes({ category, themes: customThemes
         { name: "Premium Editorial", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop" },
     ];
 
-
-
     const themes = customThemes || defaultThemes;
 
     const scroll = (direction: 'left' | 'right') => {

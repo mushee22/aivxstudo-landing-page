@@ -1,5 +1,3 @@
-'use client';
-
 import { Image as ImageIcon, Video, Gem, Users, ShoppingBag, Zap } from 'lucide-react';
 
 const features = [

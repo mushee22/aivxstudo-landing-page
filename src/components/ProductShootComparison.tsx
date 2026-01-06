@@ -1,4 +1,3 @@
-'use client';
 
 import { X, Check } from 'lucide-react';
 import Link from 'next/link';

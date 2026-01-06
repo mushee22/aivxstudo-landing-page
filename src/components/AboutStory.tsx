@@ -1,4 +1,3 @@
-'use client';
 
 import { Sparkles, Zap, Layers, BarChart } from 'lucide-react';
 

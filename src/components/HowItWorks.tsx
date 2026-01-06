@@ -1,5 +1,3 @@
-'use client';
-
 import { Upload, Palette, Sparkles } from 'lucide-react';
 
 const steps = [

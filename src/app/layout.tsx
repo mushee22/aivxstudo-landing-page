@@ -5,7 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AIVX Studio",
+  metadataBase: new URL('https://aivx.in'),
+  title: "AI Jewellery Product Shoot & Video Services | AIVX Studio",
   description: "Create Winning Ads in Seconds with AI",
   icons: {
     icon: '/logo.jpg',

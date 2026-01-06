@@ -1,5 +1,3 @@
-'use client';
-
 export default function MissionCore() {
     return (
         <section className="bg-black pb-24 px-6 md:pb-32 border-b border-white/5 relative">

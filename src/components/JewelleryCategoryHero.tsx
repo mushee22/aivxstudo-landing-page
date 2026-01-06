@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Palette, PlayCircle } from 'lucide-react';
+import { ArrowRight, Palette } from 'lucide-react';
 
 interface JewelleryCategoryHeroProps {
     category: string;

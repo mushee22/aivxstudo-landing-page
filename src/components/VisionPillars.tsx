@@ -1,5 +1,3 @@
-'use client';
-
 export default function VisionPillars() {
     return (
         <section className="bg-black py-24 px-6 border-b border-white/5">

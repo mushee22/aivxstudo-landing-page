@@ -1,7 +1,5 @@
-'use client';
 
-import { Check, ArrowRight, RefreshCcw } from 'lucide-react';
-import Link from 'next/link';
+import { Check, RefreshCcw } from 'lucide-react';
 
 export default function PricingIndividual() {
     return (
@@ -18,7 +16,7 @@ export default function PricingIndividual() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
 
-                    {/* Image Generation */}
+
                     <div className="p-8 rounded-3xl bg-dark-surface border border-white/5 hover:border-neon-green/30 transition-all duration-300 group">
                         <div className="flex justify-between items-start mb-6">
                             <div>
@@ -59,7 +57,7 @@ export default function PricingIndividual() {
                             <ArrowRight size={18} />
                         </Link> */}
                     </div>
-                    {/* Video Generation */}
+
                     <div className="p-8 rounded-3xl bg-dark-surface border border-white/5 hover:border-purple-500/30 transition-all duration-300 group">
                         <div className="flex justify-between items-start mb-6">
                             <div>
@@ -101,7 +99,7 @@ export default function PricingIndividual() {
                         </Link> */}
                     </div>
 
-                    {/* Regeneration */}
+
                     <div className="p-8 rounded-3xl bg-dark-surface border border-white/5 hover:border-blue-500/30 transition-all duration-300 group">
                         <div className="flex justify-between items-start mb-6">
                             <div>
@@ -133,14 +131,6 @@ export default function PricingIndividual() {
                                 </li>
                             ))}
                         </ul>
-
-                        {/* <Link
-                            href="/contact"
-                            className="w-full flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white py-3.5 rounded-full font-bold transition-all group-hover:bg-blue-500 group-hover:text-white"
-                        >
-                            Contact Sales
-                            <ArrowRight size={18} />
-                        </Link> */}
                     </div>
 
                 </div>

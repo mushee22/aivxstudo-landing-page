@@ -1,7 +1,4 @@
 import type { Metadata } from 'next';
-import JewelleryCategoryGallery from '@/components/JewelleryCategoryGallery';
-import JewelleryCategoryVideoGallery from '@/components/JewelleryCategoryVideoGallery';
-import JewelleryCategoryModelVariations from '@/components/JewelleryCategoryModelVariations';
 import JewelleryCategoryAspectRatios from '@/components/JewelleryCategoryAspectRatios';
 import JewelleryCategoryEcommerce from '@/components/JewelleryCategoryEcommerce';
 import JewelleryCategoryFinalCTA from '@/components/JewelleryCategoryFinalCTA';
@@ -64,9 +61,6 @@ export default function BanglePage() {
                     { name: "WHITE", image: "/theme/bangle/white-theme.png" },
                 ]}
             />
-            {/* <JewelleryCategoryGallery category={category} />
-            <JewelleryCategoryVideoGallery category={category} />
-            <JewelleryCategoryModelVariations category={category} /> */}
             <JewelleryCategoryAspectRatios category={category} />
             <JewelleryCategoryEcommerce category={category} />
             <JewelleryCategoryFinalCTA category={category} />
