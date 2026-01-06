@@ -73,6 +73,7 @@ export default function JewelleryCategories() {
                                     alt={category.name}
                                     fill
                                     className="object-cover"
+
                                 />
 
                                 <span className="text-white/20 font-bold text-6xl opacity-20 group-hover:scale-110 transition-transform duration-700 select-none">

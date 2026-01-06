@@ -2,11 +2,16 @@ import type { Metadata } from 'next';
 import HeroSection from '@/components/HeroSection';
 import WhyAivx from '@/components/WhyAivx';
 import HowItWorks from '@/components/HowItWorks';
-import JewelleryCategories from '@/components/JewelleryCategories';
-import BeforeAfter from '@/components/BeforeAfter';
-import VideoShowcase from '@/components/VideoShowcase';
 import Testimonials from '@/components/Testimonials';
 import HomeLatestArticles from '@/components/HomeLatestArticles';
+
+import dynamic from 'next/dynamic';
+
+const JewelleryCategories = dynamic(() => import('@/components/JewelleryCategories'));
+
+const BeforeAfter = dynamic(() => import('@/components/BeforeAfter'));
+
+const VideoShowcase = dynamic(() => import('@/components/VideoShowcase'));
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aivx.in'),

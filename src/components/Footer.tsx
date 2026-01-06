@@ -65,27 +65,27 @@ export default function Footer() {
                         <h4 className="text-xs font-medium text-white tracking-[0.2em] uppercase">Jewellery</h4>
                         <ul className="space-y-4">
                             <li>
-                                <Link href="/jewellery/ring" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/ring" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     Ring
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/jewellery/ear-ring" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/ear-ring" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     Ear Ring
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/jewellery/necklace" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/necklace" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     Necklace
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/jewellery/necklace-set" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/necklace-set" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     Necklace Set
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/jewellery/bangle" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/bangle" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     Bangle
                                 </Link>
                             </li>

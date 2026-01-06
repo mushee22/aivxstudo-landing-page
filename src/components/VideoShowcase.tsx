@@ -7,30 +7,30 @@ import { useRef, useEffect, useState } from 'react';
 const videos = [
     {
         id: 1,
-        title: "Diamond Ring Showcase",
+        title: "Ring Showcase",
         duration: "5s",
-        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4", // Sample video
+        src: "/theme/ring/video/ring-video-3.mp4", // Sample video
         poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Ring+Preview"
     },
     {
         id: 2,
-        title: "Gold Necklace Reveal",
+        title: "Necklace Showcase",
         duration: "15s",
-        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+        src: "/theme/necklace/video/video-15s.mp4",
         poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Necklace+Preview"
     },
     {
         id: 3,
-        title: "Bangle 360 View",
-        duration: "10s",
-        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Bangle+Preview"
+        title: "Pendant Set Showcase",
+        duration: "5s",
+        src: "/theme/pendant-set/video/pendent-set-5s.mp4",
+        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Pendant+Preview"
     },
     {
         id: 4,
-        title: "Earring Model Shoot",
+        title: "Earring Showcase",
         duration: "15s",
-        src: "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+        src: "/theme/earring/video/earring-15s.mp4",
         poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Earring+Preview"
     }
 ];
@@ -81,7 +81,7 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
             <video
                 ref={videoRef}
                 src={video.src}
-                poster={video.poster}
+                // poster={video.poster}
                 loop
                 muted
                 playsInline
@@ -125,7 +125,7 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
 
 export default function VideoShowcase() {
     return (
-        <section className="py-24 px-6 bg-dark-bg border-t border-white/5 relative overflow-hidden">
+        <section className="pt-6 pb-12 md:pb-24 px-6 bg-dark-bg border-t border-white/5 relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -142,17 +142,6 @@ export default function VideoShowcase() {
                     {videos.map((video) => (
                         <VideoCard key={video.id} video={video} />
                     ))}
-                </div>
-
-                {/* CTA */}
-                <div className="text-center">
-                    <Link
-                        href="/product-shoot/jewellery"
-                        className="inline-flex items-center gap-2 text-white border-b border-neon-green/50 pb-1 hover:text-neon-green hover:border-neon-green transition-all font-medium group"
-                    >
-                        View More
-                        <Play size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
                 </div>
             </div>
         </section>

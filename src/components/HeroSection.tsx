@@ -11,7 +11,7 @@ export default function HeroSection() {
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover opacity-80"
+                    className="w-full h-full object-cover opacity-80 hidden md:block"
                 >
                     {/* Placeholder for video file. Ensure 'hero-video.mp4' exists in public folder */}
                     <source src="/hero-video.mp4" type="video/mp4" />

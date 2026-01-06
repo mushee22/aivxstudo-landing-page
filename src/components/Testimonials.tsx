@@ -81,7 +81,7 @@ export default function Testimonials() {
 
     return (
         <section
-            className="py-24 px-6 bg-dark-bg border-t border-white/5 relative overflow-hidden"
+            className="pt-6 pb-12 md:pb-24 px-6 bg-dark-bg border-t border-white/5 relative overflow-hidden"
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
         >

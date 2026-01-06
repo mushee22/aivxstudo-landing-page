@@ -1,5 +1,6 @@
 
 import { Linkedin, User } from 'lucide-react';
+import Image from 'next/image';
 
 const teamMembers = [
     {
@@ -7,21 +8,24 @@ const teamMembers = [
         role: "Founder",
         description: "Visionary leader driving AIVX's mission to revolutionize product photography.",
 
-        linkedin: "https://www.linkedin.com/in/manu-rashid-39b1b7338/"
+        linkedin: "https://www.linkedin.com/in/manu-rashid-39b1b7338/",
+        image: "/team/manu-rashid.png"
     },
     {
         name: "Mubarak",
         role: "Co-founder",
         description: "Building the core technology and strategy for scalable AI solutions.",
 
-        linkedin: "https://www.linkedin.com/in/mubarak-k-k-9a790560/"
+        linkedin: "https://www.linkedin.com/in/mubarak-k-k-9a790560/",
+        image: "/team/mubarak.png"
     },
     {
         name: "Risham KC",
         role: "CFO",
         description: "Managing financial strategy and sustainable growth for the studio.",
 
-        linkedin: "https://www.linkedin.com/in/risham-kc-67119724b/"
+        linkedin: "https://www.linkedin.com/in/risham-kc-67119724b/",
+        image: "/team/risham.png"
     }
 ];
 
@@ -35,7 +39,15 @@ export default function TeamGrid() {
                             {/* Image Container */}
                             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-neon-green/50 transition-colors duration-500">
                                 <div className="w-full h-full bg-neutral-900 flex items-center justify-center group-hover:bg-neutral-800 transition-colors duration-500">
-                                    <User className="w-1/2 h-1/2 text-neutral-600 group-hover:text-neutral-400 transition-colors duration-500" strokeWidth={1.5} />
+                                    {/* <User className="w-1/2 h-1/2 text-neutral-600 group-hover:text-neutral-400 transition-colors duration-500" strokeWidth={1.5} /> */}
+                                    <Image
+                                        src={member.image}
+                                        alt={member.name}
+                                        fill
+                                        className="object-cover"
+                                        placeholder='blur'
+                                        blurDataURL={member.image}
+                                    />
                                 </div>
 
                                 {/* Overlay / Social Icon on Hover */}
