@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
 import ContactSuccessModal from './ContactSuccessModal';
 
+const PATH = "https://aivx.primefxt.pro/api/v1/website/leads"
+// const LOCAL_PATH = "http://localhost:5000/api/v1/website/leads"
+
 export default function ContactForm() {
     const [formData, setFormData] = useState({
         name: '',
@@ -37,17 +40,46 @@ export default function ContactForm() {
 
         setStatus('submitting');
 
-        // Simulate API call
-        setTimeout(() => {
-            setStatus('success');
-            setShowSuccessModal(true);
-            setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+        try {
+            const response = await fetch(PATH, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    full_name: formData.name,
+                    email: formData.email,
+                    company_name: formData.company,
+                    phone_number: formData.phone,
+                    message: formData.message
+                }),
+            });
 
-            // Reset status after a delay to allow re-submission if needed
+            if (!response.ok) {
+                throw new Error('Failed to submit form');
+            }
+
+            const data = await response.json();
+
+            // Simulate API call
+            setTimeout(() => {
+                setStatus('success');
+                setShowSuccessModal(true);
+                setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+
+                // Reset status after a delay to allow re-submission if needed
+                setTimeout(() => {
+                    setStatus('idle');
+                }, 5000);
+            }, 1500);
+        } catch (error) {
+            setStatus('error');
             setTimeout(() => {
                 setStatus('idle');
-            }, 5000);
-        }, 1500);
+            }, 3000);
+            return;
+        }
+
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -70,6 +102,11 @@ export default function ContactForm() {
 
             <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Name */}
+                {status === 'error' && (
+                    <p className="text-red-500 text-xs flex items-center gap-1">
+                        <AlertCircle size={12} /> Sorry, An error occurred while submitting your message. try again
+                    </p>
+                )}
                 <div className="space-y-1.5">
                     <label htmlFor="name" className="text-sm font-medium text-gray-300">
                         Full Name <span className="text-neon-green">*</span>
