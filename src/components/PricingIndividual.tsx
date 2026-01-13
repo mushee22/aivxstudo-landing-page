@@ -72,7 +72,7 @@ export default function PricingIndividual() {
                         </div>
 
                         <div className="mb-8">
-                            <span className="text-4xl font-bold text-white">102</span>
+                            <span className="text-4xl font-bold text-white">114</span>
                             <span className="text-gray-500 ml-2">Credits / video</span>
                         </div>
 

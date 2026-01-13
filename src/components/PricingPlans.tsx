@@ -13,7 +13,7 @@ const plans = [
             "(No bonus credits)",
             "52 Credits / Image Gen",
             "32 Credits / Regeneration",
-            "102 Credits / Video Gen"
+            "114 Credits / Video Gen"
         ],
         cta: "Contact Sales",
         href: "/contact",
@@ -22,14 +22,14 @@ const plans = [
     {
         name: "Pro Plan",
         price: "9,999",
-        credits: "Base + 30% Bonus",
-        subtitle: "Includes base credits",
+        credits: "Base + 20% Bonus",
+        subtitle: "Includes 10,000 base credits",
         features: [
-            "Includes base credits",
-            "30% bonus credits",
+            "Includes 10,000 base credits",
+            "2,000 bonus credits",
             "52 Credits / Image Gen",
             "32 Credits / Regeneration",
-            "102 Credits / Video Gen",
+            "114 Credits / Video Gen",
             "All jewellery themes",
             "Priority support"
         ],
