@@ -15,14 +15,15 @@ const VideoShowcase = dynamic(() => import('@/components/VideoShowcase'));
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aivx.in'),
-  title: 'AI Jewellery Product Shoot & Video Services | AIVX Studio',
-  description: 'Create studio-quality jewellery images and reel videos using AI. AIVX helps jewellery brands generate premium visuals faster and at lower cost.',
+  title: 'AIVX Studio – AI Jewelry Product Photography Software for Rings, Necklaces, Earrings & More',
+  description: 'AIVX Studio is an AI-powered jewelry product shoot software for rings, bracelets, bangles, necklaces, pendant sets, and earrings. Create professional jewelry images instantly without physical photoshoots',
+  keywords: 'AI jewelry photography, jewelry product shoot software, AI jewelry images, ring photography software, bracelet photography AI, necklace product photography, earring photography AI, jewelry photoshoot automation',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'AI Jewellery Product Shoot & Video Services | AIVX Studio',
-    description: 'AI-powered jewellery product shoot platform for images and short videos, built for ecommerce brands.',
+    title: 'AIVX Studio – AI Jewelry Product Photography Software for Rings, Necklaces, Earrings & More',
+    description: 'AIVX Studio is an AI-powered jewelry product shoot software for rings, bracelets, bangles, necklaces, pendant sets, and earrings. Create professional jewelry images instantly without physical photoshoots',
     url: '/',
     siteName: 'AIVX',
     images: [
@@ -38,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Jewellery Product Shoot & Video Services | AIVX Studio',
-    description: 'Create high-quality jewellery images and videos using AI. Faster, scalable, and cost-effective.',
+    title: 'AIVX Studio – AI Jewelry Product Photography Software for Rings, Necklaces, Earrings & More',
+    description: 'AIVX Studio is an AI-powered jewelry product shoot software for rings, bracelets, bangles, necklaces, pendant sets, and earrings. Create professional jewelry images instantly without physical photoshoots',
     images: ['/image/bangle-ai-generated-image.png'],
   },
   robots: {

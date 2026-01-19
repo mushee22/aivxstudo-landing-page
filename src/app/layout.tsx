@@ -7,10 +7,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aivx.in'),
-  title: "AI Jewellery Product Shoot & Video Services | AIVX Studio",
-  description: "Create Winning Ads in Seconds with AI",
+  title: "AIVX Studio – AI Jewelry Product Photography Software for Rings, Necklaces, Earrings & More",
+  description: "AIVX Studio is an AI-powered jewelry product shoot software for rings, bracelets, bangles, necklaces, pendant sets, and earrings. Create professional jewelry images instantly without physical photoshoots",
+  keywords: 'AI jewelry photography, jewelry product shoot software, AI jewelry images, ring photography software, bracelet photography AI, necklace product photography, earring photography AI, jewelry photoshoot automation',
   icons: {
     icon: '/logo.jpg',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
