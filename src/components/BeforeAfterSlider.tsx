@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { ChevronsLeftRight } from 'lucide-react';
 
-function BeforeAfterSlider({ before, after, title }: { before: string; after: string; title: string }) {
+function BeforeAfterSlider({ before, after, title, alt }: { before: string; after: string; title: string; alt: string }) {
     const [sliderPosition, setSliderPosition] = useState(50);
     const [isDragging, setIsDragging] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -50,9 +50,10 @@ function BeforeAfterSlider({ before, after, title }: { before: string; after: st
             <div className="absolute inset-0 w-full h-full">
                 <img
                     src={after}
-                    alt={`After ${title}`}
+                    alt={alt}
                     className="w-full h-full object-cover"
                     draggable={false}
+
                 />
                 <div className="absolute top-4 right-4 z-10 bg-neon-green/90 backdrop-blur-md px-3 py-1 rounded-full border border-neon-green/20 pointer-events-none">
                     <span className="text-xs font-bold text-black uppercase tracking-wider">After</span>
@@ -66,9 +67,10 @@ function BeforeAfterSlider({ before, after, title }: { before: string; after: st
             >
                 <img
                     src={before}
-                    alt={`Before ${title}`}
+                    alt={alt}
                     className="w-full h-full object-cover"
                     draggable={false}
+
                 />
                 <div className="absolute top-4 left-4 z-10 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 pointer-events-none">
                     <span className="text-xs font-bold text-white uppercase tracking-wider">Before</span>

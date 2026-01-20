@@ -7,37 +7,43 @@ const categories = [
         name: 'Ring',
         href: '/product-shoot/jewellery/ring',
         image: '/theme/ring/cream-theme.jpg',
-        color: 'from-rose-500/20 to-orange-500/20'
+        color: 'from-rose-500/20 to-orange-500/20',
+        alt: 'AI generated ring product photography'
     },
     {
         name: 'Ear Ring',
         href: '/product-shoot/jewellery/ear-ring',
         image: '/theme/earring/rose-amber-theme.png',
-        color: 'from-purple-500/20 to-indigo-500/20'
+        color: 'from-purple-500/20 to-indigo-500/20',
+        alt: "AI generated ear ring product photography"
     },
     {
         name: 'Pendant Set',
         href: '/product-shoot/jewellery/pendant-set',
         image: '/theme/pendant-set/navy-blue-theme.png',
-        color: 'from-blue-500/20 to-cyan-500/20'
+        color: 'from-blue-500/20 to-cyan-500/20',
+        alt: "AI generated pendant set product photography"
     },
     {
         name: 'Necklace',
         href: '/product-shoot/jewellery/necklace',
         image: '/theme/necklace/white-theme.png',
-        color: 'from-emerald-500/20 to-teal-500/20'
+        color: 'from-emerald-500/20 to-teal-500/20',
+        alt: "AI generated necklace product photography"
     },
     {
         name: 'Necklace Set',
         href: '/product-shoot/jewellery/necklace-set',
         image: '/theme/necklace-set/light-green-theme.png',
-        color: 'from-amber-500/20 to-yellow-500/20'
+        color: 'from-amber-500/20 to-yellow-500/20',
+        alt: "AI generated necklace set product photography"
     },
     {
         name: 'Bangle',
         href: '/product-shoot/jewellery/bangle',
         image: '/theme/bangle/brown-theme.png',
-        color: 'from-pink-500/20 to-rose-500/20'
+        color: 'from-pink-500/20 to-rose-500/20',
+        alt: "AI generated bangle product photography"
     },
 ];
 
@@ -48,7 +54,9 @@ export default function JewelleryCategories() {
 
                 {/* Section Header */}
                 <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white">Jewellery Categories</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">
+                        AI Jewelry Product Photography for Every Jewelry Category
+                    </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         Explore AI-powered product shoots for every jewellery type.
                     </p>

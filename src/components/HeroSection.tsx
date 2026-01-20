@@ -34,6 +34,10 @@ export default function HeroSection() {
                         </span>
                     </h1>
 
+                    <p className="sr-only">
+                        AIVX Studio is an AI jewelry product photography and video generation software designed for rings, bracelets, bangles, necklaces, pendant sets, and earrings. Create professional jewelry images instantly without physical photoshoots
+                    </p>
+
                     {/* Subheading */}
                     <p className="text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed">
                         Turn simple product photos into premium studio-quality images and reel videos using AI — without studios, models, or high cost.

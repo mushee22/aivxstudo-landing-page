@@ -42,7 +42,9 @@ export default function WhyAivx() {
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white">Why AIVX</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">
+                        Why AIVX Studio Is Built for Jewelry Brands
+                    </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         Built specifically for jewellery brands, ecommerce sellers, and marketers.
                     </p>

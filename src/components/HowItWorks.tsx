@@ -27,7 +27,9 @@ export default function HowItWorks() {
 
                 {/* Header */}
                 <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white">How AIVX Works</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white">
+                        How AIVX Studio AI Jewelry Product Photography Works
+                    </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         From simple product images to studio-quality jewellery visuals in minutes.
                     </p>

@@ -47,6 +47,7 @@ export default function BeforeAfterSliderContainer() {
                                 before={item.before}
                                 after={item.after}
                                 title={item.title}
+                                alt={item.alt}
                             />
 
                             {/* Caption/Title Bar */}
@@ -81,24 +82,28 @@ const comparisons = [
         title: "Necklace",
         category: "Jewellery",
         before: "/image/raw-input-image.png",
-        after: "/image/ai-generated-image.png"
+        after: "/image/ai-generated-image.png",
+        alt: "AI generated necklace set product photography"
     },
     {
         title: "Ring",
         category: "Jewellery",
         before: "/image/ring-raw-input-image.png",
-        after: "/image/ring-ai-generated-image.png"
+        after: "/image/ring-ai-generated-image.png",
+        alt: "AI generated ring product photography"
     },
     {
         title: "Bangle",
         category: "Jewellery",
         before: "/image/bangle-raw-input-image.png",
-        after: "/image/bangle-ai-generated-image.png"
+        after: "/image/bangle-ai-generated-image.png",
+        alt: "AI generated bangle product photography"
     },
     {
         title: "Ear Ring",
         category: "Jewellery",
         before: "/image/earring-raw-input-image.png",
-        after: "/image/earring-ai-generated-image.png"
+        after: "/image/earring-ai-generated-image.png",
+        alt: "AI generated ear ring product photography"
     }
 ];
