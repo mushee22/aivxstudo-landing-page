@@ -12,18 +12,14 @@ export default function HeroSection() {
                     loop
                     playsInline
                     className="w-full h-full object-cover opacity-80"
+                    preload='metadata'
                 >
-                    {/* Placeholder for video file. Ensure 'hero-video.mp4' exists in public folder */}
-                    <source src="/hero-video.mp4" type="video/mp4" />
+                    <source src="/hero-section-video.mp4" type="video/mp4" />
                     <div className="absolute inset-0 bg-dark-bg flex items-center justify-center text-white/20">
-                        Video Background (Add /public/hero-video.mp4)
+                        Video Background (Add /public/hero-section-video.mp4)
                     </div>
                 </video>
-
-                {/* Overlay Gradients */}
-                {/* <div className="absolute inset-0 bg-black/40" /> General darkening */}
                 <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" /> Left-side text legibility
-                {/* <div className="absolute inset-0 bg-linear-to-t from-dark-bg via-transparent to-transparent h-32 bottom-0" /> Bottom fade */}
             </div>
 
             {/* Content */}
