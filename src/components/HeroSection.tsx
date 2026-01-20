@@ -5,7 +5,7 @@ export default function HeroSection() {
         <section className="relative w-full min-h-[85vh] md:min-h-screen flex items-center overflow-hidden bg-dark-bg">
 
             {/* Background Video */}
-            <div className="absolute inset-0 w-full h-full z-0">
+            <div className="absolute inset-0 w-full h-full z-0 hidden md:block">
                 <video
                     autoPlay
                     muted
@@ -15,6 +15,23 @@ export default function HeroSection() {
                     preload='metadata'
                 >
                     <source src="/hero-section-video.mp4" type="video/mp4" />
+                    <div className="absolute inset-0 bg-dark-bg flex items-center justify-center text-white/20">
+                        Video Background (Add /public/hero-section-video.mp4)
+                    </div>
+                </video>
+                <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent" /> Left-side text legibility
+            </div>
+
+            <div className="absolute inset-0 w-full h-full z-0 block md:hidden">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover opacity-80"
+                    preload='metadata'
+                >
+                    <source src="/hero-section-video-mobile.mp4" type="video/mp4" />
                     <div className="absolute inset-0 bg-dark-bg flex items-center justify-center text-white/20">
                         Video Background (Add /public/hero-section-video.mp4)
                     </div>
