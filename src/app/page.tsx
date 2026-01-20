@@ -15,15 +15,15 @@ const VideoShowcase = dynamic(() => import('@/components/VideoShowcase'));
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aivx.in'),
-  title: 'AIVX Studio – AI Jewelry Product Photography Software for Rings, Necklaces, Earrings & More',
-  description: 'AIVX Studio is an AI-powered jewelry product shoot software for rings, bracelets, bangles, necklaces, pendant sets, and earrings. Create professional jewelry images instantly without physical photoshoots',
+  title: 'AIVX Studio | AI Jewelry Product Photography Software',
+  description: 'AI-powered jewelry photography software for rings, necklaces, and more. Create professional product images instantly without physical photoshoots with AIVX Studio',
   keywords: 'AI jewelry photography, jewelry product shoot software, AI jewelry images, ring photography software, bracelet photography AI, necklace product photography, earring photography AI, jewelry photoshoot automation',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'AIVX Studio – AI Jewelry Product Photography Software for Rings, Necklaces, Earrings & More',
-    description: 'AIVX Studio is an AI-powered jewelry product shoot software for rings, bracelets, bangles, necklaces, pendant sets, and earrings. Create professional jewelry images instantly without physical photoshoots',
+    title: 'AIVX Studio | AI Jewelry Product Photography Software',
+    description: 'AI-powered jewelry photography software for rings, necklaces, and more. Create professional product images instantly without physical photoshoots with AIVX Studio',
     url: '/',
     siteName: 'AIVX',
     images: [
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AIVX Studio – AI Jewelry Product Photography Software for Rings, Necklaces, Earrings & More',
-    description: 'AIVX Studio is an AI-powered jewelry product shoot software for rings, bracelets, bangles, necklaces, pendant sets, and earrings. Create professional jewelry images instantly without physical photoshoots',
+    title: 'AIVX Studio | AI Jewelry Product Photography Software',
+    description: 'AI-powered jewelry photography software for rings, necklaces, and more. Create professional product images instantly without physical photoshoots with AIVX Studio',
     images: ['/image/bangle-ai-generated-image.png'],
   },
   robots: {

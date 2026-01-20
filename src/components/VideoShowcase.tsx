@@ -8,28 +8,28 @@ const videos = [
         id: 1,
         title: "Ring Showcase",
         duration: "5s",
-        src: "/theme/ring/video/ring-video-3.mp4", // Sample video
+        src: "/theme/ring/video/ring-video-showcase.mp4", // Sample video
         poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Ring+Preview"
     },
     {
         id: 2,
         title: "Necklace Showcase",
         duration: "15s",
-        src: "/theme/necklace/video/video-15s.mp4",
+        src: "/theme/necklace/video/neklace-video-showcase.mp4",
         poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Necklace+Preview"
     },
     {
         id: 3,
         title: "Pendant Set Showcase",
         duration: "5s",
-        src: "/theme/pendant-set/video/pendent-set-5s.mp4",
+        src: "/theme/pendant-set/video/pendent-set-video-showcase.mp4",
         poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Pendant+Preview"
     },
     {
         id: 4,
         title: "Earring Showcase",
         duration: "15s",
-        src: "/theme/earring/video/earring-15s.mp4",
+        src: "/theme/earring/video/earring-video-showcase.mp4",
         poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Earring+Preview"
     }
 ];
