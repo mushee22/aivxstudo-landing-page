@@ -13,6 +13,7 @@ export default function HeroSection() {
                     playsInline
                     className="w-full h-full object-cover opacity-80"
                     preload='metadata'
+                    poster="/video-thumbnail-desktop.png"
                 >
                     <source src="/hero-section-video.mp4" type="video/mp4" />
                     <div className="absolute inset-0 bg-dark-bg flex items-center justify-center text-white/20">
@@ -30,6 +31,7 @@ export default function HeroSection() {
                     playsInline
                     className="w-full h-full object-cover opacity-80"
                     preload='metadata'
+                    poster="/video-thumbnail-mobile.png"
                 >
                     <source src="/hero-section-video-mobile.mp4" type="video/mp4" />
                     <div className="absolute inset-0 bg-dark-bg flex items-center justify-center text-white/20">
