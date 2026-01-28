@@ -21,12 +21,12 @@ export default function BlogList({ posts }: BlogListProps) {
         <section className="bg-black py-16 px-6 pb-32">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-                    {posts.map((post) => (
+                    {posts.toReversed().map((post) => (
                         <Link key={post.id} href={`/blog/${post.slug}`}>
                             <article className="group cursor-pointer flex flex-col space-y-6">
 
                                 {/* 1. Cover Image */}
-                                <div className="relative w-full aspect-[3/2] overflow-hidden rounded-xl bg-neutral-900 border border-white/5">
+                                <div className="relative w-full aspect-video rounded-xl bg-neutral-900 border border-white/5">
                                     <Image
                                         src={post.image}
                                         alt={post.title}
