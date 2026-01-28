@@ -40,10 +40,12 @@ export default function JewelleryCategoryHero({ category, backgroundImage }: Jew
 
                         <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
                             <Link
-                                href="/contact"
+                                href="https://studio.primefxt.pro/login"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
                             >
-                                Contact Sales
+                                Get Started
                                 <ArrowRight size={20} />
                             </Link>
                             <button
@@ -62,9 +64,9 @@ export default function JewelleryCategoryHero({ category, backgroundImage }: Jew
                     {/* Right Visual (40%) */}
                     <div className="w-full lg:w-2/5 relative">
                         {/* Soft Gradient Backdrop */}
-                        <div className="absolute inset-0 bg-linear-to-tr from-neon-green/20 to-purple-500/20 rounded-[2rem] blur-3xl opacity-30 transform scale-110" />
+                        <div className="absolute inset-0 bg-linear-to-tr from-neon-green/20 to-purple-500/20 rounded-4xl blur-3xl opacity-30 transform scale-110" />
 
-                        <div className="relative aspect-[3/4] w-full rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
+                        <div className="relative aspect-3/4 w-full rounded-4xl overflow-hidden border border-white/10 shadow-2xl">
                             <Image
                                 src={heroImage}
                                 alt={`${displayCategory} product shoot example`}

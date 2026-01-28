@@ -48,6 +48,11 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="https://studio.primefxt.pro/login" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                    Get Started
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/#pricing" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     Pricing
                                 </Link>

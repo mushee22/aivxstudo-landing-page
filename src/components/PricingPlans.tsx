@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 const plans = [
     {
-        name: "Base Plan",
+        name: "Trial Plan",
         price: "999",
         credits: "Standard Credits",
-        subtitle: "Standard credits included",
+        subtitle: "Try out AIVX capabilities",
         features: [
             "Standard credits included",
             "(No bonus credits)",
@@ -15,8 +15,24 @@ const plans = [
             "32 Credits / Regeneration",
             "114 Credits / Video Gen"
         ],
-        cta: "Contact Sales",
-        href: "/contact",
+        cta: "Get Started",
+        href: "https://studio.primefxt.pro/login",
+        popular: false
+    },
+    {
+        name: "Base Plan",
+        price: "4,999",
+        credits: "Base + 10% Bonus",
+        subtitle: "Includes 5,000 base credits",
+        features: [
+            "Includes 5,000 base credits",
+            "500 bonus credits",
+            "52 Credits / Image Gen",
+            "32 Credits / Regeneration",
+            "114 Credits / Video Gen"
+        ],
+        cta: "Get Started",
+        href: "https://studio.primefxt.pro/login",
         popular: false
     },
     {
@@ -33,8 +49,8 @@ const plans = [
             "All jewellery themes",
             "Priority support"
         ],
-        cta: "Contact Sales",
-        href: "/contact",
+        cta: "Get Started",
+        href: "https://studio.primefxt.pro/login",
         popular: true
     },
     {
@@ -68,55 +84,56 @@ export default function PricingPlans() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 items-stretch">
                     {plans.map((plan, index) => (
                         <div
                             key={index}
-                            className={`relative bg-dark-surface rounded-3xl p-8 border hover:border-neon-green/30 transition-all duration-300 flex flex-col h-full ${plan.popular ? 'border-neon-green/50 shadow-[0_0_30px_rgba(163,230,53,0.1)] scale-100 lg:scale-105 z-10' : 'border-white/5'
+                            className={`relative bg-dark-surface rounded-2xl p-6 border hover:border-neon-green/30 transition-all duration-300 flex flex-col h-full ${plan.popular ? 'border-neon-green/50 shadow-[0_0_30px_rgba(163,230,53,0.1)] z-10' : 'border-white/5'
                                 }`}
                         >
                             {plan.popular && (
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-neon-green text-black px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                                <div className="absolute top-0 right-0 bg-neon-green text-black px-3 py-1 rounded-bl-xl rounded-tr-xl text-[10px] font-bold uppercase tracking-wider">
                                     Recommended
                                 </div>
                             )}
 
-                            <div className="mb-8">
-                                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                                <p className="text-gray-400 text-sm">{plan.subtitle}</p>
+                            <div className="mb-6">
+                                <h3 className="text-xl font-bold text-white mb-1">{plan.name}</h3>
+                                <p className="text-gray-400 text-xs">{plan.subtitle}</p>
                             </div>
 
-                            <div className="mb-8">
+                            <div className="mb-6">
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-4xl font-bold text-white">
+                                    <span className="text-3xl font-bold text-white">
                                         {plan.price === "Custom" ? "Custom" : `₹${plan.price}`}
                                     </span>
-
                                 </div>
                                 {plan.price !== "Custom" && (
-                                    <div className="mt-2 inline-block bg-white/10 px-3 py-1 rounded-full border border-white/10">
-                                        <span className="text-neon-green font-bold text-sm tracking-wide">
+                                    <div className="mt-2 inline-block bg-white/10 px-2.5 py-0.5 rounded-full border border-white/10">
+                                        <span className="text-neon-green font-bold text-xs tracking-wide">
                                             {plan.credits}
                                         </span>
                                     </div>
                                 )}
                                 {plan.price === "Custom" && (
-                                    <div className="text-sm text-gray-500 mt-2">Tailored for your needs</div>
+                                    <div className="text-xs text-gray-500 mt-2">Tailored for your needs</div>
                                 )}
                             </div>
 
-                            <ul className="space-y-4 mb-8 flex-grow">
+                            <ul className="space-y-3 mb-8 grow">
                                 {plan.features.map((feature, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-gray-300">
-                                        <Check size={18} className="text-neon-green flex-shrink-0 mt-0.5" />
-                                        <span className="text-sm">{feature}</span>
+                                    <li key={i} className="flex items-start gap-2.5 text-gray-300">
+                                        <Check size={16} className="text-neon-green shrink-0 mt-0.5" />
+                                        <span className="text-xs leading-relaxed">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
 
                             <Link
                                 href={plan.href}
-                                className={`w-full py-3.5 rounded-full font-bold text-center transition-all ${plan.popular
+                                target={plan.href.startsWith('http') ? "_blank" : undefined}
+                                rel={plan.href.startsWith('http') ? "noopener noreferrer" : undefined}
+                                className={`w-full py-3 rounded-xl font-bold text-sm text-center transition-all ${plan.popular
                                     ? 'bg-neon-green text-black hover:bg-lime-300 shadow-lg'
                                     : 'bg-white/10 text-white hover:bg-white/20'
                                     }`}

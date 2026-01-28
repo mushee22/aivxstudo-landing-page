@@ -158,6 +158,9 @@ export default function Header() {
                         <Link href="/blog" className={`text-sm font-medium transition-colors duration-300 ${pathname.startsWith('/blog') ? 'text-neon-green' : 'text-neutral-300 hover:text-white'}`}>
                             Blog
                         </Link>
+                        <Link href="/contact" className={`text-sm font-medium transition-colors duration-300 ${pathname === '/contact' ? 'text-neon-green' : 'text-neutral-300 hover:text-white'}`}>
+                            Contact
+                        </Link>
                         <div className="group relative">
                             <span className="text-sm font-medium text-neutral-300 cursor-default hover:text-white transition-colors">Company</span>
                             <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
@@ -175,10 +178,12 @@ export default function Header() {
                     {/* 3. CTA Button (Desktop) */}
                     <div className="hidden lg:block">
                         <Link
-                            href="/contact"
+                            href="https://studio.primefxt.pro/login"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="bg-neon-green text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-0.5"
                         >
-                            Contact Us
+                            Get Started
                         </Link>
                     </div>
 
@@ -316,11 +321,13 @@ export default function Header() {
                 {/* Fixed Bottom CTA */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-[#0A0A0A] border-t border-white/10">
                     <Link
-                        href="/contact"
+                        href="https://studio.primefxt.pro/login"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="block w-full bg-neon-green text-black py-4 rounded-xl text-center text-lg font-bold hover:bg-lime-300 transition-colors shadow-lg shadow-neon-green/20"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        Contact Us
+                        Get Started
                     </Link>
                 </div>
             </div>

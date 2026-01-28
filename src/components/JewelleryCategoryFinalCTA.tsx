@@ -27,10 +27,12 @@ export default function JewelleryCategoryFinalCTA({ category }: JewelleryCategor
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Link
-                        href="/contact"
+                        href="https://studio.primefxt.pro/login"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-10 py-5 bg-neon-green text-black font-bold text-lg rounded-full hover:bg-neon-green/90 transition-all shadow-[0_0_20px_rgba(157,255,0,0.3)] hover:shadow-[0_0_30px_rgba(157,255,0,0.5)] transform hover:-translate-y-1 w-full sm:w-auto"
                     >
-                        Contact Us
+                        Get Started
                     </Link>
                 </div>
             </div>

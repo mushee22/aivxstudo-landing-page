@@ -87,10 +87,12 @@ export default function ProductShootComparison() {
                 {/* CTAs */}
                 <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4">
                     <Link
-                        href="/contact"
+                        href="https://studio.primefxt.pro/login"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="bg-neon-green text-black px-8 py-3.5 rounded-full font-bold hover:bg-lime-300 transition-colors shadow-lg text-center"
                     >
-                        Contact Sales
+                        Get Started
                     </Link>
                 </div>
             </div>
