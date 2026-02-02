@@ -16,7 +16,7 @@ const plans = [
             "114 Credits / Video Gen"
         ],
         cta: "Get Started",
-        href: "https://studio.primefxt.pro/login",
+        href: "https://studio.aivx.in/login",
         popular: false
     },
     {
@@ -32,7 +32,7 @@ const plans = [
             "114 Credits / Video Gen"
         ],
         cta: "Get Started",
-        href: "https://studio.primefxt.pro/login",
+        href: "https://studio.aivx.in/login",
         popular: false
     },
     {
@@ -50,7 +50,7 @@ const plans = [
             "Priority support"
         ],
         cta: "Get Started",
-        href: "https://studio.primefxt.pro/login",
+        href: "https://studio.aivx.in/login",
         popular: true
     },
     {
