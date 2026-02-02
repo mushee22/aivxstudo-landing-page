@@ -71,27 +71,27 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li>
                                 <Link href="/product-shoot/jewellery/ring" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    Ring
+                                    AI Ring Product Photography
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/product-shoot/jewellery/ear-ring" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    Ear Ring
+                                    AI Earring Product Photography
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/product-shoot/jewellery/necklace" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    Necklace
+                                    AI Necklace Product Photography
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/product-shoot/jewellery/necklace-set" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    Necklace Set
+                                    AI Necklace Set Product Photography
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/product-shoot/jewellery/bangle" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    Bangle
+                                    AI Bangle Product Photography
                                 </Link>
                             </li>
                         </ul>
