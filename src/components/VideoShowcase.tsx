@@ -9,28 +9,28 @@ const videos = [
         title: "Ring Showcase",
         duration: "5s",
         src: "/theme/ring/video/ring-video-showcase.mp4", // Sample video
-        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Ring+Preview"
+        poster: "/image/ring-video-thumbnail.png"
     },
     {
         id: 2,
         title: "Necklace Showcase",
         duration: "15s",
         src: "/theme/necklace/video/neklace-video-showcase.mp4",
-        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Necklace+Preview"
+        poster: "/image/necklace-video-thumbnail.png"
     },
     {
         id: 3,
         title: "Pendant Set Showcase",
         duration: "5s",
         src: "/theme/pendant-set/video/pendent-set-video-showcase.mp4",
-        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Pendant+Preview"
+        poster: "/image/pendant-set-video-thumbnail.png"
     },
     {
         id: 4,
         title: "Earring Showcase",
         duration: "15s",
         src: "/theme/earring/video/earring-video-showcase.mp4",
-        poster: "https://placehold.co/720x1280/1a1a1a/ffffff?text=Earring+Preview"
+        poster: "/image/earring-video-thumbnail.png"
     }
 ];
 
@@ -78,6 +78,7 @@ function VideoCard({ video }: { video: typeof videos[0] }) {
                 src={video.src}
                 loop
                 muted
+                poster={video.poster}
                 playsInline
                 preload='metadata'
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
