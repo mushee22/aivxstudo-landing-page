@@ -3,7 +3,7 @@ import BlogListWrapper from '@/components/BlogListWrapper';
 import BlogCTA from '@/components/BlogCTA';
 
 export const metadata = {
-    title: 'AI Jewellery Product Shoot Blog & Insights | AIVX | Studio',
+    title: 'AI Jewellery Product Photography Blog & Insights | AIVX Studio',
     description: 'Insights, guides, and case studies on AI-powered jewellery product shoots, ecommerce visuals, and modern jewellery branding.',
     alternates: {
         canonical: 'https://aivx.in/blog',

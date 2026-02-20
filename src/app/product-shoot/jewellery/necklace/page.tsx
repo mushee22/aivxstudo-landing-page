@@ -1,7 +1,4 @@
 import type { Metadata } from 'next';
-import JewelleryCategoryGallery from '@/components/JewelleryCategoryGallery';
-import JewelleryCategoryVideoGallery from '@/components/JewelleryCategoryVideoGallery';
-import JewelleryCategoryModelVariations from '@/components/JewelleryCategoryModelVariations';
 import JewelleryCategoryAspectRatios from '@/components/JewelleryCategoryAspectRatios';
 import JewelleryCategoryEcommerce from '@/components/JewelleryCategoryEcommerce';
 import JewelleryCategoryFinalCTA from '@/components/JewelleryCategoryFinalCTA';
@@ -10,13 +7,13 @@ import JewelleryCategoryOverview from '@/components/JewelleryCategoryOverview';
 import JewelleryCategoryThemes from '@/components/JewelleryCategoryThemes';
 
 export const metadata: Metadata = {
-    title: 'AI Necklace Product Shoot Studio | AIVX',
+    title: 'AI Necklace Product Photography | AIVX Studio',
     description: 'Create stunning necklace product images and videos using AI. Fast, scalable, and optimized for ecommerce jewellery brands.',
     alternates: {
         canonical: 'https://aivx.in/product-shoot/jewellery/necklace',
     },
     openGraph: {
-        title: 'AI Necklace Product Shoot Studio | AIVX',
+        title: 'AI Necklace Product Photography | AIVX Studio',
         description: 'Create stunning necklace product images and videos using AI. Fast, scalable, and optimized for ecommerce jewellery brands.',
         type: 'website',
         url: 'https://aivx.in/product-shoot/jewellery/necklace',
@@ -31,7 +28,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI Necklace Product Shoot Studio | AIVX',
+        title: 'AI Necklace Product Photography | AIVX Studio',
         description: 'Create stunning necklace product images and videos using AI. Fast, scalable, and optimized for ecommerce jewellery brands.',
         images: ['/images/jewellery-hero.jpg'],
     },

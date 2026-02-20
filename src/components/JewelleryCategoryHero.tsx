@@ -29,7 +29,7 @@ export default function JewelleryCategoryHero({ category, backgroundImage }: Jew
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
                             Studio-Quality <br />
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-white to-gray-400">
-                                {displayCategory} Visuals
+                                {displayCategory} Product Photography
                             </span> <br />
                             Generated Using AI
                         </h1>

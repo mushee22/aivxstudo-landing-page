@@ -7,13 +7,13 @@ import JewelleryCategoryOverview from '@/components/JewelleryCategoryOverview';
 import JewelleryCategoryThemes from '@/components/JewelleryCategoryThemes';
 
 export const metadata: Metadata = {
-    title: 'AI Bangle Product Shoot Studio | AIVX',
+    title: 'AI Bangle Product Photography | AIVX Studio',
     description: 'AI-powered bangle product shoot for premium images and videos. Built for ecommerce jewellery listings and marketing.',
     alternates: {
         canonical: 'https://aivx.in/product-shoot/jewellery/bangle',
     },
     openGraph: {
-        title: 'AI Bangle Product Shoot Studio | AIVX',
+        title: 'AI Bangle Product Photography | AIVX Studio',
         description: 'AI-powered bangle product shoot for premium images and videos. Built for ecommerce jewellery listings and marketing.',
         type: 'website',
         url: 'https://aivx.in/product-shoot/jewellery/bangle',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI Bangle Product Shoot Studio | AIVX',
+        title: 'AI Bangle Product Photography | AIVX Studio',
         description: 'AI-powered bangle product shoot for premium images and videos. Built for ecommerce jewellery listings and marketing.',
         images: ['/images/jewellery-hero.jpg'],
     },

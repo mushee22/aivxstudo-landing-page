@@ -6,13 +6,13 @@ import JewelleryOverview from '@/components/JewelleryOverview';
 import JewelleryCategories from '@/components/JewelleryCategories';
 
 export const metadata: Metadata = {
-    title: 'AI Jewellery Product Shoot Studio | AIVX',
+    title: 'AI Jewellery Product Photography | AIVX Studio',
     description: 'AI-powered jewellery product shoot studio for rings, necklaces, bangles, and more. Generate premium ecommerce images and short videos faster and cost-effectively.',
     alternates: {
         canonical: 'https://aivx.in/product-shoot/jewellery',
     },
     openGraph: {
-        title: 'AI Jewellery Product Shoot Studio | AIVX',
+        title: 'AI Jewellery Product Photography | AIVX Studio',
         description: 'Create studio-quality jewellery images and videos using AI. Built for ecommerce and modern jewellery brands.',
         url: 'https://aivx.in/product-shoot/jewellery',
         siteName: 'AIVX',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI Jewellery Product Shoot Studio | AIVX',
+        title: 'AI Jewellery Product Photography | AIVX Studio',
         description: 'AI-powered jewellery product shoots for ecommerce-ready images and videos.',
         images: ['/images/jewellery-hero.jpg'],
     },

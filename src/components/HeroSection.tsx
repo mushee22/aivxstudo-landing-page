@@ -42,14 +42,18 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-20">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6  pt-20">
                 <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-bottom-5 duration-1000">
 
                     {/* Heading */}
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.1]">
+                    <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
                         AI Jewellery <br />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-green to-emerald-400">
-                            Product Shoot
+                            {" "}Product Photography &
+                        </span>
+                        <br />
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-green to-emerald-400">
+                            Catalog Shoot
                         </span>
                     </h1>
 
@@ -59,7 +63,7 @@ export default function HeroSection() {
 
                     {/* Subheading */}
                     <p className="text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed">
-                        Turn simple product photos into premium studio-quality images and reel videos using AI — without studios, models, or high cost.
+                        AI-powered jewellery product photography for ecommerce brands, D2C labels, and catalog creators.
                     </p>
 
                     {/* CTA Buttons */}

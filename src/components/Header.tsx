@@ -50,7 +50,7 @@ export default function Header() {
             <header
                 className={`fixed top-0 w-full z-50 transition-all duration-500 ${
                     // Base (Mobile + Defaults)
-                    'bg-[#0A0A0A] py-4'
+                    'bg-[#0A0A0A] py-0'
                     } ${
                     // Desktop Defaults (Top State)
                     'lg:bg-transparent lg:py-6'

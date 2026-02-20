@@ -1,7 +1,4 @@
 import type { Metadata } from 'next';
-import JewelleryCategoryGallery from '@/components/JewelleryCategoryGallery';
-import JewelleryCategoryVideoGallery from '@/components/JewelleryCategoryVideoGallery';
-import JewelleryCategoryModelVariations from '@/components/JewelleryCategoryModelVariations';
 import JewelleryCategoryAspectRatios from '@/components/JewelleryCategoryAspectRatios';
 import JewelleryCategoryEcommerce from '@/components/JewelleryCategoryEcommerce';
 import JewelleryCategoryFinalCTA from '@/components/JewelleryCategoryFinalCTA';
@@ -10,13 +7,13 @@ import JewelleryCategoryOverview from '@/components/JewelleryCategoryOverview';
 import JewelleryCategoryThemes from '@/components/JewelleryCategoryThemes';
 
 export const metadata: Metadata = {
-    title: 'AI Pendant Set Product Shoot | AIVX',
+    title: 'AI Pendant Set Product Photography | AIVX Studio',
     description: 'AI-powered pendant set product shoot for high-quality images and videos. Designed for ecommerce-ready jewellery visuals.',
     alternates: {
         canonical: 'https://aivx.in/product-shoot/jewellery/pendant-set',
     },
     openGraph: {
-        title: 'AI Pendant Set Product Shoot | AIVX',
+        title: 'AI Pendant Set Product Photography | AIVX Studio',
         description: 'AI-powered pendant set product shoot for high-quality images and videos. Designed for ecommerce-ready jewellery visuals.',
         type: 'website',
         url: 'https://aivx.in/product-shoot/jewellery/pendant-set',
@@ -31,7 +28,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI Pendant Set Product Shoot | AIVX',
+        title: 'AI Pendant Set Product Photography | AIVX Studio',
         description: 'AI-powered pendant set product shoot for high-quality images and videos. Designed for ecommerce-ready jewellery visuals.',
         images: ['/images/jewellery-hero.jpg'],
     },

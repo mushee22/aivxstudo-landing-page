@@ -1,7 +1,4 @@
 import type { Metadata } from 'next';
-import JewelleryCategoryGallery from '@/components/JewelleryCategoryGallery';
-import JewelleryCategoryVideoGallery from '@/components/JewelleryCategoryVideoGallery';
-import JewelleryCategoryModelVariations from '@/components/JewelleryCategoryModelVariations';
 import JewelleryCategoryAspectRatios from '@/components/JewelleryCategoryAspectRatios';
 import JewelleryCategoryEcommerce from '@/components/JewelleryCategoryEcommerce';
 import JewelleryCategoryFinalCTA from '@/components/JewelleryCategoryFinalCTA';
@@ -10,13 +7,13 @@ import JewelleryCategoryOverview from '@/components/JewelleryCategoryOverview';
 import JewelleryCategoryThemes from '@/components/JewelleryCategoryThemes';
 
 export const metadata: Metadata = {
-    title: 'AI Necklace Set Product Shoot | AIVX',
+    title: 'AI Necklace Set Product Photography | AIVX Studio',
     description: 'Generate studio-quality necklace set images and short videos using AI. Ideal for ecommerce, ads, and jewellery catalogs.',
     alternates: {
         canonical: 'https://aivx.in/product-shoot/jewellery/necklace-set',
     },
     openGraph: {
-        title: 'AI Necklace Set Product Shoot | AIVX',
+        title: 'AI Necklace Set Product Photography | AIVX Studio',
         description: 'Generate studio-quality necklace set images and short videos using AI. Ideal for ecommerce, ads, and jewellery catalogs.',
         type: 'website',
         url: 'https://aivx.in/product-shoot/jewellery/necklace-set',
@@ -25,13 +22,13 @@ export const metadata: Metadata = {
                 url: '/images/jewellery-hero.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'AI Necklace Set Product Shoot',
+                alt: 'AI Necklace Set Product Photography',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI Necklace Set Product Shoot | AIVX',
+        title: 'AI Necklace Set Product Photography | AIVX Studio',
         description: 'Generate studio-quality necklace set images and short videos using AI. Ideal for ecommerce, ads, and jewellery catalogs.',
         images: ['/images/jewellery-hero.jpg'],
     },
