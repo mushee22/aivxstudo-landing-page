@@ -37,12 +37,12 @@ export default function Header() {
     }, [isMobileMenuOpen]);
 
     const jewelleryCategories = [
-        { name: 'Ring', href: '/product-shoot/jewellery/ring' },
-        { name: 'Ear Ring', href: '/product-shoot/jewellery/ear-ring' },
-        { name: 'Pendant Set', href: '/product-shoot/jewellery/pendant-set' },
-        { name: 'Necklace', href: '/product-shoot/jewellery/necklace' },
-        { name: 'Necklace Set', href: '/product-shoot/jewellery/necklace-set' },
-        { name: 'Bangle', href: '/product-shoot/jewellery/bangle' },
+        { name: 'Ring', href: '/product-shoot/jewellery/ai-ring-product-photography' },
+        { name: 'Earring', href: '/product-shoot/jewellery/ai-earring-product-photography' },
+        { name: 'Pendant Set', href: '/product-shoot/jewellery/ai-pendant-set-product-photography' },
+        { name: 'Necklace', href: '/product-shoot/jewellery/ai-necklace-product-photography' },
+        { name: 'Necklace Set', href: '/product-shoot/jewellery/ai-necklace-set-product-photography' },
+        { name: 'Bangle', href: '/product-shoot/jewellery/ai-bangle-product-photography' },
     ];
 
     return (

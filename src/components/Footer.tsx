@@ -70,27 +70,27 @@ export default function Footer() {
                         <h4 className="text-xs font-medium text-white tracking-[0.2em] uppercase">Jewellery</h4>
                         <ul className="space-y-4">
                             <li>
-                                <Link href="/product-shoot/jewellery/ring" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/ai-ring-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     AI Ring Product Photography
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/product-shoot/jewellery/ear-ring" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/ai-earring-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     AI Earring Product Photography
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/product-shoot/jewellery/necklace" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/ai-necklace-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     AI Necklace Product Photography
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/product-shoot/jewellery/necklace-set" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/ai-necklace-set-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     AI Necklace Set Product Photography
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/product-shoot/jewellery/bangle" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                <Link href="/product-shoot/jewellery/ai-bangle-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
                                     AI Bangle Product Photography
                                 </Link>
                             </li>

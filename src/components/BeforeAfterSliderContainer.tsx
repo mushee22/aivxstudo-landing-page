@@ -100,10 +100,10 @@ const comparisons = [
         alt: "AI generated bangle product photography"
     },
     {
-        title: "Ear Ring",
+        title: "Earring",
         category: "Jewellery",
         before: "/image/earring-raw-input-image.png",
         after: "/image/earring-ai-generated-image.png",
-        alt: "AI generated ear ring product photography"
+        alt: "AI generated earring product photography"
     }
 ];

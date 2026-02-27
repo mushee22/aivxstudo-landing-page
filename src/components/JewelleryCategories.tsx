@@ -5,42 +5,42 @@ import Link from 'next/link';
 const categories = [
     {
         name: 'Ring',
-        href: '/product-shoot/jewellery/ring',
+        href: '/product-shoot/jewellery/ai-ring-product-photography',
         image: '/theme/ring/cream-theme.jpg',
         color: 'from-rose-500/20 to-orange-500/20',
         alt: 'AI generated ring product photography'
     },
     {
-        name: 'Ear Ring',
-        href: '/product-shoot/jewellery/ear-ring',
+        name: 'Earring',
+        href: '/product-shoot/jewellery/ai-earring-product-photography',
         image: '/theme/earring/rose-amber-theme.png',
         color: 'from-purple-500/20 to-indigo-500/20',
-        alt: "AI generated ear ring product photography"
+        alt: "AI generated earring product photography"
     },
     {
         name: 'Pendant Set',
-        href: '/product-shoot/jewellery/pendant-set',
+        href: '/product-shoot/jewellery/ai-necklace-product-photography',
         image: '/theme/pendant-set/navy-blue-theme.png',
         color: 'from-blue-500/20 to-cyan-500/20',
         alt: "AI generated pendant set product photography"
     },
     {
         name: 'Necklace',
-        href: '/product-shoot/jewellery/necklace',
+        href: '/product-shoot/jewellery/ai-necklace-product-photography',
         image: '/theme/necklace/white-theme.png',
         color: 'from-emerald-500/20 to-teal-500/20',
         alt: "AI generated necklace product photography"
     },
     {
         name: 'Necklace Set',
-        href: '/product-shoot/jewellery/necklace-set',
+        href: '/product-shoot/jewellery/ai-necklace-set-product-photography',
         image: '/theme/necklace-set/light-green-theme.png',
         color: 'from-amber-500/20 to-yellow-500/20',
         alt: "AI generated necklace set product photography"
     },
     {
         name: 'Bangle',
-        href: '/product-shoot/jewellery/bangle',
+        href: '/product-shoot/jewellery/ai-bangle-product-photography',
         image: '/theme/bangle/brown-theme.png',
         color: 'from-pink-500/20 to-rose-500/20',
         alt: "AI generated bangle product photography"

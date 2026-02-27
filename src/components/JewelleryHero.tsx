@@ -60,7 +60,7 @@ export default function JewelleryHero() {
                 <div className="relative h-[350px] sm:h-[450px] md:h-[600px]  w-full grid grid-cols-2 gap-4 order-1 lg:order-2">
                     {[
                         { src: "/theme/ring/cream-theme.jpg", alt: "Ring", delay: "0" },
-                        { src: "/theme/earring/rose-amber-theme.png", alt: "Ear Ring", delay: "100" },
+                        { src: "/theme/earring/rose-amber-theme.png", alt: "Earring", delay: "100" },
                         { src: "/theme/pendant-set/navy-blue-theme.png", alt: "Pendant Set", delay: "200" },
                         { src: "/theme/necklace/white-theme.png", alt: "Necklace", delay: "300" },
                         { src: "/theme/necklace-set/light-green-theme.png", alt: "Necklace Set", delay: "400" },

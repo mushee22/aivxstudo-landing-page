@@ -12,7 +12,7 @@ const steps = [
         num: "02",
         icon: Tag,
         title: "Select Jewellery Type",
-        desc: "Choose from categories like Ring, Ear Ring, Necklace, or Bangle for correct AI styling."
+        desc: "Choose from categories like Ring, Earring, Necklace, or Bangle for correct AI styling."
     },
     {
         num: "03",

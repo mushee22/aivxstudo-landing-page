@@ -1,6 +1,7 @@
 import ContactHero from '@/components/ContactHero';
 import ContactOptions from '@/components/ContactOptions';
 import ContactForm from '@/components/ContactForm';
+import ContactAudience from '@/components/ContactAudience';
 
 export const metadata = {
     title: 'Contact AIVX Studio | AI Product Photography',
@@ -23,6 +24,8 @@ export default function ContactPage() {
                     </div>
                 </div>
             </section>
+
+            <ContactAudience />
         </main>
     );
 }

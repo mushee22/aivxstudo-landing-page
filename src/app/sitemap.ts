@@ -27,12 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // 2. Jewellery Categories
     const categories = [
-        'ring',
-        'ear-ring',
-        'pendant-set',
-        'necklace',
-        'necklace-set',
-        'bangle',
+        'ai-ring-product-photography',
+        'ai-earring-product-photography',
+        'ai-pendant-set-product-photography',
+        'ai-necklace-product-photography',
+        'ai-necklace-set-product-photography',
+        'ai-bangle-product-photography',
     ];
 
     const categoryRoutes = categories.map((category) => ({
