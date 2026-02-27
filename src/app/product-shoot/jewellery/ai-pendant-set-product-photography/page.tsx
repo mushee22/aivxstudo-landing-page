@@ -106,7 +106,7 @@ export default function PendantSetPage() {
                 </p>
 
                 <p className="text-lg text-gray-300 leading-relaxed">
-                    For brands expanding beyond pendant sets, you can also explore our <Link href="/product-shoot/jewellery" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports complete collection production, including rings, earrings, bangles, and necklace sets.
+                    For brands expanding beyond pendant sets, you can also explore our <Link href="/product-shoot" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports complete collection production, including rings, earrings, bangles, and necklace sets.
                 </p>
 
                 <p className="text-xl font-bold mt-8 text-white">

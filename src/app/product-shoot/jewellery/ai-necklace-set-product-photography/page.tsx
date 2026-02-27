@@ -103,7 +103,7 @@ export default function NecklaceSetPage() {
                 </p>
 
                 <p className="text-lg text-gray-300 leading-relaxed">
-                    If you are managing full-collection production beyond necklace sets, you can explore our <Link href="/product-shoot/jewellery" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports rings, earrings, pendants, and bangles at scale.
+                    If you are managing full-collection production beyond necklace sets, you can explore our <Link href="/product-shoot" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports rings, earrings, pendants, and bangles at scale.
                 </p>
 
                 <p className="text-xl font-bold mt-8 text-white">

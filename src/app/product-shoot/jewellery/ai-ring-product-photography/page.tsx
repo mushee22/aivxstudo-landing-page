@@ -102,7 +102,7 @@ export default function RingPage() {
                 </p>
 
                 <p className="text-lg text-gray-300 leading-relaxed">
-                    If you're exploring complete jewellery catalog solutions beyond rings, you can also review our <Link href="/product-shoot/jewellery" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to understand how AI transforms full-collection production.
+                    If you're exploring complete jewellery catalog solutions beyond rings, you can also review our <Link href="/product-shoot" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to understand how AI transforms full-collection production.
                 </p>
 
                 <p className="text-xl font-bold mt-8 text-white">

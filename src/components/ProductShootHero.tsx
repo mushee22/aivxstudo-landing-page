@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function ProductShootHero() {
     return (
-        <section className="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-black border-b border-white/5">
+        <section className="relative w-full pt-10 md:pt-20 h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-black border-b border-white/5">
 
             {/* Background Image with Overlay */}
             <div className="absolute inset-0">

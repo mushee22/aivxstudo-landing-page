@@ -4,6 +4,8 @@ import ProductShootSolution from '@/components/ProductShootSolution';
 import ProductShootHowItWorks from '@/components/ProductShootHowItWorks';
 import ProductShootUseCases from '@/components/ProductShootUseCases';
 import ProductShootComparison from '@/components/ProductShootComparison';
+import ProductShootArticle from '@/components/ProductShootArticle';
+import ProductShootFAQ from '@/components/ProductShootFAQ';
 
 export const metadata = {
     title: 'AI Jewellery Product Shoot | AIVX',
@@ -15,6 +17,8 @@ export default function ProductShootPage() {
         <main className="min-h-screen bg-dark-bg text-white font-sans">
             <ProductShootHero />
 
+            <ProductShootArticle />
+
             <ProductShootProblems />
 
             <ProductShootSolution />
@@ -24,6 +28,8 @@ export default function ProductShootPage() {
             <ProductShootUseCases />
 
             <ProductShootComparison />
+
+            <ProductShootFAQ />
         </main>
     );
 }

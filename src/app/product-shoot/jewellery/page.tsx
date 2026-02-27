@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import JewelleryOverview from '@/components/JewelleryOverview';
 import JewelleryCategories from '@/components/JewelleryCategories';
+import JewelleryArticle from '@/components/JewelleryArticle';
 
 export const metadata: Metadata = {
     title: 'AI Jewellery Product Photography | AIVX Studio',
@@ -44,6 +45,7 @@ export default function JewelleryPage() {
         <main className="bg-[#0A0A0A] min-h-screen flex flex-col">
             <JewelleryHero />
             <JewelleryOverview />
+            <JewelleryArticle />
             <JewelleryCategories />
         </main>
     );

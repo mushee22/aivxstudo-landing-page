@@ -103,7 +103,7 @@ export default function NecklacePage() {
                 </p>
 
                 <p className="text-lg text-gray-300 leading-relaxed">
-                    If you’re managing a full jewellery catalog beyond necklaces, you can also explore our <Link href="/product-shoot/jewellery" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports rings, earrings, pendants, and complete collection scaling.
+                    If you’re managing a full jewellery catalog beyond necklaces, you can also explore our <Link href="/product-shoot" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports rings, earrings, pendants, and complete collection scaling.
                 </p>
 
                 <p className="text-xl font-bold mt-8 text-white">

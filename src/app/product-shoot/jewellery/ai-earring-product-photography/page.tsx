@@ -126,7 +126,7 @@ export default function EarRingPage() {
                 </p>
 
                 <p className="text-lg text-gray-300 leading-relaxed">
-                    If you’re managing multiple jewellery categories beyond earrings, you can explore our <Link href="/product-shoot/jewellery" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports full-collection production at scale.
+                    If you’re managing multiple jewellery categories beyond earrings, you can explore our <Link href="/product-shoot" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports full-collection production at scale.
                 </p>
 
                 <p className="text-xl font-bold mt-8 text-white">

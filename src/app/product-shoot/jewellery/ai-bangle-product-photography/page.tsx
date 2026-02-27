@@ -127,7 +127,7 @@ export default function BanglePage() {
                 </p>
 
                 <p className="text-lg text-gray-300 leading-relaxed">
-                    If you are managing multiple jewellery categories, you can explore our <Link href="/product-shoot/jewellery" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports rings, earrings, necklaces, and full collection production at scale.
+                    If you are managing multiple jewellery categories, you can explore our <Link href="/product-shoot" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports rings, earrings, necklaces, and full collection production at scale.
                 </p>
 
                 <p className="text-xl font-bold mt-8 text-white">
