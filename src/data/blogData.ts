@@ -674,7 +674,7 @@ Explore how modern brands are transforming
         title: "How Jewellery Brands Can Scale Product Catalogs Without Increasing Photoshoot Costs",
         excerpt: "Jewellery brands are scaling their product catalogs faster than ever — but traditional photoshoots can’t keep up with growing SKU volumes and recurring production costs. Discover how AI-powered jewellery product photography enables brands to launch collections faster, maintain visual consistency, and control expenses without compromising premium quality.",
         category: "Case Studies",
-        date: "01-03-2026",
+        date: "March 01, 2026",
         readTime: "5 min read",
         image: "/blog/how-jewellery-brands-can-scale-product-catalogs-without-increasing-photoshoot-costs.jpeg",
         author: "AIVX Studio",
