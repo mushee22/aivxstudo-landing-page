@@ -1061,11 +1061,11 @@ By using an <strong>AI photo generator</strong>, brands can produce multiple var
 <h2>AI Jewellery Photography Platforms</h2>
 
 <p>
-Some platforms combine multiple AI capabilities into a single workflow. For example, solutions like <link to="https://aivx.in" target="_blank" rel="noopener noreferrer" ><strong class="text-neon-green">AIVX Studio</strong></link> provide AI-driven jewellery photography tools designed specifically for ecommerce brands.
+Some platforms combine multiple AI capabilities into a single workflow. For example, solutions like <a href="https://aivx.in" target="_blank" rel="noopener noreferrer" ><strong class="text-neon-green">AIVX Studio</strong></a> provide AI-driven jewellery photography tools designed specifically for ecommerce brands.
 </p>
 
 <p>
-Using systems like <link to="https://aivx.in" target="_blank" rel="noopener noreferrer" ><strong class="text-neon-green">AIVX</strong></link>, brands can generate product visuals for rings, earrings, necklaces, and other jewellery categories while maintaining consistent lighting and presentation.
+Using systems like <a href="https://aivx.in" target="_blank" rel="noopener noreferrer" ><strong class="text-neon-green">AIVX</strong></a>, brands can generate product visuals for rings, earrings, necklaces, and other jewellery categories while maintaining consistent lighting and presentation.
 </p>
 
 <p>
@@ -1075,7 +1075,7 @@ This allows companies to scale visual production without dramatically increasing
 <h2>The Future of Jewellery Photography</h2>
 
 <p>
-AI tools are rapidly becoming part of the modern jewellery production workflow. From <link to="https://aivx.in/product-shoot" target="_blank" rel="noopener noreferrer" ><strong class="text-neon-green">AI jewellery photo editors</strong></link> to <strong class="text-neon-green">AI jewelry image generators</strong>, technology is making high-quality jewellery visuals more accessible than ever.
+AI tools are rapidly becoming part of the modern jewellery production workflow. From <a href="https://aivx.in/product-shoot" target="_blank" rel="noopener noreferrer" ><strong class="text-neon-green">AI jewellery photo editors</strong></a> to <strong class="text-neon-green">AI jewelry image generators</strong>, technology is making high-quality jewellery visuals more accessible than ever.
 </p>
 
 <p>
