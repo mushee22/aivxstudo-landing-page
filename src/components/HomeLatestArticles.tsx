@@ -38,7 +38,7 @@ export default function HomeLatestArticles({ showViewAllLink = true }: HomeLates
                             className="group block space-y-4"
                         >
                             {/* Cover Image */}
-                            <div className="relative w-full aspect-video overflow-hidden rounded-xl bg-neutral-900 border border-white/5">
+                            <div className="relative w-full aspect-2/3 overflow-hidden rounded-xl bg-neutral-900 border border-white/5">
                                 <Image
                                     src={post.image}
                                     alt={post.title}

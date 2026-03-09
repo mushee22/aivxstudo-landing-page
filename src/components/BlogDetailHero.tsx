@@ -28,7 +28,7 @@ export default function BlogDetailHero({ post }: BlogDetailHeroProps) {
                 </p>
 
                 {/* Cover Image */}
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden mt-12 bg-neutral-900 border border-white/5">
+                <div className="relative w-full aspect-2/3 rounded-2xl overflow-hidden mt-12 bg-neutral-900 border border-white/5">
                     <Image
                         src={post.image}
                         alt={post.title}
