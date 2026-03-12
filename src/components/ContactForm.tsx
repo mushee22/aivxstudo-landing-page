@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
 import ContactSuccessModal from './ContactSuccessModal';
 
-const PATH = "https://api.studio.in/api/v1/website/leads"
+const PATH = "https://api.aivx.in/api/v1/website/leads"
 // const LOCAL_PATH = "http://localhost:5000/api/v1/website/leads"
 
 export default function ContactForm() {
