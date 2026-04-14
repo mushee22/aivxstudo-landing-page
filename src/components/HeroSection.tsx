@@ -74,7 +74,7 @@ export default function HeroSection() {
                             rel="noopener noreferrer"
                             className="w-full sm:w-auto text-center bg-neon-green text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-1 transform duration-200"
                         >
-                            Try it now
+                            Try for free
                         </Link>
 
                         <Link
