@@ -37,7 +37,7 @@ export const metadata = {
 export default function BlogPage() {
     return (
         <main className="bg-black min-h-screen">
-            <HomeLatestArticles showViewAllLink={false} />
+            {/* <HomeLatestArticles showViewAllLink={false} /> */}
             <BlogListWrapper />
             <BlogCTA />
         </main>
