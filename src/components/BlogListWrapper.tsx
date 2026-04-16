@@ -14,13 +14,13 @@ export default function BlogListWrapper() {
         : blogPosts.filter(post => post.category === selectedCategory);
 
     return (
-        <>
+        <div className='py-24'>
             <BlogFilter
                 selectedCategory={selectedCategory}
                 onSelectCategory={setSelectedCategory}
             />
 
             <BlogList posts={filteredPosts} />
-        </>
+        </div>
     );
 }
