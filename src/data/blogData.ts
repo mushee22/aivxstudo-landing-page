@@ -2371,7 +2371,7 @@ Try it here:<br>
        AI fashion photography is helping brands create lookbooks and product visuals without traditional studio shoots. Learn how modern brands use AI to produce faster, consistent, and scalable fashion and jewellery images.
         `,
     category: "Case Studies",
-    date: "April 10, 2026",
+    date: "April 15, 2026",
     readTime: "5 min read",
     image: "/blog/ai-fashion-photography-explained-how-brands-are-creating-lookbooks-without-a-studio.jpg",
     author: "AIVX Studio",
