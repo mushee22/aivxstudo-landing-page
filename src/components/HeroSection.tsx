@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CTAbtn from './CTAbtn';
 
 export default function HeroSection() {
     return (
@@ -68,15 +69,10 @@ export default function HeroSection() {
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-                        <Link
-                            href="https://studio.aivx.in/signup"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full sm:w-auto text-center bg-neon-green text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-1 transform duration-200"
-                        >
-                            Try for free
-                        </Link>
-
+                        <CTAbtn
+                            text="Try for free"
+                            className='w-full sm:w-auto text-center bg-neon-green text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-1 transform duration-200'
+                        />
                         <Link
                             href="/pricing"
                             className="w-full sm:w-auto text-center px-8 py-4 rounded-full text-lg font-bold text-white border border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all hover:-translate-y-1"

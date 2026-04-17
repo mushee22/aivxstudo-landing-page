@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import CTAbtn from './CTAbtn';
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -177,22 +178,24 @@ export default function Header() {
 
                     {/* 3. CTA Buttons (Desktop) */}
                     <div className="hidden lg:flex items-center gap-4">
-                        <Link
+                        <CTAbtn
                             href="https://studio.aivx.in/login"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-neon-green text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-0.5"
-                        >
-                            Use Studio
-                        </Link>
-                        <Link
+                            text="Use Studio"
+                            className='bg-neon-green text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-0.5'
+                        />
+
+                        <CTAbtn
+                            text="Try for free"
+                            className='bg-neon-green text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-0.5'
+                        />
+                        {/* <Link
                             href="https://studio.aivx.in/signup"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-neon-green text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-0.5"
                         >
                             Try for free
-                        </Link>
+                        </Link> */}
                     </div>
 
                     {/* Mobile Menu Toggle */}
@@ -328,24 +331,18 @@ export default function Header() {
 
                 {/* Fixed Bottom CTA */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-[#0A0A0A] border-t border-white/10 flex gap-4">
-                    <Link
+
+                    <CTAbtn
                         href="https://studio.aivx.in/login"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center bg-white text-black py-3.5 rounded-xl text-lg font-bold hover:bg-neutral-200 transition-colors"
+                        text="Use Studio"
+                        className='flex-1 flex items-center justify-center bg-white text-black py-3.5 rounded-xl text-lg font-bold hover:bg-neutral-200 transition-colors'
                         onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                        Use Studio
-                    </Link>
-                    <Link
-                        href="https://studio.aivx.in/signup"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center bg-white text-black py-3.5 rounded-xl text-lg font-bold hover:bg-neutral-200 transition-colors"
+                    />
+                    <CTAbtn
+                        text="Try for free"
+                        className='flex-1 flex items-center justify-center bg-white text-black py-3.5 rounded-xl text-lg font-bold hover:bg-neutral-200 transition-colors'
                         onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                        Try for free
-                    </Link>
+                    />
                 </div>
             </div>
         </>

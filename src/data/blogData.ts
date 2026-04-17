@@ -2174,7 +2174,7 @@ Explore here:<br>
  `
   },
   {
-    id: "19",
+    id: "20",
     slug: "how-ai-is-changing-jewellery-and-fashion-product-photography",
     title: "How AI Is Changing Jewellery and Fashion Product Photography",
     excerpt: `
@@ -2430,7 +2430,7 @@ Try it here:<br>
  `
   },
   {
-    id: "20",
+    id: "21",
     slug: "ai-fashion-photography-explained-how-brands-are-creating-lookbooks-without-a-studio",
     title: "AI Fashion Photography Explained: How Brands Are Creating Lookbooks Without a Studio",
     excerpt: `
