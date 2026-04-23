@@ -25,8 +25,7 @@ export default function ContactOptions() {
                     Let's Create Something <span className="text-neon-green">Amazing</span>
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                    Ready to elevate your jewellery brand with AI-powered visuals?
-                    Reach out to us directly or fill out the form, and we'll get back to you within 24 hours.
+                    Whether you need AI jewellery photography, AI fashion photography, pricing information, or a custom workflow for a large catalogue — send us a message and we will get back to you within one business day.
                 </p>
             </div>
 

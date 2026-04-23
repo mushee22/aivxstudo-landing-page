@@ -8,9 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://aivx.in'),
-  title: "AIVX Studio | AI Jewelry Product Photography Software",
-  description: "AI jewellery photography software for rings, necklaces, and more. Create studio-quality product images instantly without traditional photoshoots using AIVX Studio",
-  keywords: 'AI jewelry photography, jewelry product shoot software, AI jewelry images, ring photography software, bracelet photography AI, necklace product photography, earring photography AI, jewelry photoshoot automation',
+  title: "AI Product Photography for Fashion and Jewellery | AIVX",
+  description: "Create fashion and jewellery product photos without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot.",
+  keywords: 'AI jewellery photography · AI fashion photography · product photos without studio · AI model photos · jewellery photo editing · fashion lookbook generator',
   icons: {
     icon: '/logo.jpg',
   },

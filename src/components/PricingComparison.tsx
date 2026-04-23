@@ -12,7 +12,7 @@ export default function PricingComparison() {
                         Cost Comparison
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        See how much you save by switching from traditional jewellery photoshoots to AIVX.
+                        See how much you save by switching from traditional photoshoots to AIVX.
                     </p>
                 </div>
 
@@ -22,7 +22,7 @@ export default function PricingComparison() {
                     {/* Traditional Jewellery Product Shoot */}
                     <div className="p-8 rounded-3xl bg-dark-bg border border-white/5 relative overflow-hidden group hover:border-red-400/30 transition-colors">
                         <div className="absolute top-0 left-0 w-full h-1 bg-red-500/50" />
-                        <h3 className="text-2xl font-bold text-white mb-6">Traditional Jewellery Product Shoot</h3>
+                        <h3 className="text-2xl font-bold text-white mb-6">Traditional  Product Shoot</h3>
 
                         <ul className="space-y-6">
                             {[

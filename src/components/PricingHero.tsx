@@ -17,7 +17,7 @@ export default function PricingHero() {
                 </h1>
 
                 <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                    Create studio-quality jewellery images and videos using AI — at a fraction of traditional photoshoot cost.
+                    Create studio-quality images and videos using AI — at a fraction of traditional photoshoot cost.
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">

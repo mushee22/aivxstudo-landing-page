@@ -4,17 +4,17 @@ const steps = [
     {
         icon: Upload,
         title: "Upload Product Image",
-        desc: "Upload a simple jewellery product image. No studio, no photographer, no models required."
+        desc: "Take a basic photo of your jewellery piece or clothing item on any plain surface. No studio setup or special lighting needed."
     },
     {
         icon: Palette,
-        title: "Choose Theme & Model",
-        desc: "Select jewellery themes, model type (Indian or International), and output type (image or video)."
+        title: "Choose your model, background, and style ",
+        desc: "Select an AI model type (Indian or international), background scene, and output format — single product image, lifestyle shot, or full lookbook layout."
     },
     {
         icon: Sparkles,
-        title: "Generate Image & Video",
-        desc: "Get studio-quality images and 5s / 15s reel videos, ready for ecommerce and social media."
+        title: "Generate Image & Download your finished images",
+        desc: "Get multiple ready-to-use product images in seconds. Export at the correct dimensions for each platform — marketplace listings, social media, or print catalogues"
     }
 ];
 
@@ -28,10 +28,10 @@ export default function HowItWorks() {
                 {/* Header */}
                 <div className="text-center mb-16 space-y-4">
                     <h2 className="text-4xl md:text-5xl font-bold text-white">
-                        How AIVX Studio AI Jewelry Product Photography Works
+                        How AIVX Works — Three Steps
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        From simple product images to studio-quality jewellery visuals in minutes.
+                        From simple product images to studio-quality jewellery and fashion visuals in minutes.
                     </p>
                 </div>
 

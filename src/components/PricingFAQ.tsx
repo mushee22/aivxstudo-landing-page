@@ -6,11 +6,11 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
     {
         question: "What is included in image pricing?",
-        answer: "AI-generated studio-quality jewellery images with selected themes and formats, ready for ecommerce and marketing use."
+        answer: "AI-generated studio-quality images with selected themes and formats, ready for ecommerce and marketing use."
     },
     {
         question: "What video lengths are supported?",
-        answer: "We support high-quality 5-second and 15-second jewellery product videos optimized for reels and ads."
+        answer: "We support high-quality 5-second and 15-second product videos optimized for reels and ads."
     },
     {
         question: "Can I use the images and videos for commercial purposes?",
@@ -54,8 +54,8 @@ export default function PricingFAQ() {
                         <div
                             key={index}
                             className={`border rounded-xl transition-all duration-300 ${openIndex === index
-                                    ? 'bg-dark-surface border-neon-green/30 shadow-[0_4px_20px_-10px_rgba(163,230,53,0.1)]'
-                                    : 'bg-transparent border-white/10 hover:border-white/20'
+                                ? 'bg-dark-surface border-neon-green/30 shadow-[0_4px_20px_-10px_rgba(163,230,53,0.1)]'
+                                : 'bg-transparent border-white/10 hover:border-white/20'
                                 }`}
                         >
                             <button

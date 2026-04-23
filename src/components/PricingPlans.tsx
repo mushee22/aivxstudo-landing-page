@@ -80,7 +80,7 @@ export default function PricingPlans() {
                         Pricing Plans
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        Choose a plan that fits your jewellery business.
+                        Choose a plan that fits your business.
                     </p>
                 </div>
 

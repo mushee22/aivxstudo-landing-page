@@ -12,11 +12,11 @@ export default function ContactHero() {
                 </span>
 
                 <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                    Get in Touch with <br />
-                    <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-green to-white">
-                        AIVX Studio
-                    </span>
+                    Need Better Product Photos Without a Studio? Contact AIVX.
                 </h1>
+                <p className="text-lg text-gray-300 leading-relaxed">
+                    Our team helps jewellery brands, fashion labels, ecommerce sellers, and agencies create professional product images without booking a studio or photographer.
+                </p>
             </div>
         </section>
     );

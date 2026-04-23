@@ -46,6 +46,12 @@ export default function Header() {
         { name: 'Bangle', href: '/product-shoot/jewellery/ai-bangle-product-photography' },
     ];
 
+    const fashionCategories = [
+        { name: "Men's Topwear", href: '/product-shoot/fashion/ai-mens-topwear-product-photography' },
+        { name: "Men's Ethnic Wear", href: '/product-shoot/fashion/ai-mens-ethnic-wear-product-photography' },
+        { name: "Women's Ethnic Wear", href: '/product-shoot/fashion/ai-womens-ethnic-wear-product-photography' },
+    ];
+
     return (
         <>
             <header
@@ -99,54 +105,65 @@ export default function Header() {
 
                             {/* Mega Menu Panel */}
                             <div
-                                className={`absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[600px] transition-all duration-300 transform origin-top ${isProductShootOpen
+                                className={`absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[780px] transition-all duration-300 transform origin-top ${isProductShootOpen
                                     ? 'opacity-100 visible translate-y-0 scale-100'
                                     : 'opacity-0 invisible translate-y-4 scale-95 pointer-events-none'
                                     }`}
                             >
-                                <div className="bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl p-6 grid grid-cols-12 gap-8 overflow-hidden">
-                                    {/* Left Column: Context */}
-                                    <div className="col-span-5 flex flex-col justify-between border-r border-white/5 pr-6">
-                                        <div className="space-y-4">
-                                            <span className="text-xs font-bold text-neon-green uppercase tracking-widest">
-                                                Jewellery Product Shoot
-                                            </span>
-                                            <p className="text-sm text-neutral-400 leading-relaxed font-light">
-                                                AI-powered studio-quality images and videos tailored for modern jewellery brands.
-                                            </p>
-                                        </div>
-                                        <div className="pt-8">
-                                            <Link href="/product-shoot" className="text-xs font-bold text-white flex items-center gap-2 hover:gap-3 transition-all">
-                                                Overview
-                                                <ArrowRight size={12} className="text-neon-green" />
-                                            </Link>
-                                        </div>
+                                <div className="bg-[#0A0A0A]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl p-6 overflow-hidden">
+                                    {/* Header Row */}
+                                    <div className="flex items-center justify-between mb-5 pb-4 border-b border-white/5">
+                                        <span className="text-xs font-bold text-neon-green uppercase tracking-widest">Product Shoot</span>
+                                        <Link href="/product-shoot" className="text-xs font-medium text-neutral-400 flex items-center gap-1.5 hover:text-white transition-colors">
+                                            Overview <ArrowRight size={11} className="text-neon-green" />
+                                        </Link>
                                     </div>
 
-                                    {/* Right Column: Categories Grid */}
-                                    <div className="col-span-7">
-                                        <div className="grid grid-cols-2 gap-3">
-                                            {jewelleryCategories.map((category) => (
-                                                <Link
-                                                    key={category.name}
-                                                    href={category.href}
-                                                    className="block p-3 rounded-lg hover:bg-white/5 transition-colors group/item"
-                                                >
-                                                    <span className="block text-sm font-medium text-neutral-300 group-hover/item:text-white transition-colors">
-                                                        {category.name}
-                                                    </span>
-                                                </Link>
-                                            ))}
-                                        </div>
-                                        {/* <div className="mt-6 pt-4 border-t border-white/5 text-center">
-                                            <Link
-                                                href="/product-shoot/jewellery"
-                                                className="text-xs text-neutral-500 hover:text-neon-green transition-colors duration-300 flex items-center justify-center gap-1"
-                                            >
-                                                View All Jewellery Categories
-                                                <ArrowRight size={10} />
+                                    {/* Two-column categories */}
+                                    <div className="grid grid-cols-2 gap-6">
+
+                                        {/* Jewellery Column */}
+                                        <div>
+                                            <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-3">💎 Jewellery</p>
+                                            <div className="grid grid-cols-2 gap-1">
+                                                {jewelleryCategories.map((category) => (
+                                                    <Link
+                                                        key={category.name}
+                                                        href={category.href}
+                                                        className="block px-3 py-2 rounded-lg hover:bg-white/5 transition-colors group/item"
+                                                    >
+                                                        <span className="block text-sm font-medium text-neutral-300 group-hover/item:text-white transition-colors">
+                                                            {category.name}
+                                                        </span>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                            <Link href="/product-shoot/jewellery" className="mt-3 ml-3 text-xs text-neutral-500 hover:text-neon-green transition-colors flex items-center gap-1">
+                                                View all <ArrowRight size={10} />
                                             </Link>
-                                        </div> */}
+                                        </div>
+
+                                        {/* Fashion Column */}
+                                        <div className="border-l border-white/5 pl-6">
+                                            <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-3">👗 Fashion</p>
+                                            <div className="grid grid-cols-2 gap-1">
+                                                {fashionCategories.map((category) => (
+                                                    <Link
+                                                        key={category.name}
+                                                        href={category.href}
+                                                        className="block px-3 py-2 rounded-lg hover:bg-white/5 transition-colors group/item"
+                                                    >
+                                                        <span className="block text-sm font-medium text-neutral-300 group-hover/item:text-white transition-colors">
+                                                            {category.name}
+                                                        </span>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                            <Link href="/product-shoot/fashion" className="mt-3 ml-3 text-xs text-neutral-500 hover:text-neon-green transition-colors flex items-center gap-1">
+                                                View all <ArrowRight size={10} />
+                                            </Link>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -254,9 +271,11 @@ export default function Header() {
                                 />
                             </button>
 
-                            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileProductShootOpen ? 'max-h-[500px] opacity-100 mt-2 mb-4' : 'max-h-0 opacity-0'
+                            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileProductShootOpen ? 'max-h-[800px] opacity-100 mt-2 mb-4' : 'max-h-0 opacity-0'
                                 }`}>
-                                <div className="flex flex-col gap-3 pl-4 border-l border-white/10 ml-2">
+                                <div className="flex flex-col gap-1 pl-4 border-l border-white/10 ml-2">
+                                    {/* Jewellery Section */}
+                                    <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-1 mt-1">💎 Jewellery</p>
                                     {jewelleryCategories.map((category) => (
                                         <Link
                                             key={category.name}
@@ -267,9 +286,23 @@ export default function Header() {
                                             {category.name}
                                         </Link>
                                     ))}
+
+                                    {/* Fashion Section */}
+                                    <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-1 mt-4">👗 Fashion</p>
+                                    {fashionCategories.map((category) => (
+                                        <Link
+                                            key={category.name}
+                                            href={category.href}
+                                            className="text-neutral-400 hover:text-neon-green text-lg transition-colors py-1"
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            {category.name}
+                                        </Link>
+                                    ))}
+
                                     <Link
                                         href="/product-shoot"
-                                        className="text-neon-green font-medium text-base pt-2 flex items-center gap-2"
+                                        className="text-neon-green font-medium text-base pt-3 flex items-center gap-2"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         View Overview <ArrowRight size={14} />

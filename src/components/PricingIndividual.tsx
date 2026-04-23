@@ -22,7 +22,7 @@ export default function PricingIndividual() {
                             <div>
                                 <h3 className="text-2xl font-bold text-white mb-2">AI Image Generation</h3>
                                 <p className="text-gray-400 text-sm max-w-xs">
-                                    Studio-quality jewellery images generated using AI.
+                                    Studio-quality images generated using AI.
                                 </p>
                             </div>
                             <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-neon-green/20 transition-colors">
@@ -63,7 +63,7 @@ export default function PricingIndividual() {
                             <div>
                                 <h3 className="text-2xl font-bold text-white mb-2">AI Video Generation</h3>
                                 <p className="text-gray-400 text-sm max-w-xs">
-                                    High-quality 5s and 15s jewellery product videos.
+                                    High-quality 5s and 15s  product videos.
                                 </p>
                             </div>
                             <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-purple-500/20 transition-colors">

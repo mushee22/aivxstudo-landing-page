@@ -11,10 +11,10 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Main Footer Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 mb-24">
 
                     {/* Column 1: Branding */}
-                    <div className="lg:col-span-1 space-y-8">
+                    <div className="lg:col-span-2 space-y-8">
                         <Link href="/" className="inline-block">
                             <div className="flex items-center gap-2">
                                 <div className="w-8 h-8 rounded-lg overflow-hidden border border-neon-green/50 flex items-center justify-center bg-black">
@@ -27,7 +27,7 @@ export default function Footer() {
                         </Link>
                         <div>
                             <p className="text-neutral-500 text-sm leading-relaxed font-light max-w-xs">
-                                AI-powered studio for jewellery images and videos, built for ecommerce brands.
+                                AI-powered studio for jewellery and fashion product photography, built for ecommerce brands.
                             </p>
                             <br />
                             <p className="text-sm text-neutral-500 font-light leading-relaxed">
@@ -71,33 +71,60 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li>
                                 <Link href="/product-shoot/jewellery/ai-ring-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    AI Ring Product Photography
+                                    AI Ring Photography
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/product-shoot/jewellery/ai-earring-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    AI Earring Product Photography
+                                    AI Earring Photography
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/product-shoot/jewellery/ai-necklace-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    AI Necklace Product Photography
+                                    AI Necklace Photography
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/product-shoot/jewellery/ai-necklace-set-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    AI Necklace Set Product Photography
+                                    AI Necklace Set Photography
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/product-shoot/jewellery/ai-bangle-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
-                                    AI Bangle Product Photography
+                                    AI Bangle Photography
                                 </Link>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Column 4: Company */}
+                    {/* Column 4: Fashion */}
+                    <div className="space-y-8">
+                        <h4 className="text-xs font-medium text-white tracking-[0.2em] uppercase">Fashion</h4>
+                        <ul className="space-y-4">
+                            <li>
+                                <Link href="/product-shoot/fashion" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                    AI Fashion Shoot
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/product-shoot/fashion/ai-mens-topwear-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                    Men&apos;s Topwear
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/product-shoot/fashion/ai-mens-ethnic-wear-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                    Men&apos;s Ethnic Wear
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/product-shoot/fashion/ai-womens-ethnic-wear-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                    Women&apos;s Ethnic Wear
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Column 5: Company */}
                     <div className="space-y-8">
                         <h4 className="text-xs font-medium text-white tracking-[0.2em] uppercase">Company</h4>
                         <ul className="space-y-4">

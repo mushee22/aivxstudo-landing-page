@@ -48,23 +48,24 @@ export default function HeroSection() {
 
                     {/* Heading */}
                     <h1 className="text-5xl md:text-7xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-                        AI Jewellery <br />
+                        {/* AI Jewellery <br />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-green to-emerald-400">
                             {" "}Product Photography &
                         </span>
                         <br />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-neon-green to-emerald-400">
                             Catalog Shoot
-                        </span>
+                        </span> */}
+                        AI Product Photography for Fashion and Jewellery
                     </h1>
 
                     <p className="sr-only">
-                        AIVX Studio is an AI jewelry product photography and video generation software designed for rings, bracelets, bangles, necklaces, pendant sets, and earrings. Create professional jewelry images instantly without physical photoshoots
+                        Create product photos, AI model images, and lookbooks without booking a studio. Built for fashion brands and jewellery businesses that need professional-quality visuals — quickly and consistently.
                     </p>
 
                     {/* Subheading */}
-                    <p className="text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed">
-                        AI-powered jewellery product photography for ecommerce brands, D2C labels, and catalog creators.
+                    <p className="text-lg md:text-lg text-gray-300 max-w-xl leading-relaxed">
+                        Create product photos, AI model images, and lookbooks without booking a studio. Built for fashion brands and jewellery businesses that need professional-quality visuals — quickly and consistently.
                     </p>
 
                     {/* CTA Buttons */}
@@ -81,10 +82,13 @@ export default function HeroSection() {
                         </Link>
                     </div>
 
-                    {/* Trust Indicators / Social Proof (Optional Addition based on "Luxury feel") */}
-                    <div className="pt-8 flex items-center gap-4 text-sm text-gray-400">
+                    <p className="text-sm text-gray-300 max-w-xl leading-relaxed">
+                        From sarees and kurtas to rings and necklaces — generate clean, realistic product images ready for your website, ads, and online marketplaces.
+                    </p>
 
-                        <p>Trusted by 100+ Jewellery Brands</p>
+                    {/* Trust Indicators / Social Proof (Optional Addition based on "Luxury feel") */}
+                    <div className="pb-2 flex items-center gap-4 text-sm text-gray-400">
+                        <p>Trusted by 100+  Brands</p>
                     </div>
 
                 </div>
