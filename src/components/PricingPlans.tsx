@@ -26,7 +26,7 @@ const plans = [
         subtitle: "Includes 5,000 base credits",
         features: [
             "Includes 5,000 base credits",
-            "500 bonus credits",
+            "500 bonus credits (First-time purchase only)",
             "52 Credits / Image Gen",
             "32 Credits / Regeneration",
             "114 Credits / Video Gen"
@@ -42,7 +42,7 @@ const plans = [
         subtitle: "Includes 10,000 base credits",
         features: [
             "Includes 10,000 base credits",
-            "2,000 bonus credits",
+            "2,000 bonus credits (First-time purchase only)",
             "52 Credits / Image Gen",
             "32 Credits / Regeneration",
             "114 Credits / Video Gen",
