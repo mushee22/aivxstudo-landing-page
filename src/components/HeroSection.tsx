@@ -8,17 +8,17 @@ import { Gem, Shirt } from 'lucide-react';
 
 // ─── Alternating sequence ──────────────────────────────────────────────────────
 const SEQUENCE = [
-    { src: '/image/hero/jewellery/slider-image-one.webp',   industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-four.webp',    industry: 'Fashion',   pos: 'object-top'    },
-    { src: '/image/hero/jewellery/slider-image-two.webp',   industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-one.webp',     industry: 'Fashion',   pos: 'object-top'    },
+    { src: '/image/hero/jewellery/slider-image-one.webp', industry: 'Jewellery', pos: 'object-center' },
+    { src: '/image/hero/fashion/slider-image-four.webp', industry: 'Fashion', pos: 'object-top' },
+    { src: '/image/hero/jewellery/slider-image-two.webp', industry: 'Jewellery', pos: 'object-center' },
+    { src: '/image/hero/fashion/slider-image-one.webp', industry: 'Fashion', pos: 'object-top' },
     { src: '/image/hero/jewellery/slider-image-three.webp', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-three.webp',   industry: 'Fashion',   pos: 'object-top'    },
-    { src: '/theme/ring/cream-theme.jpg',                   industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-two.webp',     industry: 'Fashion',   pos: 'object-top'    },
+    { src: '/image/hero/fashion/slider-image-three.webp', industry: 'Fashion', pos: 'object-top' },
+    { src: '/theme/ring/cream-theme.jpg', industry: 'Jewellery', pos: 'object-center' },
+    { src: '/image/hero/fashion/slider-image-two.webp', industry: 'Fashion', pos: 'object-top' },
 ];
 
-const N        = SEQUENCE.length;
+const N = SEQUENCE.length;
 const DURATION = 1000; // ms — total animation duration
 const INTERVAL = 5000; // ms — time each pair is shown
 
@@ -38,37 +38,38 @@ function Label({ item, align }: { item: SlideItem; align: 'left' | 'right' }) {
 
 // ─── Main Hero ─────────────────────────────────────────────────────────────────
 export default function HeroSection() {
-    const [pairIdx,   setPairIdx]   = useState(0);
-    const [phase,     setPhase]     = useState<Phase>('idle');
+    const [pairIdx, setPairIdx] = useState(0);
+    const [phase, setPhase] = useState<Phase>('idle');
+    const [isAnimating, setIsAnimating] = useState(false);
     const [mobileIdx, setMobileIdx] = useState(0);
-    const [paused,    setPaused]    = useState(false);
-    const phaseRef = useRef<Phase>('idle');
+    const [paused, setPaused] = useState(false);
+
+    // Sync ref — updated synchronously to prevent race conditions in production
+    const animatingRef = useRef(false);
+    const mountedRef = useRef(true);
+    useEffect(() => { mountedRef.current = true; return () => { mountedRef.current = false; }; }, []);
 
     // Derived images — index-based, can never show duplicates
-    const leftImg     = SEQUENCE[pairIdx % N];
-    const rightImg    = SEQUENCE[(pairIdx + 1) % N];
-    const nextLeftImg = SEQUENCE[(pairIdx + 1) % N]; // same as rightImg — rises into left
-    const nextRightImg = SEQUENCE[(pairIdx + 2) % N]; // new image — drops into right
+    const leftImg = SEQUENCE[pairIdx % N];
+    const rightImg = SEQUENCE[(pairIdx + 1) % N];
+    const nextLeftImg = SEQUENCE[(pairIdx + 1) % N]; // rises into left panel
+    const nextRightImg = SEQUENCE[(pairIdx + 2) % N]; // drops into right panel
 
-    useEffect(() => { phaseRef.current = phase; }, [phase]);
-
-    // Stable advance — uses ref so interval never resets on phase changes
+    // Self-contained advance: guards + timing all live here, no useEffect chain
     const advance = useCallback(() => {
-        if (phaseRef.current !== 'idle') return;
-        setPhase('animating');
+        if (animatingRef.current) return;   // synchronous guard — no race window
+        animatingRef.current = true;        // lock immediately
+        setIsAnimating(true);
+
+        setTimeout(() => {
+            if (!mountedRef.current) return;
+            setPairIdx(prev => prev + 1);
+            setIsAnimating(false);
+            animatingRef.current = false;   // unlock
+        }, DURATION);
     }, []);
 
-    // After animation finishes → advance index, return to idle
-    useEffect(() => {
-        if (phase !== 'animating') return;
-        const t = setTimeout(() => {
-            setPairIdx(prev => prev + 1);
-            setPhase('idle');
-        }, DURATION);
-        return () => clearTimeout(t);
-    }, [phase]);
-
-    // Auto-advance desktop
+    // Auto-advance desktop (advance is stable — interval never resets)
     useEffect(() => {
         if (paused) return;
         const t = setInterval(advance, INTERVAL);
@@ -82,12 +83,10 @@ export default function HeroSection() {
         return () => clearInterval(t);
     }, [paused]);
 
-    const isAnimating = phase === 'animating';
-
     // Easing strings
     const slide = `transform ${DURATION}ms cubic-bezier(0.76, 0, 0.24, 1)`;
-    const fade  = `opacity ${Math.round(DURATION * 0.55)}ms ease`;
-    const both  = `${slide}, ${fade}`;
+    const fade = `opacity ${Math.round(DURATION * 0.55)}ms ease`;
+    const both = `${slide}, ${fade}`;
 
     return (
         <section
@@ -120,7 +119,7 @@ export default function HeroSection() {
                         className="absolute inset-0"
                         style={{
                             transform: isAnimating ? 'translateY(0%)' : 'translateY(110%)',
-                            opacity:   isAnimating ? 1 : 0,
+                            opacity: isAnimating ? 1 : 0,
                             transition: isAnimating ? both : 'none',
                         }}
                     >
@@ -151,7 +150,7 @@ export default function HeroSection() {
                         className="absolute inset-0"
                         style={{
                             transform: isAnimating ? 'translateY(110%)' : 'translateY(0%)',
-                            opacity:   isAnimating ? 0 : 1,
+                            opacity: isAnimating ? 0 : 1,
                             transition: isAnimating ? both : 'none',
                         }}
                     >
@@ -165,7 +164,7 @@ export default function HeroSection() {
                         className="absolute inset-0"
                         style={{
                             transform: isAnimating ? 'translateY(0%)' : 'translateY(-110%)',
-                            opacity:   isAnimating ? 1 : 0,
+                            opacity: isAnimating ? 1 : 0,
                             transition: isAnimating ? both : 'none',
                         }}
                     >
@@ -285,7 +284,7 @@ export default function HeroSection() {
                         aria-label={`Slide ${i + 1}`}
                         className="rounded-full transition-all duration-300"
                         style={{
-                            width:  i === mobileIdx ? 28 : 8,
+                            width: i === mobileIdx ? 28 : 8,
                             height: 8,
                             background: i === mobileIdx ? '#00ff88' : 'rgba(255,255,255,0.25)',
                         }}
