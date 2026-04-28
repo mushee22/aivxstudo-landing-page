@@ -8,34 +8,29 @@ import { Gem, Shirt } from 'lucide-react';
 
 // ─── Alternating sequence ──────────────────────────────────────────────────────
 const SEQUENCE = [
-    { src: '/image/hero/jewellery/slider-image-one.webp', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-four.webp', industry: 'Fashion', pos: 'object-top' },
-    { src: '/image/hero/jewellery/slider-image-two.webp', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-one.webp', industry: 'Fashion', pos: 'object-top' },
+    { src: '/image/hero/jewellery/slider-image-one.webp',   industry: 'Jewellery', pos: 'object-center' },
+    { src: '/image/hero/fashion/slider-image-four.webp',    industry: 'Fashion',   pos: 'object-top'    },
+    { src: '/image/hero/jewellery/slider-image-two.webp',   industry: 'Jewellery', pos: 'object-center' },
+    { src: '/image/hero/fashion/slider-image-one.webp',     industry: 'Fashion',   pos: 'object-top'    },
     { src: '/image/hero/jewellery/slider-image-three.webp', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-three.webp', industry: 'Fashion', pos: 'object-top' },
-    { src: '/theme/ring/cream-theme.jpg', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-two.webp', industry: 'Fashion', pos: 'object-top' },
+    { src: '/image/hero/fashion/slider-image-three.webp',   industry: 'Fashion',   pos: 'object-top'    },
+    { src: '/theme/ring/cream-theme.jpg',                   industry: 'Jewellery', pos: 'object-center' },
+    { src: '/image/hero/fashion/slider-image-two.webp',     industry: 'Fashion',   pos: 'object-top'    },
 ];
 
-const N = SEQUENCE.length;
-const DURATION = 950;   // slide animation ms
-const INTERVAL = 4500;  // time between slides ms
+const N        = SEQUENCE.length;
+const DURATION = 1000; // ms — total animation duration
+const INTERVAL = 5000; // ms — time each pair is shown
 
+type Phase = 'idle' | 'animating';
 type SlideItem = typeof SEQUENCE[0];
-type Phase = 'idle' | 'ready' | 'animating';
-
-// ─── Icon helper ──────────────────────────────────────────────────────────────
-function IndustryIcon({ industry, size = 12 }: { industry: string; size?: number }) {
-    return industry === 'Jewellery' ? <Gem size={size} /> : <Shirt size={size} />;
-}
 
 // ─── Industry label pill ──────────────────────────────────────────────────────
 function Label({ item, align }: { item: SlideItem; align: 'left' | 'right' }) {
     const isJewellery = item.industry === 'Jewellery';
     return (
-        <div className={`absolute bottom-10 ${align === 'left' ? 'left-6' : 'right-6'} flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md border transition-all duration-500 ${isJewellery ? 'bg-black/55 border-neon-green/40 text-neon-green' : 'bg-black/55 border-white/25 text-gray-200'}`}>
-            <IndustryIcon industry={item.industry} size={12} />
+        <div className={`absolute bottom-10 ${align === 'left' ? 'left-6' : 'right-6'} flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md border ${isJewellery ? 'bg-black/55 border-neon-green/40 text-neon-green' : 'bg-black/55 border-white/25 text-gray-200'}`}>
+            {isJewellery ? <Gem size={12} /> : <Shirt size={12} />}
             <span className="text-xs font-bold uppercase tracking-widest">{item.industry}</span>
         </div>
     );
@@ -43,39 +38,27 @@ function Label({ item, align }: { item: SlideItem; align: 'left' | 'right' }) {
 
 // ─── Main Hero ─────────────────────────────────────────────────────────────────
 export default function HeroSection() {
-    // ── Single source of truth: pairIdx ───────────────────────────────────────
-    // leftImg  = SEQUENCE[pairIdx % N]
-    // rightImg = SEQUENCE[(pairIdx + 1) % N]
-    // incoming = SEQUENCE[(pairIdx + 2) % N]
-    // This guarantees left ≠ right at all times.
-    const [pairIdx, setPairIdx] = useState(0);
-    const [phase, setPhase] = useState<Phase>('idle');
+    const [pairIdx,   setPairIdx]   = useState(0);
+    const [phase,     setPhase]     = useState<Phase>('idle');
     const [mobileIdx, setMobileIdx] = useState(0);
-    const [paused, setPaused] = useState(false);
-    const phaseRef = useRef<Phase>('idle'); // stable ref so interval never resets
+    const [paused,    setPaused]    = useState(false);
+    const phaseRef = useRef<Phase>('idle');
 
-    // Derived — never stale, never duplicated
-    const leftImg    = SEQUENCE[pairIdx % N];
-    const rightImg   = SEQUENCE[(pairIdx + 1) % N];
-    const incomingImg = SEQUENCE[(pairIdx + 2) % N];
+    // Derived images — index-based, can never show duplicates
+    const leftImg     = SEQUENCE[pairIdx % N];
+    const rightImg    = SEQUENCE[(pairIdx + 1) % N];
+    const nextLeftImg = SEQUENCE[(pairIdx + 1) % N]; // same as rightImg — rises into left
+    const nextRightImg = SEQUENCE[(pairIdx + 2) % N]; // new image — drops into right
 
-    // Keep ref in sync with state
     useEffect(() => { phaseRef.current = phase; }, [phase]);
 
-    // ── Stable advance (uses ref, not phase state) ─────────────────────────────
+    // Stable advance — uses ref so interval never resets on phase changes
     const advance = useCallback(() => {
         if (phaseRef.current !== 'idle') return;
-        setPhase('ready');
+        setPhase('animating');
     }, []);
 
-    // 'ready' → one rAF → 'animating' (gives browser one frame to paint incoming off-screen)
-    useEffect(() => {
-        if (phase !== 'ready') return;
-        const raf = requestAnimationFrame(() => setPhase('animating'));
-        return () => cancelAnimationFrame(raf);
-    }, [phase]);
-
-    // After animation completes → advance pair index, back to idle
+    // After animation finishes → advance index, return to idle
     useEffect(() => {
         if (phase !== 'animating') return;
         const t = setTimeout(() => {
@@ -85,24 +68,26 @@ export default function HeroSection() {
         return () => clearTimeout(t);
     }, [phase]);
 
-    // ── Mobile: crossfade cycle ────────────────────────────────────────────────
-    useEffect(() => {
-        if (paused) return;
-        const t = setInterval(() => setMobileIdx(prev => (prev + 1) % N), INTERVAL);
-        return () => clearInterval(t);
-    }, [paused]);
-
-    // ── Desktop auto-advance — stable interval (advance never changes) ─────────
+    // Auto-advance desktop
     useEffect(() => {
         if (paused) return;
         const t = setInterval(advance, INTERVAL);
         return () => clearInterval(t);
     }, [advance, paused]);
 
-    const isAnimating   = phase === 'animating';
-    const showIncoming  = phase === 'ready' || phase === 'animating';
-    const slideEasing   = `transform ${DURATION}ms cubic-bezier(0.76, 0, 0.24, 1)`;
-    const fadeEasing    = `opacity ${DURATION}ms ease-in-out`;
+    // Mobile crossfade cycle
+    useEffect(() => {
+        if (paused) return;
+        const t = setInterval(() => setMobileIdx(prev => (prev + 1) % N), INTERVAL);
+        return () => clearInterval(t);
+    }, [paused]);
+
+    const isAnimating = phase === 'animating';
+
+    // Easing strings
+    const slide = `transform ${DURATION}ms cubic-bezier(0.76, 0, 0.24, 1)`;
+    const fade  = `opacity ${Math.round(DURATION * 0.55)}ms ease`;
+    const both  = `${slide}, ${fade}`;
 
     return (
         <section
@@ -111,95 +96,92 @@ export default function HeroSection() {
             onMouseLeave={() => setPaused(false)}
         >
             {/* ══════════════ DESKTOP LAYOUT ══════════════ */}
-            <div className="absolute inset-0 z-0 hidden md:block overflow-hidden">
+            <div className="absolute inset-0 z-0 hidden md:flex">
 
-                {/* ── Left panel (background behind text, static) ── */}
-                <div className="absolute top-0 left-0 w-1/2 h-full" style={{ zIndex: 1 }}>
-                    <Image
-                        src={leftImg.src}
-                        alt={`AI ${leftImg.industry} product photography`}
-                        fill
-                        className={`object-cover ${leftImg.pos}`}
-                        sizes="50vw"
-                        priority
-                    />
-                    <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
-                    <Label item={leftImg} align="left" />
-                </div>
+                {/* ── LEFT PANEL ─────────────────────────────────────────────── */}
+                {/* Old left image fades out. New left image (= old right) rises from below. */}
+                <div className="relative w-1/2 h-full overflow-hidden" style={{ zIndex: 1 }}>
 
-                {/* ── Right panel → slides+fades to left position on advance ── */}
-                <div
-                    className="absolute top-0 w-1/2 h-full"
-                    style={{
-                        left: '50%',
-                        zIndex: 3,
-                        transform: isAnimating ? 'translateX(-100%)' : 'translateX(0)',
-                        opacity: isAnimating ? 0.75 : 1,
-                        transition: isAnimating ? `${slideEasing}, ${fadeEasing}` : 'none',
-                    }}
-                >
-                    <Image
-                        src={rightImg.src}
-                        alt={`AI ${rightImg.industry} product photography`}
-                        fill
-                        className={`object-cover ${rightImg.pos}`}
-                        sizes="50vw"
-                        priority
-                    />
-                    <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
-                    {/* Label follows the panel */}
+                    {/* Layer A — current leftImg: fades out */}
                     <div
-                        className="absolute bottom-10 transition-all duration-500"
-                        style={{ right: isAnimating ? 'auto' : '24px', left: isAnimating ? '24px' : 'auto' }}
-                    >
-                        <div className={`flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md border ${rightImg.industry === 'Jewellery' ? 'bg-black/55 border-neon-green/40 text-neon-green' : 'bg-black/55 border-white/25 text-gray-200'}`}>
-                            <IndustryIcon industry={rightImg.industry} size={12} />
-                            <span className="text-xs font-bold uppercase tracking-widest">{rightImg.industry}</span>
-                        </div>
-                    </div>
-                </div>
-
-                {/* ── Incoming panel → fades in + slides from right ── */}
-                {showIncoming && (
-                    <div
-                        className="absolute top-0 w-1/2 h-full"
+                        className="absolute inset-0"
                         style={{
-                            left: '50%',
-                            zIndex: 2,
-                            transform: isAnimating ? 'translateX(0)' : 'translateX(100%)',
-                            opacity: isAnimating ? 1 : 0,
-                            transition: isAnimating ? `${slideEasing}, ${fadeEasing}` : 'none',
+                            opacity: isAnimating ? 0 : 1,
+                            transition: isAnimating ? `opacity ${Math.round(DURATION * 0.5)}ms ease` : 'none',
                         }}
                     >
-                        <Image
-                            src={incomingImg.src}
-                            alt={`AI ${incomingImg.industry} product photography`}
-                            fill
-                            className={`object-cover ${incomingImg.pos}`}
-                            sizes="50vw"
-                        />
+                        <Image src={leftImg.src} alt={`AI ${leftImg.industry} photography`} fill className={`object-cover ${leftImg.pos}`} sizes="50vw" priority />
                         <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
-                        <Label item={incomingImg} align="right" />
+                        <Label item={leftImg} align="left" />
                     </div>
-                )}
 
-                {/* ── Fixed text-legibility gradient overlay (left half) ── */}
-                <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                        zIndex: 4,
-                        background: 'linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.15) 55%, transparent 75%)',
-                    }}
-                />
+                    {/* Layer B — nextLeftImg: rises UP from below (preloaded: always in DOM) */}
+                    <div
+                        className="absolute inset-0"
+                        style={{
+                            transform: isAnimating ? 'translateY(0%)' : 'translateY(110%)',
+                            opacity:   isAnimating ? 1 : 0,
+                            transition: isAnimating ? both : 'none',
+                        }}
+                    >
+                        <Image src={nextLeftImg.src} alt={`AI ${nextLeftImg.industry} photography`} fill className={`object-cover ${nextLeftImg.pos}`} sizes="50vw" />
+                        <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
+                        <Label item={nextLeftImg} align="left" />
+                    </div>
 
-                {/* ── Center divider ── */}
+                </div>
+
+                {/* ── CENTER DIVIDER ─────────────────────────────────────────── */}
                 <div
                     className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px pointer-events-none"
                     style={{
                         zIndex: 5,
                         background: 'linear-gradient(to bottom, transparent 5%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.15) 70%, transparent 95%)',
-                        boxShadow: isAnimating ? '0 0 16px rgba(255,255,255,0.2)' : 'none',
-                        transition: 'box-shadow 300ms',
+                        boxShadow: isAnimating ? '0 0 20px rgba(255,255,255,0.25)' : 'none',
+                        transition: 'box-shadow 400ms',
+                    }}
+                />
+
+                {/* ── RIGHT PANEL ────────────────────────────────────────────── */}
+                {/* Old right image falls DOWN. New image drops in from TOP. */}
+                <div className="relative w-1/2 h-full overflow-hidden" style={{ zIndex: 1 }}>
+
+                    {/* Layer A — current rightImg: falls DOWN and exits */}
+                    <div
+                        className="absolute inset-0"
+                        style={{
+                            transform: isAnimating ? 'translateY(110%)' : 'translateY(0%)',
+                            opacity:   isAnimating ? 0 : 1,
+                            transition: isAnimating ? both : 'none',
+                        }}
+                    >
+                        <Image src={rightImg.src} alt={`AI ${rightImg.industry} photography`} fill className={`object-cover ${rightImg.pos}`} sizes="50vw" priority />
+                        <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
+                        <Label item={rightImg} align="right" />
+                    </div>
+
+                    {/* Layer B — nextRightImg: drops IN from TOP (preloaded: always in DOM) */}
+                    <div
+                        className="absolute inset-0"
+                        style={{
+                            transform: isAnimating ? 'translateY(0%)' : 'translateY(-110%)',
+                            opacity:   isAnimating ? 1 : 0,
+                            transition: isAnimating ? both : 'none',
+                        }}
+                    >
+                        <Image src={nextRightImg.src} alt={`AI ${nextRightImg.industry} photography`} fill className={`object-cover ${nextRightImg.pos}`} sizes="50vw" />
+                        <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
+                        <Label item={nextRightImg} align="right" />
+                    </div>
+
+                </div>
+
+                {/* ── Fixed text-legibility gradient (left half) ── */}
+                <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        zIndex: 4,
+                        background: 'linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 30%, rgba(0,0,0,0.15) 55%, transparent 75%)',
                     }}
                 />
 
@@ -225,13 +207,11 @@ export default function HeroSection() {
                         />
                     </div>
                 ))}
-                {/* Mobile gradient - dark left/top for text */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-dark-bg" />
-                {/* Mobile bottom fade */}
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-bg to-transparent" />
             </div>
 
-            {/* ══════════════ TEXT CONTENT (both layouts) ══════════════ */}
+            {/* ══════════════ TEXT CONTENT ══════════════ */}
             <div className="relative w-full max-w-7xl mx-auto px-6 pt-28 pb-28" style={{ zIndex: 10 }}>
                 <div className="max-w-xl space-y-7 animate-in fade-in slide-in-from-bottom-5 duration-1000">
 
@@ -262,12 +242,10 @@ export default function HeroSection() {
                         Create product photos, AI model images, and lookbooks without booking a studio. Built for fashion brands and jewellery businesses.
                     </p>
 
-                    {/* Subheading */}
                     <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
                         Create product photos, AI model images, and lookbooks without booking a studio — for fashion brands and jewellery businesses.
                     </p>
 
-                    {/* CTAs */}
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
                         <CTAbtn
                             text="Try for free"
@@ -281,12 +259,10 @@ export default function HeroSection() {
                         </Link>
                     </div>
 
-                    {/* Supporting text */}
                     <p className="text-sm text-gray-400 max-w-lg leading-relaxed">
                         From sarees and kurtas to rings and necklaces — generate clean, realistic product images ready for your website, ads, and online marketplaces.
                     </p>
 
-                    {/* Trust */}
                     <div className="flex items-center gap-3 text-sm text-gray-400">
                         <div className="flex -space-x-2">
                             {['/theme/ring/cream-theme.jpg', '/theme/bangle/brown-theme.png', '/image/fashion/mens-top-wear/shot-1.jpg'].map((src, i) => (
@@ -309,7 +285,7 @@ export default function HeroSection() {
                         aria-label={`Slide ${i + 1}`}
                         className="rounded-full transition-all duration-300"
                         style={{
-                            width: i === mobileIdx ? 28 : 8,
+                            width:  i === mobileIdx ? 28 : 8,
                             height: 8,
                             background: i === mobileIdx ? '#00ff88' : 'rgba(255,255,255,0.25)',
                         }}
