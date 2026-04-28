@@ -43,60 +43,66 @@ function Label({ item, align }: { item: SlideItem; align: 'left' | 'right' }) {
 
 // ─── Main Hero ─────────────────────────────────────────────────────────────────
 export default function HeroSection() {
-    const [leftImg, setLeftImg] = useState<SlideItem>(SEQUENCE[0]);
-    const [rightImg, setRightImg] = useState<SlideItem>(SEQUENCE[1]);
-    const [incomingImg, setIncomingImg] = useState<SlideItem | null>(null);
+    // ── Single source of truth: pairIdx ───────────────────────────────────────
+    // leftImg  = SEQUENCE[pairIdx % N]
+    // rightImg = SEQUENCE[(pairIdx + 1) % N]
+    // incoming = SEQUENCE[(pairIdx + 2) % N]
+    // This guarantees left ≠ right at all times.
+    const [pairIdx, setPairIdx] = useState(0);
     const [phase, setPhase] = useState<Phase>('idle');
     const [mobileIdx, setMobileIdx] = useState(0);
     const [paused, setPaused] = useState(false);
-    const seqRef = useRef(2); // next desktop index
+    const phaseRef = useRef<Phase>('idle'); // stable ref so interval never resets
 
-    // ── Desktop: trigger slide ─────────────────────────────────────────────────
+    // Derived — never stale, never duplicated
+    const leftImg    = SEQUENCE[pairIdx % N];
+    const rightImg   = SEQUENCE[(pairIdx + 1) % N];
+    const incomingImg = SEQUENCE[(pairIdx + 2) % N];
+
+    // Keep ref in sync with state
+    useEffect(() => { phaseRef.current = phase; }, [phase]);
+
+    // ── Stable advance (uses ref, not phase state) ─────────────────────────────
     const advance = useCallback(() => {
-        if (phase !== 'idle') return;
-        const next = SEQUENCE[seqRef.current % N];
-        seqRef.current++;
-        setIncomingImg(next);
+        if (phaseRef.current !== 'idle') return;
         setPhase('ready');
-    }, [phase]);
+    }, []);
 
-    // After 'ready' renders incoming off-screen → start animation next frame
+    // 'ready' → one rAF → 'animating' (gives browser one frame to paint incoming off-screen)
     useEffect(() => {
         if (phase !== 'ready') return;
         const raf = requestAnimationFrame(() => setPhase('animating'));
         return () => cancelAnimationFrame(raf);
     }, [phase]);
 
-    // After animation → swap state, reset
+    // After animation completes → advance pair index, back to idle
     useEffect(() => {
-        if (phase !== 'animating' || !incomingImg) return;
+        if (phase !== 'animating') return;
         const t = setTimeout(() => {
-            setLeftImg(rightImg);
-            setRightImg(incomingImg);
-            setIncomingImg(null);
+            setPairIdx(prev => prev + 1);
             setPhase('idle');
         }, DURATION);
         return () => clearTimeout(t);
-    }, [phase, rightImg, incomingImg]);
+    }, [phase]);
 
     // ── Mobile: crossfade cycle ────────────────────────────────────────────────
     useEffect(() => {
         if (paused) return;
-        const t = setInterval(() => {
-            setMobileIdx(prev => (prev + 1) % N);
-        }, INTERVAL);
+        const t = setInterval(() => setMobileIdx(prev => (prev + 1) % N), INTERVAL);
         return () => clearInterval(t);
     }, [paused]);
 
-    // ── Desktop auto-advance ───────────────────────────────────────────────────
+    // ── Desktop auto-advance — stable interval (advance never changes) ─────────
     useEffect(() => {
         if (paused) return;
         const t = setInterval(advance, INTERVAL);
         return () => clearInterval(t);
     }, [advance, paused]);
 
-    const isAnimating = phase === 'animating';
-    const easing = `transform ${DURATION}ms cubic-bezier(0.76, 0, 0.24, 1)`;
+    const isAnimating   = phase === 'animating';
+    const showIncoming  = phase === 'ready' || phase === 'animating';
+    const slideEasing   = `transform ${DURATION}ms cubic-bezier(0.76, 0, 0.24, 1)`;
+    const fadeEasing    = `opacity ${DURATION}ms ease-in-out`;
 
     return (
         <section
@@ -121,14 +127,15 @@ export default function HeroSection() {
                     <Label item={leftImg} align="left" />
                 </div>
 
-                {/* ── Right panel → slides to left position on advance ── */}
+                {/* ── Right panel → slides+fades to left position on advance ── */}
                 <div
                     className="absolute top-0 w-1/2 h-full"
                     style={{
                         left: '50%',
                         zIndex: 3,
                         transform: isAnimating ? 'translateX(-100%)' : 'translateX(0)',
-                        transition: isAnimating ? easing : 'none',
+                        opacity: isAnimating ? 0.75 : 1,
+                        transition: isAnimating ? `${slideEasing}, ${fadeEasing}` : 'none',
                     }}
                 >
                     <Image
@@ -152,15 +159,16 @@ export default function HeroSection() {
                     </div>
                 </div>
 
-                {/* ── Incoming panel → slides in from right ── */}
-                {incomingImg && (
+                {/* ── Incoming panel → fades in + slides from right ── */}
+                {showIncoming && (
                     <div
                         className="absolute top-0 w-1/2 h-full"
                         style={{
                             left: '50%',
                             zIndex: 2,
                             transform: isAnimating ? 'translateX(0)' : 'translateX(100%)',
-                            transition: isAnimating ? easing : 'none',
+                            opacity: isAnimating ? 1 : 0,
+                            transition: isAnimating ? `${slideEasing}, ${fadeEasing}` : 'none',
                         }}
                     >
                         <Image
