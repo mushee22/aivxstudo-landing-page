@@ -1,23 +1,37 @@
 "use client"
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 
 function CTAbtnContent({ href, text, className = '', onClick }: { href?: string, text: string, className?: string, onClick?: () => void }) {
+
     const searchParams = useSearchParams();
-    const query = searchParams.toString();
-    const link = href ? `${href}${query ? `?${query}` : ''}` : `https://studio.aivx.in/signup${query ? `?${query}` : ''}`;
+
+    useEffect(() => {
+        if (searchParams) {
+            const campaign_source: any = Object.fromEntries(searchParams.entries());
+            if (Object.keys(campaign_source).length > 0) {
+                localStorage.setItem("campaign_source", JSON.stringify(campaign_source));
+            }
+        }
+    }, [searchParams])
+
+    const handleOnClick = () => {
+        const query = localStorage.getItem("campaign_source")
+        const parsedQuery = query ? JSON.parse(query) : {}
+        const link = href ? `${href}${parsedQuery ? `?${Object.keys(parsedQuery).map(key => `${key}=${parsedQuery[key]}`).join('&')}` : ''}` : `https://studio.aivx.in/signup${parsedQuery ? `?${Object.keys(parsedQuery).map(key => `${key}=${parsedQuery[key]}`).join('&')}` : ''}`;
+        window.open(link, "_blank")
+        onClick?.();
+        //localStorage.removeItem("campaign_source");
+    }
 
     return (
-        <Link
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
+        <button
             className={`${className}`}
-            onClick={onClick}
+            onClick={handleOnClick}
         >
             {text}
-        </Link>
+        </button>
     )
 }
 
@@ -38,4 +52,3 @@ export default function CTAbtn(props: { href?: string, text: string, className?:
         </Suspense>
     )
 }
-    
