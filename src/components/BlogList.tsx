@@ -26,7 +26,11 @@ export default function BlogList({ posts }: BlogListProps) {
                             <article className="group cursor-pointer flex flex-col space-y-6">
 
                                 {/* 1. Cover Image */}
-                                <div className="relative w-full aspect-video rounded-xl bg-neutral-900 border border-white/5">
+                                <div className={`relative w-full rounded-xl bg-neutral-900 border border-white/5`}
+                                    style={{
+                                        aspectRatio: '3/4'
+                                    }}
+                                >
                                     <Image
                                         src={post.image}
                                         alt={post.title}

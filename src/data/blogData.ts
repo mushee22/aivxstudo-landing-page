@@ -32,6 +32,7 @@ export interface BlogPost {
   category: BlogCategory;
   date: string;
   readTime: string;
+  ratio?: string;
   image: string;
   author: string;
   content: string;
@@ -3578,6 +3579,7 @@ Just upload your jewelry image and generate professional visuals.
     excerpt: `
        AI product photography is helping fashion and jewellery brands create studio-quality product images, model shots, and videos without expensive shoots. Learn how it works, why businesses are adopting it, and whether it fits your ecommerce workflow.
         `,
+    ratio: '3/4',
     category: "Case Studies",
     date: "May 08, 2026",
     readTime: "5 min read",
