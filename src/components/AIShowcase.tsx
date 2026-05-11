@@ -19,9 +19,10 @@ const jewelleryCategories = [
 ];
 
 const fashionCategories = [
-    { name: "Men's Topwear", href: '/product-shoot/fashion', image: '/image/fashion/mens-top-wear/shot-1.jpg', alt: "AI men's topwear photography" },
-    { name: "Men's Ethnic Wear", href: '/product-shoot/fashion', image: '/image/fashion/men-ethinic-wear/men-ethinic-wear.jpg', alt: "AI men's ethnic wear photography" },
-    { name: "Women's Ethnic Wear", href: '/product-shoot/fashion', image: '/image/fashion/women-ethinic-wear/women-ethinic-wear.jpg', alt: "AI women's ethnic wear photography" },
+    { name: "Men's Topwear", href: '/product-shoot/fashion/ai-mens-topwear-product-photography', image: '/image/hero/fashion/slider-image-three.webp', alt: "AI men's topwear photography" },
+    { name: "Men's Ethnic Wear", href: '/product-shoot/fashion/ai-mens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-four.webp', alt: "AI men's ethnic wear photography" },
+    { name: "Women's Ethnic Wear", href: '/product-shoot/fashion/ai-womens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-two.webp', alt: "AI women's ethnic wear photography" },
+    { name: "Garment Only", href: '/product-shoot/fashion/ai-garment-only-product-photography', image: '/image/hero/fashion/slider-image-five.webp', alt: "AI garment only photography" },
 ];
 
 const jewelleryVideos = [
@@ -57,8 +58,8 @@ function CategoryCard({ name, href, image, alt, accentHover = 'neon-green' }: {
 }) {
     return (
         <Link href={href} className="group block relative overflow-hidden rounded-2xl bg-dark-surface border border-white/10 hover:border-white/25 transition-all duration-400">
-            <div className="h-52 w-full relative overflow-hidden">
-                <Image src={image} alt={alt} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="aspect-[3/4] w-full relative overflow-hidden">
+                <Image src={image} alt={alt} fill className="object-cover object-center transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent" />
             </div>
             <div className="p-4 bg-dark-surface group-hover:bg-white/5 transition-colors duration-300">
@@ -262,7 +263,7 @@ export default function AIShowcase() {
                                 </Link>
                             }
                         />
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                             {fashionCategories.map(cat => <CategoryCard key={cat.name} {...cat} />)}
                         </div>
                     </div>

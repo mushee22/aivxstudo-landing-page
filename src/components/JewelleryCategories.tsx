@@ -129,26 +129,6 @@ export default function JewelleryCategories() {
                         ))}
                     </div>
                 </div>
-
-                {/* Fashion */}
-                <div>
-                    <div className="flex items-center gap-4 mb-6">
-                        <h3 className="text-lg font-semibold text-white">Fashion</h3>
-                        <div className="h-px flex-1 bg-white/5" />
-                        <Link
-                            href="/product-shoot/fashion"
-                            className="text-sm text-gray-500 hover:text-neon-green transition-colors"
-                        >
-                            View all →
-                        </Link>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        {fashionCategories.map((cat) => (
-                            <CategoryCard key={cat.name} {...cat} />
-                        ))}
-                    </div>
-                </div>
-
             </div>
         </section>
     );

@@ -6,23 +6,30 @@ const fashionCategories = [
     {
         name: "Men's Topwear",
         href: '/product-shoot/fashion/ai-mens-topwear-product-photography',
-        image: '/image/fashion/mens-top-wear/shot-1.jpg',
+        image: '/image/hero/fashion/slider-image-three.webp',
         alt: "AI generated men's topwear product photography",
         description: 'T-shirts, shirts, polos & more'
     },
     {
         name: "Men's Ethnic Wear",
         href: '/product-shoot/fashion/ai-mens-ethnic-wear-product-photography',
-        image: '/image/fashion/men-ethinic-wear/men-ethinic-wear.jpg',
+        image: '/image/hero/fashion/slider-image-four.webp',
         alt: "AI generated men's ethnic wear product photography",
         description: 'Kurtas, sherwanis, dhoti sets'
     },
     {
         name: "Women's Ethnic Wear",
         href: '/product-shoot/fashion/ai-womens-ethnic-wear-product-photography',
-        image: '/image/fashion/women-ethinic-wear/women-ethinic-wear.jpg',
+        image: '/image/hero/fashion/slider-image-two.webp',
         alt: "AI generated women's ethnic wear product photography",
         description: 'Sarees, lehengas, salwar suits'
+    },
+    {
+        name: "Garment Only",
+        href: '/product-shoot/fashion/ai-garment-only-product-photography',
+        image: '/image/hero/fashion/slider-image-five.webp',
+        alt: "AI generated garment only product photography",
+        description: 'Flat-lay, hanger shots, ghost mannequin'
     },
 ];
 
@@ -38,12 +45,12 @@ function CategoryCard({ name, href, image, alt, description }: {
             href={href}
             className="group block relative overflow-hidden rounded-2xl bg-dark-surface border border-white/10 hover:border-neon-green/50 transition-all duration-500"
         >
-            <div className="h-56 w-full relative overflow-hidden">
+            <div className="aspect-[3/4] w-full relative overflow-hidden">
                 <Image
                     src={image}
                     alt={alt}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
@@ -83,7 +90,7 @@ export default function FashionCategories() {
                 </div>
 
                 {/* Categories Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {fashionCategories.map((cat) => (
                         <CategoryCard key={cat.name} {...cat} />
                     ))}

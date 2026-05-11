@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { ArrowRight, ChevronDown, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import CTAbtn from './CTAbtn';
 
 export default function Header() {
@@ -50,6 +50,7 @@ export default function Header() {
         { name: "Men's Topwear", href: '/product-shoot/fashion/ai-mens-topwear-product-photography' },
         { name: "Men's Ethnic Wear", href: '/product-shoot/fashion/ai-mens-ethnic-wear-product-photography' },
         { name: "Women's Ethnic Wear", href: '/product-shoot/fashion/ai-womens-ethnic-wear-product-photography' },
+        { name: "Garment only", href: '/product-shoot/fashion/ai-garment-only-product-photography' },
     ];
 
     return (

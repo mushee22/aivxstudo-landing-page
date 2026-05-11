@@ -3,15 +3,36 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function FashionHero() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    const categories = [
+        { src: '/image/hero/fashion/slider-image-three.webp', alt: "Men's Topwear" },
+        { src: '/image/hero/fashion/slider-image-four.webp', alt: "Men's Ethnic Wear" },
+        { src: '/image/hero/fashion/slider-image-two.webp', alt: "Women's Ethnic Wear" },
+        { src: '/image/hero/fashion/slider-image-five.webp', alt: "Garment Only" },
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsAnimating(true);
+            setTimeout(() => {
+                setCurrentIndex((prev) => (prev + 1) % categories.length);
+                setIsAnimating(false);
+            }, 700);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, [categories.length]);
 
     const handleViewCategories = () => {
         const section = document.getElementById('categories');
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
         }
-    }
+    };
 
     return (
         <section className="relative w-full bg-[#0A0A0A] text-white pt-32 lg:pt-40 pb-16 lg:pb-32 px-6 overflow-hidden">
@@ -56,30 +77,114 @@ export default function FashionHero() {
                     </div>
                 </div>
 
-                {/* Right Visual - Grid of Categories */}
-                <div className="relative h-[350px] sm:h-[450px] md:h-[600px] w-full grid grid-cols-3 gap-4 order-1 lg:order-2">
-                    {[
-                        { src: '/image/fashion/mens-top-wear/shot-1.jpg', alt: "Men's Topwear", delay: '0' },
-                        { src: '/image/fashion/men-ethinic-wear/men-ethinic-wear.jpg', alt: "Men's Ethnic Wear", delay: '100' },
-                        { src: '/image/fashion/women-ethinic-wear/women-ethinic-wear.jpg', alt: "Women's Ethnic Wear", delay: '200' },
-                        // { src: '/image/fashion/mens-top-wear/shot-1.jpg', alt: "Men's Topwear", delay: '0' },
+                {/* Right Visual - Three Column Slider */}
+                <div className="relative h-[350px] sm:h-[450px] md:h-[600px] w-full order-1 lg:order-2 overflow-hidden">
+                    <div className="relative w-full h-full flex gap-3">
 
-                    ].map((item, index) => (
-                        <div
-                            key={index}
-                            className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 group hover:border-neon-green/50 transition-all duration-500"
-                        >
-                            <Image
-                                src={item.src}
-                                alt={item.alt}
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                sizes="(max-width: 768px) 50vw, 33vw"
-                            />
-                            {/* Overlay */}
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
+                        {/* Previous Image (Left - Small) */}
+                        <div className="relative w-20 sm:w-24 md:w-28 rounded-2xl overflow-hidden opacity-40">
+                            {categories.map((item, index) => (
+                                <div
+                                    key={`prev-${index}`}
+                                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                                        index === (currentIndex - 1 + categories.length) % categories.length
+                                            ? 'opacity-100 translate-x-0'
+                                            : index === (currentIndex - 2 + categories.length) % categories.length
+                                            ? 'opacity-0 -translate-x-full'
+                                            : 'opacity-0 translate-x-full'
+                                    }`}
+                                >
+                                    <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10">
+                                        <Image
+                                            src={item.src}
+                                            alt={item.alt}
+                                            fill
+                                            className="object-cover object-center"
+                                            sizes="(max-width: 768px) 15vw, 10vw"
+                                        />
+                                        <div className="absolute inset-0 bg-black/40" />
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                    ))}
+
+                        {/* Current/Main Image (Center - Large) */}
+                        <div className="relative flex-1 rounded-2xl overflow-hidden">
+                            {categories.map((item, index) => (
+                                <div
+                                    key={`main-${index}`}
+                                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                                        index === currentIndex
+                                            ? 'opacity-100 translate-x-0'
+                                            : index === (currentIndex - 1 + categories.length) % categories.length
+                                            ? 'opacity-0 -translate-x-full'
+                                            : 'opacity-0 translate-x-full'
+                                    }`}
+                                >
+                                    <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 group hover:border-neon-green/50 transition-all duration-500">
+                                        <Image
+                                            src={item.src}
+                                            alt={item.alt}
+                                            fill
+                                            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 60vw, 40vw"
+                                            priority={index === 0}
+                                        />
+                                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Next Preview Image (Right - Medium) */}
+                        <div className="relative w-28 sm:w-32 md:w-36 rounded-2xl overflow-hidden opacity-50">
+                            {categories.map((item, index) => (
+                                <div
+                                    key={`next-${index}`}
+                                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                                        index === (currentIndex + 1) % categories.length
+                                            ? 'opacity-100 translate-x-0'
+                                            : index === currentIndex
+                                            ? 'opacity-0 -translate-x-full'
+                                            : 'opacity-0 translate-x-full'
+                                    }`}
+                                >
+                                    <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10">
+                                        <Image
+                                            src={item.src}
+                                            alt={item.alt}
+                                            fill
+                                            className="object-cover object-center"
+                                            sizes="(max-width: 768px) 20vw, 15vw"
+                                        />
+                                        <div className="absolute inset-0 bg-black/30" />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Slider Indicators */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+                        {categories.map((_, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => {
+                                    if (!isAnimating) {
+                                        setIsAnimating(true);
+                                        setTimeout(() => {
+                                            setCurrentIndex(idx);
+                                            setIsAnimating(false);
+                                        }, 700);
+                                    }
+                                }}
+                                className={`h-2 rounded-full transition-all duration-300 ${
+                                    currentIndex === idx ? 'w-8 bg-neon-green' : 'w-2 bg-white/30'
+                                }`}
+                                aria-label={`Slide ${idx + 1}`}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
 

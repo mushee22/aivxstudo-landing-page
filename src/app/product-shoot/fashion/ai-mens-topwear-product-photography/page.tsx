@@ -1,13 +1,12 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
 import FashionCategoryHero from '@/components/FashionCategoryHero';
 import FashionCategoryOverview from '@/components/FashionCategoryOverview';
-import JewelleryCategoryThemes from '@/components/JewelleryCategoryThemes';
 import JewelleryCategoryAspectRatios from '@/components/JewelleryCategoryAspectRatios';
 import JewelleryCategoryEcommerce from '@/components/JewelleryCategoryEcommerce';
 import JewelleryCategoryFAQ from '@/components/JewelleryCategoryFAQ';
 import JewelleryCategoryFinalCTA from '@/components/JewelleryCategoryFinalCTA';
 import JewelleryCategorySEO from '@/components/JewelleryCategorySEO';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: "AI Men's Topwear Product Photography | AIVX Studio",
@@ -61,7 +60,7 @@ export default function MensTopwearPage() {
         <main className="min-h-screen bg-dark-bg">
             <FashionCategoryHero
                 category={category}
-                backgroundImage="/image/fashion/mens-top-wear/shot-1.jpg"
+                backgroundImage="/image/hero/fashion/slider-image-three.webp"
             />
 
             <JewelleryCategorySEO title="Why Men's Topwear Product Photography Matters for Ecommerce">

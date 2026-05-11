@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Palette } from 'lucide-react';
+import CTAbtn from './CTAbtn';
 
 interface FashionCategoryHeroProps {
     category: string;
@@ -41,15 +42,13 @@ export default function FashionCategoryHero({ category, backgroundImage }: Fashi
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
-                            <Link
+                            <CTAbtn
                                 href="https://studio.aivx.in/login"
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 className="flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-200 transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
                             >
                                 Get Started
                                 <ArrowRight size={20} />
-                            </Link>
+                            </CTAbtn>
                             <button
                                 onClick={() => {
                                     const gallerySection = document.getElementById('theme-gallery');

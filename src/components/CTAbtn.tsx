@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect } from "react";
 
-function CTAbtnContent({ href, text, className = '', onClick }: { href?: string, text: string, className?: string, onClick?: () => void }) {
+function CTAbtnContent({ href, text, className = '', onClick, children }: { href?: string, text?: string, className?: string, onClick?: () => void, children?: React.ReactNode }) {
 
     const searchParams = useSearchParams();
 
@@ -30,12 +30,12 @@ function CTAbtnContent({ href, text, className = '', onClick }: { href?: string,
             className={`${className}`}
             onClick={handleOnClick}
         >
-            {text}
+            {children || text}
         </button>
     )
 }
 
-export default function CTAbtn(props: { href?: string, text: string, className?: string, onClick?: () => void }) {
+export default function CTAbtn(props: { href?: string, text?: string, className?: string, onClick?: () => void, children?: React.ReactNode }) {
     return (
         <Suspense fallback={
             <Link
@@ -45,7 +45,7 @@ export default function CTAbtn(props: { href?: string, text: string, className?:
                 className={props.className}
                 onClick={props.onClick}
             >
-                {props.text}
+                {props.children || props.text}
             </Link>
         }>
             <CTAbtnContent {...props} />

@@ -1,13 +1,12 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
 import FashionCategoryHero from '@/components/FashionCategoryHero';
 import FashionCategoryOverview from '@/components/FashionCategoryOverview';
-import JewelleryCategoryThemes from '@/components/JewelleryCategoryThemes';
 import JewelleryCategoryAspectRatios from '@/components/JewelleryCategoryAspectRatios';
 import JewelleryCategoryEcommerce from '@/components/JewelleryCategoryEcommerce';
 import JewelleryCategoryFAQ from '@/components/JewelleryCategoryFAQ';
 import JewelleryCategoryFinalCTA from '@/components/JewelleryCategoryFinalCTA';
 import JewelleryCategorySEO from '@/components/JewelleryCategorySEO';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: "AI Women's Ethnic Wear Product Photography | AIVX Studio",
@@ -61,7 +60,7 @@ export default function WomensEthnicWearPage() {
         <main className="min-h-screen bg-dark-bg">
             <FashionCategoryHero
                 category={category}
-                backgroundImage="/image/fashion/women-ethinic-wear/women-ethinic-wear.jpg"
+                backgroundImage="/image/hero/fashion/slider-image-two.webp"
             />
 
             <JewelleryCategorySEO title="Why Women's Ethnic Wear Product Photography Matters for Ecommerce">

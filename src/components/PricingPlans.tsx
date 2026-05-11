@@ -11,9 +11,12 @@ const plans = [
         features: [
             "Standard credits included",
             "(No bonus credits)",
-            "52 Credits / Image Gen",
-            "32 Credits / Regeneration",
-            "114 Credits / Video Gen"
+            "Image Gen 4K: 52 Credits",
+            "Image Gen 2K: 32 Credits",
+            "Regeneration 4K: 32 Credits",
+            "Regeneration 2K: 22 Credits",
+            "Video Gen: Starting at 62 Credits",
+            "(Varies by model & duration)"
         ],
         cta: "Get Started",
         href: "https://studio.aivx.in/login",
@@ -27,9 +30,12 @@ const plans = [
         features: [
             "Includes 5,000 base credits",
             "500 bonus credits (First-time purchase only)",
-            "52 Credits / Image Gen",
-            "32 Credits / Regeneration",
-            "114 Credits / Video Gen"
+            "Image Gen 4K: 52 Credits",
+            "Image Gen 2K: 32 Credits",
+            "Regeneration 4K: 32 Credits",
+            "Regeneration 2K: 22 Credits",
+            "Video Gen: Starting at 62 Credits",
+            "(Varies by model & duration)"
         ],
         cta: "Get Started",
         href: "https://studio.aivx.in/login",
@@ -43,9 +49,12 @@ const plans = [
         features: [
             "Includes 10,000 base credits",
             "2,000 bonus credits (First-time purchase only)",
-            "52 Credits / Image Gen",
-            "32 Credits / Regeneration",
-            "114 Credits / Video Gen",
+            "Image Gen 4K: 52 Credits",
+            "Image Gen 2K: 32 Credits",
+            "Regeneration 4K: 32 Credits",
+            "Regeneration 2K: 22 Credits",
+            "Video Gen: Starting at 62 Credits",
+            "(Varies by model & duration)",
             "All jewellery themes",
             "Priority support"
         ],
