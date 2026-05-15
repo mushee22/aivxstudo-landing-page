@@ -228,7 +228,7 @@ export default function AIApparelHero() {
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
                         <CTAbtn
-                            text="Try for free"
+                            text="Try it out"
                             className="w-full sm:w-auto text-center bg-neon-green text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-1 transform duration-200"
                         />
                         <button

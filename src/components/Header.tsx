@@ -16,6 +16,7 @@ export default function Header() {
     // Mobile accordion states
     const [isMobileProductShootOpen, setIsMobileProductShootOpen] = useState(false);
     const [isMobileCompanyOpen, setIsMobileCompanyOpen] = useState(false);
+    const [isFree, setIsFree] = useState(false);
 
     const pathname = usePathname();
 
@@ -27,6 +28,14 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        if (pathname.includes('ai-jewellery-product-photography') || pathname.includes('ai-apparel-photography')) {
+            setIsFree(false)
+        } else {
+            setIsFree(true)
+        }
+    }, [pathname])
 
     // Lock body scroll when mobile menu is open
     useEffect(() => {
@@ -203,7 +212,7 @@ export default function Header() {
                         />
 
                         <CTAbtn
-                            text="Try for free"
+                            text={isFree ? "Try it free" : "Try it out"}
                             className='bg-neon-green text-black px-6 py-2.5 rounded-full text-sm font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-0.5'
                         />
                         {/* <Link
@@ -373,7 +382,7 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(false)}
                     />
                     <CTAbtn
-                        text="Try for free"
+                        text={isFree ? "Try it free" : "Try it out"}
                         className='flex-1 flex items-center justify-center bg-white text-black py-3.5 rounded-xl text-lg font-bold hover:bg-neutral-200 transition-colors'
                         onClick={() => setIsMobileMenuOpen(false)}
                     />
