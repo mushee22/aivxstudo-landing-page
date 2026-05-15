@@ -227,16 +227,16 @@ export default function AIApparelHero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
-                        <CTAbtn
+                        {/* <CTAbtn
                             text="Try it out"
                             className="w-full sm:w-auto text-center bg-neon-green text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-1 transform duration-200"
-                        />
+                        /> */}
                         <button
                             onClick={() => {
                                 const element = document.getElementById('plans');
                                 element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                             }}
-                            className="w-full sm:w-auto text-center px-8 py-4 rounded-full text-lg font-bold text-white border border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all hover:-translate-y-1"
+                            className="w-full sm:w-auto text-center bg-neon-green text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-1 transform duration-200"
                         >
                             Get Pricing
                         </button>
