@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/logo.jpg',
   },
+  other: {
+    'facebook-domain-verification': 'r951zgn7b009eko58bkc9626jmq54a',
+  },
   robots: {
     index: true,
     follow: true,
