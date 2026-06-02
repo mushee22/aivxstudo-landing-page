@@ -3135,16 +3135,6 @@ Take one clear phone photo. Upload to AIVX. Generate better visuals.
 <p>
 That is why many modern jewellery brands now choose faster AI workflows instead of expensive traditional shoots.
 </p>
-
-<h2>Suggested Internal Links</h2>
-
-<ul>
-  <li><a href="#">AI Jewelry Photography</a></li>
-  <li><a href="#">Jewelry Editing Solutions</a></li>
-  <li><a href="#">Pricing Plans</a></li>
-  <li><a href="#">AI Fashion Photography</a></li>
-  <li><a href="#">Contact AIVX</a></li>
-</ul>
  `
   },
   {
@@ -5301,8 +5291,6 @@ The important step is testing your own catalog before committing.
 
 <p>The difference between a flat product image and an on-model, styled AI photoshoot is the difference between showing a customer what your product is and showing them what it looks like when worn, styled, and presented well. That difference shows up in conversion rates, return rates, and how long someone stays on your product page.</p>
 
-<p><strong>Internal Link:</strong> <a href="/blog/ai-product-photography-with-models">See why on-model images convert better for fashion and jewellery</a></p>
-
 <h2>What You Need Before You Start</h2>
 
 <h3>A Clean Product Photo</h3>
@@ -5324,7 +5312,6 @@ The important step is testing your own catalog before committing.
 
 <p>This distinction matters most for Indian sellers. Kundan, polki, temple sets, meenakari, and antique gold all have surface characteristics that require category-specific training to render correctly. Generic tools miss these. AIVX Studio is built on them.</p>
 
-<p><strong>Internal Link:</strong> <a href="/blog/best-ai-platforms-fashion-jewellery-photoshoot-editing">Compare AI platforms for fashion and jewellery photoshoot editing</a></p>
 
 <h2>Step-by-Step: Creating Your AI Photoshoot</h2>
 
@@ -5347,8 +5334,6 @@ The important step is testing your own catalog before committing.
 <p>Log in to AIVX Studio and upload your product image. The platform accepts standard JPG and PNG files. There is no minimum resolution requirement, but higher-resolution inputs produce sharper outputs, especially for jewellery where detail matters at close range.</p>
 
 <p>At this stage, the AI reads your product, identifies the category, the surface characteristics, and the details it needs to preserve in the output.</p>
-
-<p><strong>Internal Link:</strong> <a href="https://aivx.in">Start your free trial on AIVX Studio</a></p>
 
 <h3>Step 3 - Choose Your Output Type</h3>
 
@@ -5405,8 +5390,6 @@ The important step is testing your own catalog before committing.
 </ul>
 
 <p>This approach helps you build a complete content stack from a single upload without running separate shoots for different channels.</p>
-
-<p><strong>Internal Link:</strong> <a href="/blog/how-ai-improves-efficiency-in-fashion-photoshoots">How AI improves efficiency across your full fashion photo workflow</a></p>
 
 <h2>Specific Guidance for Indian Jewellery Categories</h2>
 
