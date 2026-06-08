@@ -5522,8 +5522,6 @@ The important step is testing your own catalog before committing.
 
 <p>Jewellery varies enormously across markets. Indian kundan and polki, Middle Eastern gold work, East Asian jade settings, European fine jewellery, and contemporary designer pieces all have distinct surface characteristics. A platform trained broadly on jewellery categories handles this complexity better than one trained on Western fine jewellery alone.</p>
 
-<p><strong>Internal Link:</strong> <a href="/features">How AIVX Studio handles jewellery photography across categories</a></p>
-
 <h2>What to Look for in a Jewellery Editing Platform</h2>
 
 <h3>Surface-Specific Editing Accuracy</h3>
