@@ -45,8 +45,8 @@ export default function BlogList({ posts }: BlogListProps) {
 
                                     {/* 2. Meta Row */}
                                     <div className="flex items-center text-xs font-medium text-neutral-500 uppercase tracking-wider space-x-2">
-                                        <span className="text-neon-green">{post.category}</span>
-                                        <span>·</span>
+                                        {/* <span className="text-neon-green">{post.category}</span> */}
+                                        {/* <span>·</span> */}
                                         <span>{post.date}</span>
                                     </div>
 
