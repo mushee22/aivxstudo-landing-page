@@ -50,6 +50,7 @@ export default function PricingIndividual() {
                                     </div>
                                     <div className="p-4 bg-white/[0.02] text-center">
                                         <div className="text-2xl font-bold text-white mb-1">32</div>
+                                        <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">(N/A for Jewellery)</div>
                                         <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Credits</div>
                                         <span className="inline-block px-2 py-0.5 rounded-full bg-white/10 text-gray-300 text-[10px] font-bold">2K</span>
                                     </div>
@@ -164,6 +165,7 @@ export default function PricingIndividual() {
                                     </div>
                                     <div className="p-4 bg-white/[0.02] text-center">
                                         <div className="text-2xl font-bold text-white mb-1">22</div>
+                                        <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">(N/A for Jewellery)</div>
                                         <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Credits</div>
                                         <span className="inline-block px-2 py-0.5 rounded-full bg-white/10 text-gray-300 text-[10px] font-bold">2K</span>
                                     </div>
