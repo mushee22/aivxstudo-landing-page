@@ -13,9 +13,9 @@ export default function BlogDetailHero({ post }: BlogDetailHeroProps) {
             <div className="max-w-4xl mx-auto space-y-8 text-center">
 
                 {/* Category */}
-                <span className="text-neon-green text-sm font-bold tracking-widest uppercase">
+                {/* <span className="text-neon-green text-sm font-bold tracking-widest uppercase">
                     {post.category}
-                </span>
+                </span> */}
 
                 {/* Title */}
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
