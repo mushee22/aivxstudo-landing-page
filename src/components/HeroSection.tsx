@@ -242,7 +242,7 @@ export default function HeroSection() {
                     </p>
 
                     <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
-                        Create product photos, AI model images, and lookbooks without booking a studio — for fashion brands and jewellery businesses.
+                        Create product photos, AI model images, and lookbooks without booking a studio for fashion brands and jewellery businesses.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
@@ -259,7 +259,7 @@ export default function HeroSection() {
                     </div>
 
                     <p className="text-sm text-gray-400 max-w-lg leading-relaxed">
-                        From sarees and kurtas to rings and necklaces — generate clean, realistic product images ready for your website, ads, and online marketplaces.
+                        From sarees and kurtas to rings and necklaces generate clean, realistic product images ready for your website, ads, and online marketplaces.
                     </p>
 
                     <div className="flex items-center gap-3 text-sm text-gray-400">
