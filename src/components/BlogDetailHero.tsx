@@ -28,16 +28,19 @@ export default function BlogDetailHero({ post }: BlogDetailHeroProps) {
                 </p>
 
                 {/* Cover Image */}
-                <div className="relative w-full aspect-3/4  rounded-2xl overflow-hidden mt-12 bg-neutral-900 border border-white/5">
-                    <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        sizes="(max-width: 896px) 100vw, 896px"
-                        className="object-cover object-center"
-                        priority
-                    />
-                </div>
+                {post.image && (
+                    <div className="relative w-full aspect-3/4 rounded-2xl overflow-hidden mt-12 bg-neutral-900 border border-white/5">
+                        <Image
+                            src={post.image}
+                            alt={post.title}
+                            fill
+                            sizes="(max-width: 896px) 100vw, 896px"
+                            className="object-cover object-center"
+                            priority
+                            unoptimized
+                        />
+                    </div>
+                )}
 
             </div>
         </section>

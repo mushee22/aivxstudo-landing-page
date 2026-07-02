@@ -1,6 +1,7 @@
 import HomeLatestArticles from '@/components/HomeLatestArticles';
 import BlogListWrapper from '@/components/BlogListWrapper';
 import BlogCTA from '@/components/BlogCTA';
+import { fetchAllBlogs } from '@/lib/strapi';
 
 export const metadata = {
     title: 'AI Jewellery Product Photography Blog & Insights | AIVX Studio',
@@ -34,11 +35,13 @@ export const metadata = {
     },
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+    const posts = await fetchAllBlogs();
+
     return (
         <main className="bg-black min-h-screen">
             {/* <HomeLatestArticles showViewAllLink={false} /> */}
-            <BlogListWrapper />
+            <BlogListWrapper initialPosts={posts} />
             <BlogCTA />
         </main>
     );

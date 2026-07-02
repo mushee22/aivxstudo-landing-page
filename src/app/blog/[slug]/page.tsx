@@ -1,4 +1,4 @@
-import { blogPosts } from '@/data/blogData';
+import { fetchAllBlogs, fetchBlogBySlug } from '@/lib/strapi';
 import BlogDetailHero from '@/components/BlogDetailHero';
 import BlogMeta from '@/components/BlogMeta';
 import BlogContent from '@/components/BlogContent';
@@ -14,7 +14,8 @@ interface BlogDetailPageProps {
 
 // 1. Generate Static Params at Build Time
 export async function generateStaticParams() {
-    return blogPosts.map((post) => ({
+    const posts = await fetchAllBlogs();
+    return posts.map((post) => ({
         slug: post.slug,
     }));
 }
@@ -22,7 +23,7 @@ export async function generateStaticParams() {
 // 2. Generate Metadata
 export async function generateMetadata({ params }: BlogDetailPageProps): Promise<Metadata> {
     const { slug } = await params;
-    const post = blogPosts.find((p) => p.slug === slug);
+    const post = await fetchBlogBySlug(slug);
 
     if (!post) {
         return {
@@ -66,7 +67,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
 // 3. Page Component
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
     const { slug } = await params;
-    const post = blogPosts.find((p) => p.slug === slug);
+    const post = await fetchBlogBySlug(slug);
 
     if (!post) {
         notFound();

@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next';
-import { blogPosts } from '@/data/blogData';
+import { fetchAllBlogs } from '@/lib/strapi';
 import { faqs } from '@/data/faqs';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://aivx.in';
 
     // 1. Static Routes
@@ -43,7 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     // 3. Blog Posts
-    const blogRoutes = blogPosts.map((post) => ({
+    const posts = await fetchAllBlogs();
+    const blogRoutes = posts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.date), // Using post date if valid, else current
         changeFrequency: 'monthly' as const,
