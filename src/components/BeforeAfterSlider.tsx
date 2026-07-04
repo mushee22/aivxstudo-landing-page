@@ -42,7 +42,7 @@ function BeforeAfterSlider({ before, after, title, alt }: { before: string; afte
     return (
         <div
             ref={containerRef}
-            className="relative w-full h-[500px] md:h-[600px] rounded-xl overflow-hidden cursor-ew-resize select-none group"
+            className="relative w-full aspect-[3/4] rounded-xl overflow-hidden cursor-ew-resize select-none group"
             onMouseDown={handleInteractionStart}
             onTouchStart={handleInteractionStart}
         >

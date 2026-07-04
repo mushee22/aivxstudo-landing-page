@@ -18,6 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/team',
         '/location',
         '/product-shoot/jewellery',
+        '/product-shoot/accessories',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
@@ -26,7 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // 2. Jewellery Categories
-    const categories = [
+    const jewelleryCategories = [
         'ai-ring-product-photography',
         'ai-earring-product-photography',
         'ai-pendant-set-product-photography',
@@ -35,8 +36,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'ai-bangle-product-photography',
     ];
 
-    const categoryRoutes = categories.map((category) => ({
+    const jewelleryCategoryRoutes = jewelleryCategories.map((category) => ({
         url: `${baseUrl}/product-shoot/jewellery/${category}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+    }));
+
+    // 2b. Accessories Categories
+    const accessoriesCategories = [
+        'ai-bag-product-photography',
+        'ai-watch-product-photography',
+        'ai-perfume-product-photography',
+        'ai-cosmetics-product-photography',
+    ];
+
+    const accessoriesCategoryRoutes = accessoriesCategories.map((category) => ({
+        url: `${baseUrl}/product-shoot/accessories/${category}`,
         lastModified: new Date(),
         changeFrequency: 'weekly' as const,
         priority: 0.8,
@@ -61,7 +77,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return [
         ...staticRoutes,
-        ...categoryRoutes,
+        ...jewelleryCategoryRoutes,
+        ...accessoriesCategoryRoutes,
         ...blogRoutes,
         ...faqRoutes,
     ];

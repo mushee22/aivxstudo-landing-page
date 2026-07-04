@@ -30,7 +30,11 @@ export default function Header() {
     }, []);
 
     useEffect(() => {
-        if (pathname.includes('ai-jewellery-product-photography') || pathname.includes('ai-apparel-photography')) {
+        if (
+            pathname.includes('ai-jewellery-product-photography') ||
+            pathname.includes('ai-apparel-photography') ||
+            pathname.includes('ai-accessories-photography')
+        ) {
             setIsFree(false)
         } else {
             setIsFree(true)
@@ -60,6 +64,13 @@ export default function Header() {
         { name: "Men's Ethnic Wear", href: '/product-shoot/fashion/ai-mens-ethnic-wear-product-photography' },
         { name: "Women's Ethnic Wear", href: '/product-shoot/fashion/ai-womens-ethnic-wear-product-photography' },
         { name: "Garment only", href: '/product-shoot/fashion/ai-garment-only-product-photography' },
+    ];
+
+    const accessoriesCategories = [
+        { name: 'Bag', href: '/product-shoot/accessories/ai-bag-product-photography' },
+        { name: 'Watch', href: '/product-shoot/accessories/ai-watch-product-photography' },
+        { name: 'Perfume', href: '/product-shoot/accessories/ai-perfume-product-photography' },
+        { name: 'Cosmetics', href: '/product-shoot/accessories/ai-cosmetics-product-photography' },
     ];
 
     return (
@@ -115,7 +126,7 @@ export default function Header() {
 
                             {/* Mega Menu Panel */}
                             <div
-                                className={`absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[780px] transition-all duration-300 transform origin-top ${isProductShootOpen
+                                className={`absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[90vw] max-w-5xl transition-all duration-300 transform origin-top ${isProductShootOpen
                                     ? 'opacity-100 visible translate-y-0 scale-100'
                                     : 'opacity-0 invisible translate-y-4 scale-95 pointer-events-none'
                                     }`}
@@ -129,8 +140,8 @@ export default function Header() {
                                         </Link>
                                     </div>
 
-                                    {/* Two-column categories */}
-                                    <div className="grid grid-cols-2 gap-6">
+                                    {/* Three-column categories */}
+                                    <div className="grid grid-cols-3 gap-6">
 
                                         {/* Jewellery Column */}
                                         <div>
@@ -170,6 +181,27 @@ export default function Header() {
                                                 ))}
                                             </div>
                                             <Link href="/product-shoot/fashion" className="mt-3 ml-3 text-xs text-neutral-500 hover:text-neon-green transition-colors flex items-center gap-1">
+                                                View all <ArrowRight size={10} />
+                                            </Link>
+                                        </div>
+
+                                        {/* Accessories Column */}
+                                        <div className="border-l border-white/5 pl-6">
+                                            <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-3">👜 Accessories</p>
+                                            <div className="grid grid-cols-2 gap-1">
+                                                {accessoriesCategories.map((category) => (
+                                                    <Link
+                                                        key={category.name}
+                                                        href={category.href}
+                                                        className="block px-3 py-2 rounded-lg hover:bg-white/5 transition-colors group/item"
+                                                    >
+                                                        <span className="block text-sm font-medium text-neutral-300 group-hover/item:text-white transition-colors">
+                                                            {category.name}
+                                                        </span>
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                            <Link href="/product-shoot/accessories" className="mt-3 ml-3 text-xs text-neutral-500 hover:text-neon-green transition-colors flex items-center gap-1">
                                                 View all <ArrowRight size={10} />
                                             </Link>
                                         </div>
@@ -300,6 +332,19 @@ export default function Header() {
                                     {/* Fashion Section */}
                                     <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-1 mt-4">👗 Fashion</p>
                                     {fashionCategories.map((category) => (
+                                        <Link
+                                            key={category.name}
+                                            href={category.href}
+                                            className="text-neutral-400 hover:text-neon-green text-lg transition-colors py-1"
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            {category.name}
+                                        </Link>
+                                    ))}
+
+                                    {/* Accessories Section */}
+                                    <p className="text-[10px] font-bold text-neutral-500 uppercase tracking-widest mb-1 mt-4">👜 Accessories</p>
+                                    {accessoriesCategories.map((category) => (
                                         <Link
                                             key={category.name}
                                             href={category.href}

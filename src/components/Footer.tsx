@@ -122,9 +122,37 @@ export default function Footer() {
                                 </Link>
                             </li>
                         </ul>
+                        <div className="space-y-8">
+                            <h4 className="text-xs font-medium text-white tracking-[0.2em] uppercase">Accessories</h4>
+                            <ul className="space-y-4 font-sans">
+                                <li>
+                                    <Link href="/product-shoot/accessories/ai-bag-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                        Bag Photography
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/product-shoot/accessories/ai-watch-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                        Watch Photography
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/product-shoot/accessories/ai-perfume-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                        Perfume Photography
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/product-shoot/accessories/ai-cosmetics-product-photography" className="text-neutral-400 hover:text-white transition-colors text-sm">
+                                        Cosmetics Photography
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
-                    {/* Column 5: Company */}
+                    {/* Column 5: Accessories */}
+
+
+                    {/* Column 6: Company */}
                     <div className="space-y-8">
                         <h4 className="text-xs font-medium text-white tracking-[0.2em] uppercase">Company</h4>
                         <ul className="space-y-4">

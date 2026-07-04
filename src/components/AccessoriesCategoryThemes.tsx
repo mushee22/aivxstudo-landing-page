@@ -1,0 +1,99 @@
+'use client';
+
+import { useRef } from 'react';
+import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+interface AccessoriesCategoryThemesProps {
+    category: string;
+    themes?: { name: string; image: string }[];
+}
+
+export default function AccessoriesCategoryThemes({ category, themes: customThemes }: AccessoriesCategoryThemesProps) {
+    const displayCategory = category.charAt(0).toUpperCase() + category.slice(1);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+    const defaultThemes = [
+        { name: "Studio Light", image: "/image/hero/accessories/bag-3.jpg" },
+        { name: "Luxury Slate", image: "/image/hero/accessories/watch-4.jpg" },
+        { name: "Reflective Water", image: "/image/hero/accessories/perfume-4.jpg" },
+        { name: "Zen Stone & Moss", image: "/image/hero/accessories/perfume-2.jpg" },
+        { name: "Editorial Cyclorama", image: "/image/hero/accessories/watch-2.jpg" },
+        { name: "Burgundy Editorial Still Life", image: "/image/hero/accessories/bag-2.jpg" },
+    ];
+
+    const themes = customThemes || defaultThemes;
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = 400;
+            const newScrollLeft = scrollContainerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+            scrollContainerRef.current.scrollTo({
+                left: newScrollLeft,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    return (
+        <section id="theme-gallery" className="py-24 bg-dark-bg border-b border-white/5 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                        Themes for {displayCategory}
+                    </h2>
+                    <p className="text-gray-400 text-lg">
+                        Choose from a wide range of studio and lifestyle themes.
+                    </p>
+                </div>
+
+                {/* Navigation Buttons */}
+                <div className="flex items-center gap-4">
+                    <button
+                        onClick={() => scroll('left')}
+                        className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/30 transition-all"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button
+                        onClick={() => scroll('right')}
+                        className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white/10 hover:border-white/30 transition-all"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
+                </div>
+            </div>
+
+            {/* Horizontal Scroll Container */}
+            <div
+                ref={scrollContainerRef}
+                className="flex overflow-x-auto gap-6 px-6 pb-8 snap-x snap-mandatory scrollbar-hide"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+                {themes.map((theme, index) => (
+                    <div
+                        key={index}
+                        className="min-w-[300px] md:min-w-[400px] aspect-[4/5] relative rounded-3xl overflow-hidden group snap-center cursor-pointer border border-white/5"
+                    >
+                        <Image
+                            src={theme.image}
+                            alt={`${theme.name} theme example`}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+
+                        {/* Content */}
+                        <div className="absolute bottom-0 left-0 w-full p-8 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 className="text-2xl font-bold text-white mb-2">
+                                {theme.name}
+                            </h3>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+}
