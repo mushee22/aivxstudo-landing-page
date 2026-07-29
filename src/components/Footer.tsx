@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Linkedin, Instagram, Youtube, MapPin, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
@@ -25,16 +26,24 @@ export default function Footer() {
                                 </span>
                             </div>
                         </Link>
-                        <div>
+                        <div className="space-y-6">
                             <p className="text-neutral-500 text-sm leading-relaxed font-light max-w-xs">
                                 AI-powered studio for jewellery and fashion product photography, built for ecommerce brands.
                             </p>
-                            <br />
                             <p className="text-sm text-neutral-500 font-light leading-relaxed">
                                 2nd Floor UL Cyberpark<br />
                                 Nellikode, Kozhikode<br />
                                 Kerala, 673016
                             </p>
+                            <div className="pt-2">
+                                <Image 
+                                    src="/google-partner.png" 
+                                    alt="Google Partner" 
+                                    width={150}
+                                    height={150}
+                                    className="h-16 w-auto object-contain rounded" 
+                                />
+                            </div>
                         </div>
                     </div>
 
