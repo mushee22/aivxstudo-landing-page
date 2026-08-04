@@ -43,7 +43,6 @@ export default function AIAccessoriesHero() {
     const [pairIdx, setPairIdx] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const [mobileIdx, setMobileIdx] = useState(0);
-    const [paused, setPaused] = useState(false);
 
     // Sync ref — updated synchronously to prevent race conditions
     const animatingRef = useRef(false);
@@ -70,19 +69,17 @@ export default function AIAccessoriesHero() {
         }, DURATION);
     }, []);
 
-    // Auto-advance desktop
+    // Auto-advance desktop — continuous interval every 5000ms
     useEffect(() => {
-        if (paused) return;
         const t = setInterval(advance, INTERVAL);
         return () => clearInterval(t);
-    }, [advance, paused]);
+    }, [advance]);
 
     // Mobile crossfade cycle
     useEffect(() => {
-        if (paused) return;
         const t = setInterval(() => setMobileIdx(prev => (prev + 1) % N), INTERVAL);
         return () => clearInterval(t);
-    }, [paused]);
+    }, []);
 
     // Easing strings
     const slide = `transform ${DURATION}ms cubic-bezier(0.76, 0, 0.24, 1)`;
@@ -92,8 +89,6 @@ export default function AIAccessoriesHero() {
     return (
         <section
             className="relative w-full min-h-screen flex items-center overflow-hidden bg-dark-bg"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
         >
             {/* ══════════════ DESKTOP LAYOUT ══════════════ */}
             <div className="absolute inset-0 z-0 hidden md:flex">
@@ -193,7 +188,7 @@ export default function AIAccessoriesHero() {
                     >
                         <Image
                             src={slide.src}
-                            alt="AI Accessories product photography"
+                            alt="AI accessories product photography"
                             fill
                             className={`object-cover ${slide.pos}`}
                             sizes="100vw"
@@ -225,11 +220,11 @@ export default function AIAccessoriesHero() {
                     </h1>
 
                     <p className="sr-only">
-                        Create premium accessories product photos without a studio. Generate AI-powered images for bags, watches, perfume, cosmetics and more.
+                        Create product photos, AI model images, and lookbooks without booking a studio. Built for accessories brands.
                     </p>
 
                     <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
-                        Create premium accessories product photos without a studio AI-powered images for bags, watches, perfume, and all your style items.
+                        Create product photos, AI model images, and lookbooks without booking a studio. Built for handbags, watches, cosmetics, and perfume brands.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
@@ -245,18 +240,18 @@ export default function AIAccessoriesHero() {
                     </div>
 
                     <p className="text-sm text-gray-400 max-w-lg leading-relaxed">
-                        From handbags and luxury watches to perfumes generate clean, realistic product images ready for your website, ads, and online marketplaces.
+                        From luxury handbags and watches to perfume bottles and cosmetic sets — generate clean, realistic product images ready for your website, ads, and online marketplaces.
                     </p>
 
                     <div className="flex items-center gap-3 text-sm text-gray-400">
                         <div className="flex -space-x-2">
                             {SEQUENCE.slice(0, 3).map((img, i) => (
                                 <div key={i} className="w-7 h-7 rounded-full border-2 border-dark-bg overflow-hidden relative">
-                                    <Image src={img.src} alt="Accessory Brand" fill className="object-cover" sizes="28px" />
+                                    <Image src={img.src} alt="Brand" fill className="object-cover" sizes="28px" />
                                 </div>
                             ))}
                         </div>
-                        <span>Trusted by <strong className="text-white">1000+</strong> accessory brands</span>
+                        <span>Trusted by <strong className="text-white">100+</strong> accessories brands</span>
                     </div>
                 </div>
             </div>
@@ -266,7 +261,7 @@ export default function AIAccessoriesHero() {
                 {SEQUENCE.map((_, i) => (
                     <button
                         key={i}
-                        onClick={() => { setMobileIdx(i); setPaused(true); setTimeout(() => setPaused(false), 6000); }}
+                        onClick={() => { setMobileIdx(i); }}
                         aria-label={`Slide ${i + 1}`}
                         className="rounded-full transition-all duration-300"
                         style={{

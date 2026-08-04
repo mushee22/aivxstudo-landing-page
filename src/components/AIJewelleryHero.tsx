@@ -7,14 +7,12 @@ import CTAbtn from './CTAbtn';
 
 // ─── Jewellery-only sequence ──────────────────────────────────────────────────
 const SEQUENCE = [
-    { src: '/image/hero/jewellery/slider-image-one.webp', pos: 'object-center' },
-    { src: '/image/hero/jewellery/slider-image-two.webp', pos: 'object-center' },
-    { src: '/image/hero/jewellery/slider-image-three.webp', pos: 'object-center' },
-    { src: '/theme/ring/cream-theme.jpg', pos: 'object-center' },
-    { src: '/theme/earring/rose-amber-theme.png', pos: 'object-center' },
-    { src: '/theme/pendant-set/navy-blue-theme.png', pos: 'object-center' },
-    { src: '/theme/necklace/white-theme.png', pos: 'object-center' },
-    // { src: '/theme/bangle/brown-theme.png', pos: 'object-center' },
+    { src: '/image/hero/jewellery/slider-image-new-one.webp', pos: 'object-center' },
+    { src: '/image/hero/jewellery/slider-image-new-two.webp', pos: 'object-center' },
+    { src: '/image/hero/jewellery/slider-image-new-three.webp', pos: 'object-center' },
+    { src: '/image/hero/jewellery/slider-image-new-four.webp', pos: 'object-center' },
+    { src: '/image/hero/jewellery/slider-image-new-five.webp', pos: 'object-center' },
+    { src: '/image/hero/jewellery/slider-image-new-six.webp', pos: 'object-center' },
 ];
 
 const N = SEQUENCE.length;
@@ -38,7 +36,6 @@ export default function AIJewelleryHero() {
     const [pairIdx, setPairIdx] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const [mobileIdx, setMobileIdx] = useState(0);
-    const [paused, setPaused] = useState(false);
 
     // Sync ref — updated synchronously to prevent race conditions
     const animatingRef = useRef(false);
@@ -65,19 +62,17 @@ export default function AIJewelleryHero() {
         }, DURATION);
     }, []);
 
-    // Auto-advance desktop
+    // Auto-advance desktop — continuous interval every 5000ms
     useEffect(() => {
-        if (paused) return;
         const t = setInterval(advance, INTERVAL);
         return () => clearInterval(t);
-    }, [advance, paused]);
+    }, [advance]);
 
     // Mobile crossfade cycle
     useEffect(() => {
-        if (paused) return;
         const t = setInterval(() => setMobileIdx(prev => (prev + 1) % N), INTERVAL);
         return () => clearInterval(t);
-    }, [paused]);
+    }, []);
 
     // Easing strings
     const slide = `transform ${DURATION}ms cubic-bezier(0.76, 0, 0.24, 1)`;
@@ -87,8 +82,6 @@ export default function AIJewelleryHero() {
     return (
         <section
             className="relative w-full min-h-screen flex items-center overflow-hidden bg-dark-bg"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
         >
             {/* ══════════════ DESKTOP LAYOUT ══════════════ */}
             <div className="absolute inset-0 z-0 hidden md:flex">
@@ -228,20 +221,6 @@ export default function AIJewelleryHero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
-                        {/* <CTAbtn
-                            text="Try it out"
-                            className="w-full sm:w-auto text-center bg-neon-green text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-lime-300 transition-all shadow-lg shadow-neon-green/20 hover:shadow-neon-green/40 hover:-translate-y-1 transform duration-200"
-                        />
-                        <button
-                            onClick={() => {
-                                const element = document.getElementById('plans');
-                                element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                            }}
-                            className="w-full sm:w-auto text-center px-8 py-4 rounded-full text-lg font-bold text-white border border-white/20 hover:bg-white/10 backdrop-blur-sm transition-all hover:-translate-y-1"
-                        >
-                            Get Pricing
-                        </button> */}
-
                         <button
                             onClick={() => {
                                 const element = document.getElementById('plans');
@@ -275,7 +254,7 @@ export default function AIJewelleryHero() {
                 {SEQUENCE.map((_, i) => (
                     <button
                         key={i}
-                        onClick={() => { setMobileIdx(i); setPaused(true); setTimeout(() => setPaused(false), 6000); }}
+                        onClick={() => { setMobileIdx(i); }}
                         aria-label={`Slide ${i + 1}`}
                         className="rounded-full transition-all duration-300"
                         style={{
@@ -290,3 +269,4 @@ export default function AIJewelleryHero() {
         </section>
     );
 }
+

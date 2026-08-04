@@ -7,13 +7,15 @@ import CTAbtn from './CTAbtn';
 
 // ─── Fashion/Apparel-only sequence ────────────────────────────────────────────
 const SEQUENCE = [
-    { src: '/image/hero/fashion/slider-image-one.webp', pos: 'object-top' },
-    { src: '/image/hero/fashion/slider-image-two.webp', pos: 'object-top' },
-    { src: '/image/hero/fashion/slider-image-three.webp', pos: 'object-top' },
-    { src: '/image/hero/fashion/slider-image-four.webp', pos: 'object-top' },
-    { src: '/image/fashion/mens-top-wear/shot-1.jpg', pos: 'object-top' },
-    { src: '/image/fashion/women-ethinic-wear/women-ethinic-wear.webp', pos: 'object-top' },
-    { src: '/image/fashion/men-ethinic-wear/men-ethinic-wear.webp', pos: 'object-top' },
+    { src: '/image/hero/fashion/slider-image-new-two.webp', pos: 'object-top' },
+    { src: '/image/hero/fashion/slider-image-new-one.webp', pos: 'object-top' },
+    { src: '/image/hero/fashion/slider-image-new-six.webp', pos: 'object-top' },
+    { src: '/image/hero/fashion/slider-image-new-five.webp', pos: 'object-top' },
+
+    // { src: '/image/hero/fashion/slider-image-four.webp', pos: 'object-top' },
+    // { src: '/image/fashion/mens-top-wear/shot-1.jpg', pos: 'object-top' },
+    // { src: '/image/fashion/women-ethinic-wear/women-ethinic-wear.webp', pos: 'object-top' },
+    // { src: '/image/fashion/men-ethinic-wear/men-ethinic-wear.webp', pos: 'object-top' },
 ];
 
 const N = SEQUENCE.length;
@@ -37,7 +39,6 @@ export default function AIApparelHero() {
     const [pairIdx, setPairIdx] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const [mobileIdx, setMobileIdx] = useState(0);
-    const [paused, setPaused] = useState(false);
 
     // Sync ref — updated synchronously to prevent race conditions
     const animatingRef = useRef(false);
@@ -64,19 +65,17 @@ export default function AIApparelHero() {
         }, DURATION);
     }, []);
 
-    // Auto-advance desktop
+    // Auto-advance desktop — continuous interval every 5000ms
     useEffect(() => {
-        if (paused) return;
         const t = setInterval(advance, INTERVAL);
         return () => clearInterval(t);
-    }, [advance, paused]);
+    }, [advance]);
 
     // Mobile crossfade cycle
     useEffect(() => {
-        if (paused) return;
         const t = setInterval(() => setMobileIdx(prev => (prev + 1) % N), INTERVAL);
         return () => clearInterval(t);
-    }, [paused]);
+    }, []);
 
     // Easing strings
     const slide = `transform ${DURATION}ms cubic-bezier(0.76, 0, 0.24, 1)`;
@@ -86,8 +85,6 @@ export default function AIApparelHero() {
     return (
         <section
             className="relative w-full min-h-screen flex items-center overflow-hidden bg-dark-bg"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
         >
             {/* ══════════════ DESKTOP LAYOUT ══════════════ */}
             <div className="absolute inset-0 z-0 hidden md:flex">
@@ -264,7 +261,7 @@ export default function AIApparelHero() {
                 {SEQUENCE.map((_, i) => (
                     <button
                         key={i}
-                        onClick={() => { setMobileIdx(i); setPaused(true); setTimeout(() => setPaused(false), 6000); }}
+                        onClick={() => { setMobileIdx(i); }}
                         aria-label={`Slide ${i + 1}`}
                         className="rounded-full transition-all duration-300"
                         style={{

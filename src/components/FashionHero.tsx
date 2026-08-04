@@ -10,9 +10,9 @@ export default function FashionHero() {
     const [isAnimating, setIsAnimating] = useState(false);
 
     const categories = [
-        { src: '/image/hero/fashion/slider-image-three.webp', alt: "Men's Topwear" },
-        { src: '/image/hero/fashion/slider-image-four.webp', alt: "Men's Ethnic Wear" },
-        { src: '/image/hero/fashion/slider-image-two.webp', alt: "Women's Ethnic Wear" },
+        { src: '/image/hero/fashion/slider-image-new-six.webp', alt: "Men's Topwear" },
+        { src: '/image/hero/fashion/slider-image-new-one.webp', alt: "Men's Ethnic Wear" },
+        { src: '/image/hero/fashion/slider-image-new-two.webp', alt: "Women's Ethnic Wear" },
         { src: '/image/hero/fashion/slider-image-five.webp', alt: "Garment Only" },
     ];
 
@@ -86,13 +86,12 @@ export default function FashionHero() {
                             {categories.map((item, index) => (
                                 <div
                                     key={`prev-${index}`}
-                                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                                        index === (currentIndex - 1 + categories.length) % categories.length
-                                            ? 'opacity-100 translate-x-0'
-                                            : index === (currentIndex - 2 + categories.length) % categories.length
+                                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === (currentIndex - 1 + categories.length) % categories.length
+                                        ? 'opacity-100 translate-x-0'
+                                        : index === (currentIndex - 2 + categories.length) % categories.length
                                             ? 'opacity-0 -translate-x-full'
                                             : 'opacity-0 translate-x-full'
-                                    }`}
+                                        }`}
                                 >
                                     <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10">
                                         <Image
@@ -113,13 +112,12 @@ export default function FashionHero() {
                             {categories.map((item, index) => (
                                 <div
                                     key={`main-${index}`}
-                                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                                        index === currentIndex
-                                            ? 'opacity-100 translate-x-0'
-                                            : index === (currentIndex - 1 + categories.length) % categories.length
+                                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === currentIndex
+                                        ? 'opacity-100 translate-x-0'
+                                        : index === (currentIndex - 1 + categories.length) % categories.length
                                             ? 'opacity-0 -translate-x-full'
                                             : 'opacity-0 translate-x-full'
-                                    }`}
+                                        }`}
                                 >
                                     <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 group hover:border-neon-green/50 transition-all duration-500">
                                         <Image
@@ -141,13 +139,12 @@ export default function FashionHero() {
                             {categories.map((item, index) => (
                                 <div
                                     key={`next-${index}`}
-                                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                                        index === (currentIndex + 1) % categories.length
-                                            ? 'opacity-100 translate-x-0'
-                                            : index === currentIndex
+                                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === (currentIndex + 1) % categories.length
+                                        ? 'opacity-100 translate-x-0'
+                                        : index === currentIndex
                                             ? 'opacity-0 -translate-x-full'
                                             : 'opacity-0 translate-x-full'
-                                    }`}
+                                        }`}
                                 >
                                     <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10">
                                         <Image
@@ -178,9 +175,8 @@ export default function FashionHero() {
                                         }, 700);
                                     }
                                 }}
-                                className={`h-2 rounded-full transition-all duration-300 ${
-                                    currentIndex === idx ? 'w-8 bg-neon-green' : 'w-2 bg-white/30'
-                                }`}
+                                className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx ? 'w-8 bg-neon-green' : 'w-2 bg-white/30'
+                                    }`}
                                 aria-label={`Slide ${idx + 1}`}
                             />
                         ))}

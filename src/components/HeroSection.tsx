@@ -11,7 +11,7 @@ const SEQUENCE = [
     { src: '/image/hero/jewellery/slider-image-new-one.webp', industry: 'Jewellery', pos: 'object-center' },
     { src: '/image/hero/fashion/slider-image-new-one.webp', industry: 'Fashion', pos: 'object-top' },
     { src: '/image/hero/jewellery/slider-image-new-two.webp', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-new-three.webp', industry: 'Fashion', pos: 'object-top' },
+    { src: '/image/hero/fashion/slider-image-new-six.webp', industry: 'Fashion', pos: 'object-top' },
     { src: '/image/hero/jewellery/slider-image-new-three.webp', industry: 'Jewellery', pos: 'object-center' },
     { src: '/image/hero/fashion/slider-image-new-two.webp', industry: 'Fashion', pos: 'object-top' },
 ];
