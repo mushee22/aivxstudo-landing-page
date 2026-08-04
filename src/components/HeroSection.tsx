@@ -8,14 +8,12 @@ import { Gem, Shirt } from 'lucide-react';
 
 // ─── Alternating sequence ──────────────────────────────────────────────────────
 const SEQUENCE = [
-    { src: '/image/hero/jewellery/slider-image-one.webp', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-four.webp', industry: 'Fashion', pos: 'object-top' },
-    { src: '/image/hero/jewellery/slider-image-two.webp', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-one.webp', industry: 'Fashion', pos: 'object-top' },
-    { src: '/image/hero/jewellery/slider-image-three.webp', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-three.webp', industry: 'Fashion', pos: 'object-top' },
-    { src: '/theme/ring/cream-theme.jpg', industry: 'Jewellery', pos: 'object-center' },
-    { src: '/image/hero/fashion/slider-image-two.webp', industry: 'Fashion', pos: 'object-top' },
+    { src: '/image/hero/jewellery/slider-image-new-one.webp', industry: 'Jewellery', pos: 'object-center' },
+    { src: '/image/hero/fashion/slider-image-new-one.webp', industry: 'Fashion', pos: 'object-top' },
+    { src: '/image/hero/jewellery/slider-image-new-two.webp', industry: 'Jewellery', pos: 'object-center' },
+    { src: '/image/hero/fashion/slider-image-new-three.webp', industry: 'Fashion', pos: 'object-top' },
+    { src: '/image/hero/jewellery/slider-image-new-three.webp', industry: 'Jewellery', pos: 'object-center' },
+    { src: '/image/hero/fashion/slider-image-new-two.webp', industry: 'Fashion', pos: 'object-top' },
 ];
 
 const N = SEQUENCE.length;
