@@ -277,7 +277,7 @@ export default function AIShowcase() {
                         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 items-start">
                             {/* Input */}
                             <div className="lg:col-span-1 flex flex-col gap-3">
-                                <div className="relative aspect-3/4 rounded-2xl overflow-hidden border border-white/10 bg-dark-surface">
+                                <div className="relative aspect-329/585 rounded-2xl overflow-hidden border border-white/10 bg-dark-surface">
                                     <Image src="/image/fashion/mens-top-wear/raw-upload.webp" alt="Raw fashion product upload" fill className="" />
                                     <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm border border-white/10 px-3 py-1 rounded-full">
                                         <span className="text-xs font-semibold text-gray-300">Your Upload</span>
