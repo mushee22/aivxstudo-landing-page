@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import CTAbtn from './CTAbtn';
-import { Gem, Shirt } from 'lucide-react';
+import { Gem, Handbag, Shirt } from 'lucide-react';
 
 // ─── Alternating sequence ──────────────────────────────────────────────────────
 const SEQUENCE = [
@@ -37,15 +37,10 @@ function Label({ item, align }: { item: SlideItem; align: 'left' | 'right' }) {
 // ─── Main Hero ─────────────────────────────────────────────────────────────────
 export default function HeroSection() {
     const [pairIdx, setPairIdx] = useState(0);
-    const [phase, setPhase] = useState<Phase>('idle');
     const [isAnimating, setIsAnimating] = useState(false);
     const [mobileIdx, setMobileIdx] = useState(0);
-    const [paused, setPaused] = useState(false);
 
-    // Sync ref — updated synchronously to prevent race conditions in production
     const animatingRef = useRef(false);
-    const mountedRef = useRef(true);
-    useEffect(() => { mountedRef.current = true; return () => { mountedRef.current = false; }; }, []);
 
     // Derived images — index-based, can never show duplicates
     const leftImg = SEQUENCE[pairIdx % N];
@@ -53,33 +48,34 @@ export default function HeroSection() {
     const nextLeftImg = SEQUENCE[(pairIdx + 1) % N]; // rises into left panel
     const nextRightImg = SEQUENCE[(pairIdx + 2) % N]; // drops into right panel
 
-    // Self-contained advance: guards + timing all live here, no useEffect chain
+    // Self-contained advance: guards + timing all live here
     const advance = useCallback(() => {
-        if (animatingRef.current) return;   // synchronous guard — no race window
-        animatingRef.current = true;        // lock immediately
+        if (animatingRef.current) return;
+        animatingRef.current = true;
         setIsAnimating(true);
 
         setTimeout(() => {
-            if (!mountedRef.current) return;
             setPairIdx(prev => prev + 1);
             setIsAnimating(false);
-            animatingRef.current = false;   // unlock
+            animatingRef.current = false;
         }, DURATION);
     }, []);
 
-    // Auto-advance desktop (advance is stable — interval never resets)
+    // Auto-advance desktop — continuous interval every 5000ms
     useEffect(() => {
-        if (paused) return;
-        const t = setInterval(advance, INTERVAL);
+        const t = setInterval(() => {
+            advance();
+        }, INTERVAL);
         return () => clearInterval(t);
-    }, [advance, paused]);
+    }, [advance]);
 
     // Mobile crossfade cycle
     useEffect(() => {
-        if (paused) return;
-        const t = setInterval(() => setMobileIdx(prev => (prev + 1) % N), INTERVAL);
+        const t = setInterval(() => {
+            setMobileIdx(prev => (prev + 1) % N);
+        }, INTERVAL);
         return () => clearInterval(t);
-    }, [paused]);
+    }, []);
 
     // Easing strings
     const slide = `transform ${DURATION}ms cubic-bezier(0.76, 0, 0.24, 1)`;
@@ -87,16 +83,11 @@ export default function HeroSection() {
     const both = `${slide}, ${fade}`;
 
     return (
-        <section
-            className="relative w-full min-h-screen flex items-center overflow-hidden bg-dark-bg"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-        >
+        <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-dark-bg">
             {/* ══════════════ DESKTOP LAYOUT ══════════════ */}
             <div className="absolute inset-0 z-0 hidden md:flex">
 
                 {/* ── LEFT PANEL ─────────────────────────────────────────────── */}
-                {/* Old left image fades out. New left image (= old right) rises from below. */}
                 <div className="relative w-1/2 h-full overflow-hidden" style={{ zIndex: 1 }}>
 
                     {/* Layer A — current leftImg: fades out */}
@@ -112,7 +103,7 @@ export default function HeroSection() {
                         <Label item={leftImg} align="left" />
                     </div>
 
-                    {/* Layer B — nextLeftImg: rises UP from below (preloaded: always in DOM) */}
+                    {/* Layer B — nextLeftImg: rises UP from below */}
                     <div
                         className="absolute inset-0"
                         style={{
@@ -140,7 +131,6 @@ export default function HeroSection() {
                 />
 
                 {/* ── RIGHT PANEL ────────────────────────────────────────────── */}
-                {/* Old right image falls DOWN. New image drops in from TOP. */}
                 <div className="relative w-1/2 h-full overflow-hidden" style={{ zIndex: 1 }}>
 
                     {/* Layer A — current rightImg: falls DOWN and exits */}
@@ -157,7 +147,7 @@ export default function HeroSection() {
                         <Label item={rightImg} align="right" />
                     </div>
 
-                    {/* Layer B — nextRightImg: drops IN from TOP (preloaded: always in DOM) */}
+                    {/* Layer B — nextRightImg: drops IN from TOP */}
                     <div
                         className="absolute inset-0"
                         style={{
@@ -188,17 +178,17 @@ export default function HeroSection() {
 
             {/* ══════════════ MOBILE LAYOUT (full-bleed crossfade) ══════════════ */}
             <div className="absolute inset-0 z-0 md:hidden">
-                {SEQUENCE.map((slide, i) => (
+                {SEQUENCE.map((slideItem, i) => (
                     <div
-                        key={slide.src}
+                        key={slideItem.src + i}
                         className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
                         style={{ opacity: i === mobileIdx ? 1 : 0 }}
                     >
                         <Image
-                            src={slide.src}
-                            alt={`AI ${slide.industry} product photography`}
+                            src={slideItem.src}
+                            alt={`AI ${slideItem.industry} product photography`}
                             fill
-                            className={`object-cover ${slide.pos}`}
+                            className={`object-cover ${slideItem.pos}`}
                             sizes="100vw"
                             priority={i === 0}
                         />
@@ -220,6 +210,10 @@ export default function HeroSection() {
                         <span className="text-gray-500 text-xs font-bold">+</span>
                         <span className="flex items-center gap-1.5 text-xs font-semibold text-gray-300 bg-white/8 border border-white/15 px-3 py-1.5 rounded-full backdrop-blur-sm">
                             <Shirt size={11} /> Fashion
+                        </span>
+                        <span className="text-gray-500 text-xs font-bold">+</span>
+                        <span className="flex items-center gap-1.5 text-xs font-semibold text-gray-300 bg-white/8 border border-white/15 px-3 py-1.5 rounded-full backdrop-blur-sm">
+                            <Handbag size={11} /> Accessories
                         </span>
                     </div>
 
@@ -278,7 +272,9 @@ export default function HeroSection() {
                 {SEQUENCE.map((_, i) => (
                     <button
                         key={i}
-                        onClick={() => { setMobileIdx(i); setPaused(true); setTimeout(() => setPaused(false), 6000); }}
+                        onClick={() => {
+                            setMobileIdx(i);
+                        }}
                         aria-label={`Slide ${i + 1}`}
                         className="rounded-full transition-all duration-300"
                         style={{
