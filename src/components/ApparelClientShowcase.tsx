@@ -7,32 +7,32 @@ import { useRef, useState } from 'react';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 const fashionCategories = [
-    { name: "Men's Topwear", href: '/product-shoot/fashion/ai-mens-topwear-product-photography', image: '/image/hero/fashion/slider-image-three.webp', alt: "AI men's topwear photography" },
-    { name: "Men's Ethnic Wear", href: '/product-shoot/fashion/ai-mens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-four.webp', alt: "AI men's ethnic wear photography" },
-    { name: "Women's Ethnic Wear", href: '/product-shoot/fashion/ai-womens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-two.webp', alt: "AI women's ethnic wear photography" },
+    { name: "Men's Topwear", href: '/product-shoot/fashion/ai-mens-topwear-product-photography', image: '/image/fashion/mens-top-wear/shot-new-four.webp', alt: "AI men's topwear photography" },
+    { name: "Men's Ethnic Wear", href: '/product-shoot/fashion/ai-mens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-new-two.webp', alt: "AI men's ethnic wear photography" },
+    { name: "Women's Ethnic Wear", href: '/product-shoot/fashion/ai-womens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-new-one.webp', alt: "AI women's ethnic wear photography" },
     { name: "Garment Only", href: '/product-shoot/fashion/ai-garment-only-product-photography', image: '/image/hero/fashion/slider-image-five.webp', alt: "AI garment only photography" },
 ];
 
+
+
 const fashionVideos = [
-    { id: 1, title: "Men's Top Wear", duration: '5s', src: '/image/fashion/mens-top-wear/ment-top-wear-video-showcase.mp4', poster: '/image/fashion/mens-top-wear/shot-1.jpg' },
-    { id: 2, title: "Men's Ethnic Wear", duration: '5s', src: '/image/fashion/men-ethinic-wear/men-ethinic-wear-show-case.mp4', poster: '/image/fashion/men-ethinic-wear/men-ethinic-wear.jpg' },
-    { id: 3, title: "Women's Ethnic Wear", duration: '5s', src: '/image/fashion/women-ethinic-wear/women-ethinic-wear-show-case.mp4', poster: '/image/fashion/women-ethinic-wear/women-ethinic-wear.jpg' },
-    { id: 4, title: "Men's Top Wear V2", duration: '5s', src: '/image/fashion/mens-top-wear/video-show-case-1.mp4', poster: '/image/fashion/mens-top-wear/shot-11.jpg' },
+    { id: 1, title: "Men's Top Wear", duration: '5s', src: '/videos/fashion/mt.mp4', poster: '/videos/fashion/thumbnail/mt.webp' },
+    { id: 2, title: "Saree", duration: '5s', src: '/videos/fashion/saree.mp4', poster: '/videos/fashion/thumbnail/saree.webp' },
+    { id: 3, title: "Women's Ethnic Wear", duration: '5s', src: '/videos/fashion/we.mp4', poster: '/videos/fashion/thumbnail/we.webp' },
+    { id: 4, title: "Men's Top Wear", duration: '5s', src: '/videos/fashion/t.mp4', poster: '/videos/fashion/thumbnail/t.webp' },
 ];
+
 
 const fashionOutputs = [
-    { src: '/image/fashion/mens-top-wear/shot-1.jpg', label: 'Full Body Front' },
-    { src: '/image/fashion/mens-top-wear/shot-6.jpg', label: 'Front Close-up V1' },
-    { src: '/image/fashion/mens-top-wear/shot-2.jpg', label: 'Full Body V1' },
-    { src: '/image/fashion/mens-top-wear/shot-7.jpg', label: 'Full Body V2' },
-    { src: '/image/fashion/mens-top-wear/shot-8.jpg', label: 'Full Body V3' },
-    { src: '/image/fashion/mens-top-wear/shot-9.jpg', label: 'Full Body V4' },
-    { src: '/image/fashion/mens-top-wear/shot-3.jpg', label: 'Back Close-up V1' },
-    { src: '/image/fashion/mens-top-wear/shot-5.jpg', label: 'Back Close-up V2' },
-    { src: '/image/fashion/mens-top-wear/shot-4.jpg', label: 'Back Full View 1' },
-    { src: '/image/fashion/mens-top-wear/shot-back-10.jpg', label: 'Back Full View 2' },
+    { src: '/image/fashion/mens-top-wear/shot-new-four.webp', label: 'Full Body Front' },
+    { src: '/image/fashion/mens-top-wear/shot-new-two.webp', label: 'Front Close-up V1' },
+    { src: '/image/fashion/mens-top-wear/shot-new-one.webp', label: 'Full Body V1' },
+    { src: '/image/fashion/mens-top-wear/shot-new-three.webp', label: 'Front Close-up V2' },
+    { src: '/image/fashion/mens-top-wear/shot-new-six.webp', label: 'Back Close-up' },
+    { src: '/image/fashion/mens-top-wear/shot-new-seven.webp', label: 'Back Close-up V1' },
+    { src: '/image/fashion/mens-top-wear/shot-new-eight.webp', label: 'Back Close-up V2' },
+    { src: '/image/fashion/mens-top-wear/shot-new-five.webp', label: 'Full Body V3' },
 ];
-
 // ─── Category Card ────────────────────────────────────────────────────────────
 function CategoryCard({ name, href, image, alt }: { name: string; href: string; image: string; alt: string }) {
     return (
@@ -143,8 +143,8 @@ export default function ApparelClientShowcase() {
                         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 items-start">
                             {/* Input */}
                             <div className="lg:col-span-1 flex flex-col gap-3">
-                                <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 bg-dark-surface">
-                                    <Image src="/image/fashion/mens-top-wear/raw-upload.jpg" alt="Raw fashion product upload" fill className="object-cover" />
+                                <div className="relative aspect-329/585 rounded-2xl overflow-hidden border border-white/10 bg-dark-surface">
+                                    <Image src="/image/fashion/mens-top-wear/raw-upload.webp" alt="Raw fashion product upload" fill className="object-cover" />
                                     <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm border border-white/10 px-3 py-1 rounded-full">
                                         <span className="text-xs font-semibold text-gray-300">Your Upload</span>
                                     </div>
