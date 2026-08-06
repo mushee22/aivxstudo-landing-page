@@ -44,10 +44,10 @@ const fashionOutputs = [
 ];
 
 const fashionVideos = [
-    { id: 1, title: "Men's Top Wear", duration: '5s', src: '/image/fashion/mens-top-wear/ment-top-wear-video-showcase.mp4', poster: '/image/fashion/mens-top-wear/shot-1.jpg' },
-    { id: 2, title: "Men's Ethnic Wear", duration: '5s', src: '/image/fashion/men-ethinic-wear/men-ethinic-wear-show-case.mp4', poster: '/image/fashion/men-ethinic-wear/men-ethinic-wear.jpg' },
-    { id: 3, title: "Women's Ethnic Wear", duration: '5s', src: '/image/fashion/women-ethinic-wear/women-ethinic-wear-show-case.mp4', poster: '/image/fashion/women-ethinic-wear/women-ethinic-wear.jpg' },
-    { id: 4, title: "Men's Top Wear", duration: '5s', src: '/image/fashion/mens-top-wear/video-show-case-1.mp4', poster: '/image/fashion/mens-top-wear/shot-11.jpg' },
+    { id: 1, title: "Men's Top Wear", duration: '5s', src: '/videos/fashion/mt.mp4', poster: '/videos/fashion/thumbnail/mt.webp' },
+    { id: 2, title: "Saree", duration: '5s', src: '/videos/fashion/saree.mp4', poster: '/videos/fashion/thumbnail/saree.webp' },
+    { id: 3, title: "Women's Ethnic Wear", duration: '5s', src: '/videos/fashion/we.mp4', poster: '/videos/fashion/thumbnail/we.webp' },
+    { id: 4, title: "Men's Top Wear", duration: '5s', src: '/videos/fashion/t.mp4', poster: '/videos/fashion/thumbnail/t.webp' },
 ];
 
 // ─── Category Card ────────────────────────────────────────────────────────────
