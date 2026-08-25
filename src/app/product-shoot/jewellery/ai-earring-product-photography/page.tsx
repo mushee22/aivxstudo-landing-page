@@ -62,7 +62,7 @@ export default function EarRingPage() {
             a: "Yes. AI allows brands to generate model-based visuals and lifestyle themes without organizing physical model shoots."
         },
         {
-            q: "Is AI earring product photography cost-effective compared to traditional studio shoots?",
+            q: "Is AI earring product photography cost-effective compared to traditional studio based shoots?",
             a: "In most cases, yes. AI reduces studio rental, setup, retouching, and repeated shoot costs, making it ideal for scaling ecommerce jewellery brands."
         }
     ];
