@@ -76,11 +76,11 @@ export default function NecklacePage() {
 
             <JewelleryCategorySEO title="AI Necklace Product Photography for Ecommerce Brands">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                    Necklace product photography requires a careful balance between detail, proportion, and styling. Unlike rings or earrings, necklaces occupy more visual space and often interact with the neckline, background, and overall composition of the frame.
+                    Necklace product photography demands more precision than rings or earrings. Since the piece takes up more of the frame, detail, proportion, and styling all have to line up, particularly where the necklace meets the neckline and sits against the background.
                 </p>
 
-                <div className="text-left">
-                    <h3 className="text-xl font-semibold mb-4">Capturing necklace designs effectively involves:</h3>
+                <div className="text-left mt-6">
+                    <h3 className="text-xl font-semibold mb-4 text-white">Capturing necklace designs effectively involves:</h3>
                     <ul className="list-disc pl-6 space-y-2 text-lg text-gray-300">
                         <li>Showing accurate chain length and drape</li>
                         <li>Highlighting pendant positioning</li>
@@ -90,24 +90,24 @@ export default function NecklacePage() {
                     </ul>
                 </div>
 
-                <p className="text-lg text-gray-300 leading-relaxed">
-                    In traditional studio shoots, necklaces can be difficult to position naturally. Chains may twist, reflections can vary, and lighting inconsistencies can affect gemstone sparkle. Achieving the perfect angle often requires multiple adjustments and retouching sessions.
+                <p className="text-lg text-gray-300 leading-relaxed mt-6">
+                    Traditional necklace shoots make natural positioning hard. Chains twist between takes, reflections shift, and small lighting changes can dull gemstone sparkle. Getting one clean angle often takes several rounds of adjustment and retouching.
                 </p>
 
-                <p className="text-lg text-gray-300 leading-relaxed">
-                    With AI-powered necklace product photography (necklace jewelry photography), brands can generate hyper-realistic visuals with consistent lighting, controlled reflections, and natural chain flow. AI systems simulate realistic shadow depth and sparkle behavior while maintaining uniform styling across entire collections.
+                <p className="text-lg text-gray-300 leading-relaxed mt-4">
+                    AI-powered necklace photography (necklace jewelry photography) produces hyper-realistic visuals with steady lighting, controlled reflections, and natural chain flow, while simulating realistic shadow depth and sparkle behavior across the entire collection.
                 </p>
 
-                <p className="text-lg text-gray-300 leading-relaxed">
-                    For ecommerce brands, necklace visuals must perform across multiple platforms. Product listing pages, social media ads, marketplace thumbnails, and homepage banners. AI workflows allow brands to generate white background catalog images, editorial dark themes, or lifestyle-inspired aesthetics instantly without reshooting the physical product.
+                <p className="text-lg text-gray-300 leading-relaxed mt-4">
+                    Necklace visuals have to perform across more than one channel, product listing pages, social ads, marketplace thumbnails, homepage banners, and each one carries its own tone. AI workflows generate white background catalog shots, dark editorial themes, or lifestyle-style visuals instantly, without a single reshoot of the actual piece.
                 </p>
 
-                <p className="text-lg text-gray-300 leading-relaxed">
-                    If you’re managing a full jewellery catalog beyond necklaces, you can also explore our <Link href="/product-shoot" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> to see how AI supports rings, earrings, pendants, and complete collection scaling.
+                <p className="text-lg text-gray-300 leading-relaxed mt-4">
+                    If your catalogue extends beyond necklaces, our <Link href="/product-shoot" className="font-bold text-neon-green hover:underline">AI jewellery product photography services</Link> cover rings, earrings, pendants, and full collection scaling.
                 </p>
 
                 <p className="text-xl font-bold mt-8 text-white">
-                    In modern ecommerce, clarity and consistency influence buying decisions. AI necklace product photography enables brands to scale production while maintaining premium presentation.
+                    Clarity and consistency drive buying decisions in ecommerce. AI necklace product photography lets brands scale production without giving up that premium presentation.
                 </p>
             </JewelleryCategorySEO>
 

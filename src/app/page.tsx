@@ -59,29 +59,36 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-dark-bg text-white selection:bg-neon-green selection:text-black font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "AIVX Studio",
+            "url": "https://aivx.in",
+            "applicationCategory": "PhotographyApplication",
+            "operatingSystem": "Web",
+            "description": "AI-powered photography platform for fashion and jewellery brands. Generate product photos, AI model images, and lookbooks without booking a studio.",
+            "offers": { "@type": "Offer", "price": "999", "priceCurrency": "INR", "description": "Trial plan starting at ₹999. Base and Pro plans available at ₹4,999 and ₹9,999. Custom Enterprise pricing available." },
+            "provider": { "@type": "Organization", "name": "AIVX", "url": "https://aivx.in" }
+          })
+        }}
+      />
+
       <HeroSection />
-
       <ProductSolution />
-
       <HowItWorks />
-
       <BuiltFor />
-
       <AIShowcase />
-
       <UseCases />
-
       <WhySwitch />
-
       <SearchIntent />
-
       <Testimonials />
-
       <HomeLatestArticles />
-
       <FAQ />
-
       <FinalCTA />
     </main>
   );
 }
+

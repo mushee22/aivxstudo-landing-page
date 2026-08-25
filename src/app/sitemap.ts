@@ -17,6 +17,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/mission',
         '/team',
         '/location',
+        '/product-shoot',
+        '/product-shoot/fashion',
         '/product-shoot/jewellery',
         '/product-shoot/accessories',
     ].map((route) => ({
@@ -58,6 +60,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
     }));
 
+    // 2c. Fashion Categories
+    const fashionCategories = [
+        'ai-mens-topwear-product-photography',
+        'ai-mens-ethnic-wear-product-photography',
+        'ai-womens-ethnic-wear-product-photography',
+        'ai-garment-only-product-photography',
+    ];
+
+    const fashionCategoryRoutes = fashionCategories.map((category) => ({
+        url: `${baseUrl}/product-shoot/fashion/${category}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+    }));
+
     // 3. Blog Posts
     const posts = await fetchAllBlogs();
     const blogRoutes = posts.map((post) => ({
@@ -79,6 +96,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...staticRoutes,
         ...jewelleryCategoryRoutes,
         ...accessoriesCategoryRoutes,
+        ...fashionCategoryRoutes,
         ...blogRoutes,
         ...faqRoutes,
     ];

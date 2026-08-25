@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Create fashion and jewellery product photos without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot.",
   keywords: 'AI jewellery photography · AI fashion photography · product photos without studio · AI model photos · jewellery photo editing · fashion lookbook generator',
   icons: {
-    icon: '/logo.jpg',
+    icon: '/favicon.ico',
   },
   verification: {
     other: {
