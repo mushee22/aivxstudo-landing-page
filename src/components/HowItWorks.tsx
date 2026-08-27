@@ -14,7 +14,7 @@ const steps = [
     {
         icon: Sparkles,
         title: "Generate Image & Download your finished images",
-        desc: "Get multiple ready-to-use product images in seconds. Export at the correct dimensions for each platform — marketplace listings, social media, or print catalogues"
+        desc: "Get multiple ready-to-use AI product images in seconds. Export at the correct dimensions for each platform — marketplace listings, social media, or print catalogues"
     }
 ];
 

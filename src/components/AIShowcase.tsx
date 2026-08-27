@@ -10,19 +10,19 @@ const BeforeAfterSliderContainer = dynamic(() => import('./BeforeAfterSliderCont
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 const jewelleryCategories = [
-    { name: 'Ring', href: '/product-shoot/jewellery/ai-ring-product-photography', image: '/theme/ring/cream-theme.jpg', alt: 'AI generated ring product photography' },
-    { name: 'Earring', href: '/product-shoot/jewellery/ai-earring-product-photography', image: '/theme/earring/rose-amber-theme.png', alt: 'AI generated earring product photography' },
-    { name: 'Pendant Set', href: '/product-shoot/jewellery/ai-necklace-product-photography', image: '/theme/pendant-set/navy-blue-theme.png', alt: 'AI generated pendant set product photography' },
-    { name: 'Necklace', href: '/product-shoot/jewellery/ai-necklace-product-photography', image: '/theme/necklace/white-theme.png', alt: 'AI generated necklace product photography' },
-    { name: 'Necklace Set', href: '/product-shoot/jewellery/ai-necklace-set-product-photography', image: '/theme/necklace-set/light-green-theme.png', alt: 'AI generated necklace set product photography' },
-    { name: 'Bangle', href: '/product-shoot/jewellery/ai-bangle-product-photography', image: '/theme/bangle/brown-theme.png', alt: 'AI generated bangle product photography' },
+    { name: 'Ring', href: '/product-shoot/jewellery/ai-ring-product-photography', image: '/theme/ring/cream-theme.jpg', alt: 'AI product photography of a gold ring on a cream theme background' },
+    { name: 'Earring', href: '/product-shoot/jewellery/ai-earring-product-photography', image: '/theme/earring/rose-amber-theme.png', alt: 'AI product photography of elegant earrings on a rose amber background' },
+    { name: 'Pendant Set', href: '/product-shoot/jewellery/ai-necklace-product-photography', image: '/theme/pendant-set/navy-blue-theme.png', alt: 'AI product photography of a pendant set on a navy blue background' },
+    { name: 'Necklace', href: '/product-shoot/jewellery/ai-necklace-product-photography', image: '/theme/necklace/white-theme.png', alt: 'AI product photography of a necklace on a clean white background' },
+    { name: 'Necklace Set', href: '/product-shoot/jewellery/ai-necklace-set-product-photography', image: '/theme/necklace-set/light-green-theme.png', alt: 'AI product photography of a full necklace set on a light green background' },
+    { name: 'Bangle', href: '/product-shoot/jewellery/ai-bangle-product-photography', image: '/theme/bangle/brown-theme.png', alt: 'AI product photography of a bangle pair on a brown background' },
 ];
 
 const fashionCategories = [
-    { name: "Men's Topwear", href: '/product-shoot/fashion/ai-mens-topwear-product-photography', image: '/image/fashion/mens-top-wear/shot-new-four.webp', alt: "AI men's topwear photography" },
-    { name: "Men's Ethnic Wear", href: '/product-shoot/fashion/ai-mens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-new-two.webp', alt: "AI men's ethnic wear photography" },
-    { name: "Women's Ethnic Wear", href: '/product-shoot/fashion/ai-womens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-new-one.webp', alt: "AI women's ethnic wear photography" },
-    { name: "Garment Only", href: '/product-shoot/fashion/ai-garment-only-product-photography', image: '/image/hero/fashion/slider-image-five.webp', alt: "AI garment only photography" },
+    { name: "Men's Topwear", href: '/product-shoot/fashion/ai-mens-topwear-product-photography', image: '/image/fashion/mens-top-wear/shot-new-four.webp', alt: "AI product photography of a men's topwear shirt on a model" },
+    { name: "Men's Ethnic Wear", href: '/product-shoot/fashion/ai-mens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-new-two.webp', alt: "AI product photography of men's ethnic wear kurta" },
+    { name: "Women's Ethnic Wear", href: '/product-shoot/fashion/ai-womens-ethnic-wear-product-photography', image: '/image/hero/fashion/slider-image-new-one.webp', alt: "AI product photography of a women's ethnic saree" },
+    { name: "Garment Only", href: '/product-shoot/fashion/ai-garment-only-product-photography', image: '/image/hero/fashion/slider-image-five.webp', alt: "AI product photography of a flat-lay fashion garment" },
 ];
 
 const jewelleryVideos = [

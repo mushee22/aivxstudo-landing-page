@@ -8,6 +8,9 @@ const intents = [
     "Jewellery photo editing and background replacement using AI",
     "A lookbook generator for Indian fashion brands",
     "Consistent product images for Etsy, Meesho, Shopify, and Amazon sellers",
+    "The best AI photography software for e-commerce product shoots",
+    "An easy-to-use product photography AI for online sellers",
+    "Automated AI photography for cataloguing and social media",
 ];
 
 export default function SearchIntent() {
@@ -24,7 +27,7 @@ export default function SearchIntent() {
                             AI Fashion &amp; AI Jewellery Photography in One Place
                         </h2>
                         <p className="text-gray-400 text-base leading-relaxed">
-                            If you have been searching for any of the following, AIVX is built to answer those needs directly.
+                            If you have been searching for AI for product photography or any of the following, AIVX is built to answer those needs directly.
                         </p>
                     </div>
 

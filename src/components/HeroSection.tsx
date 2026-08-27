@@ -98,7 +98,7 @@ export default function HeroSection() {
                             transition: isAnimating ? `opacity ${Math.round(DURATION * 0.5)}ms ease` : 'none',
                         }}
                     >
-                        <Image src={leftImg.src} alt={`AI ${leftImg.industry} photography`} fill className={`object-cover ${leftImg.pos}`} sizes="50vw" priority />
+                        <Image src={leftImg.src} alt={`AI product photography of ${leftImg.industry.toLowerCase()} items`} fill className={`object-cover ${leftImg.pos}`} sizes="50vw" priority />
                         <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
                         <Label item={leftImg} align="left" />
                     </div>
@@ -112,7 +112,7 @@ export default function HeroSection() {
                             transition: isAnimating ? both : 'none',
                         }}
                     >
-                        <Image src={nextLeftImg.src} alt={`AI ${nextLeftImg.industry} photography`} fill className={`object-cover ${nextLeftImg.pos}`} sizes="50vw" />
+                        <Image src={nextLeftImg.src} alt={`AI product photography of upcoming ${nextLeftImg.industry.toLowerCase()} collection items`} fill className={`object-cover ${nextLeftImg.pos}`} sizes="50vw" />
                         <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
                         <Label item={nextLeftImg} align="left" />
                     </div>
@@ -142,7 +142,7 @@ export default function HeroSection() {
                             transition: isAnimating ? both : 'none',
                         }}
                     >
-                        <Image src={rightImg.src} alt={`AI ${rightImg.industry} photography`} fill className={`object-cover ${rightImg.pos}`} sizes="50vw" priority />
+                        <Image src={rightImg.src} alt={`AI product photography of ${rightImg.industry.toLowerCase()} showcases`} fill className={`object-cover ${rightImg.pos}`} sizes="50vw" priority />
                         <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
                         <Label item={rightImg} align="right" />
                     </div>
@@ -156,7 +156,7 @@ export default function HeroSection() {
                             transition: isAnimating ? both : 'none',
                         }}
                     >
-                        <Image src={nextRightImg.src} alt={`AI ${nextRightImg.industry} photography`} fill className={`object-cover ${nextRightImg.pos}`} sizes="50vw" />
+                        <Image src={nextRightImg.src} alt={`AI product photography of upcoming ${nextRightImg.industry.toLowerCase()} showcases`} fill className={`object-cover ${nextRightImg.pos}`} sizes="50vw" />
                         <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-dark-bg to-transparent" />
                         <Label item={nextRightImg} align="right" />
                     </div>
@@ -186,7 +186,7 @@ export default function HeroSection() {
                     >
                         <Image
                             src={slideItem.src}
-                            alt={`AI ${slideItem.industry} product photography`}
+                            alt={`AI product photography of ${slideItem.industry.toLowerCase()} model showcase`}
                             fill
                             className={`object-cover ${slideItem.pos}`}
                             sizes="100vw"
@@ -230,11 +230,11 @@ export default function HeroSection() {
                     </h1>
 
                     <p className="sr-only">
-                        Create product photos, AI model images, and lookbooks without booking a studio. Built for fashion brands and jewellery businesses.
+                        Create AI product photography, AI model images, and lookbooks without booking a studio for fashion brands and jewellery businesses.
                     </p>
 
                     <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
-                        Create product photos, AI model images, and lookbooks without booking a studio for fashion brands and jewellery businesses.
+                        Create AI product photography, AI model images, and lookbooks without booking a studio for fashion brands and jewellery businesses.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">

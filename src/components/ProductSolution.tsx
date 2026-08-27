@@ -18,7 +18,7 @@ export default function ProductSolution() {
                             <span className="text-neon-green">Without a Photoshoot</span>
                         </h2>
                         <p className="text-gray-400 text-base leading-relaxed">
-                            AIVX is an AI photography platform built for fashion brands and jewellery businesses. Instead of arranging a studio, booking models, and waiting weeks for edited images, you generate product photos directly from a single image of your item.
+                            AIVX is an AI photoshoot platform built for fashion brands and jewellery businesses. Instead of arranging a studio, booking models, and waiting weeks for edited images, you generate product photos directly from a single image of your item.
                         </p>
                         <div className="pt-6 border-t border-white/5">
                             <p className="text-xs text-gray-600 uppercase tracking-widest mb-3">Marketplace Ready</p>

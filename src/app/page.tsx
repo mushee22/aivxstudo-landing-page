@@ -23,14 +23,14 @@ const FinalCTA = dynamic(() => import('@/components/FinalCTA'));
 export const metadata: Metadata = {
   metadataBase: new URL('https://aivx.in'),
   title: 'AI Product Photography for Fashion and Jewellery | AIVX',
-  description: 'Create fashion and jewellery product photos without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot.',
+  description: 'Create AI product photography for fashion and jewellery brands without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot.',
   keywords: 'AI jewellery photography · AI fashion photography · product photos without studio · AI model photos · jewellery photo editing · fashion lookbook generator',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'AI Product Photography for Fashion and Jewellery | AIVX',
-    description: 'Create fashion and jewellery product photos without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot.',
+    description: 'Create AI product photography for fashion and jewellery brands without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot.',
     url: '/',
     siteName: 'AIVX',
     images: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AI Product Photography for Fashion and Jewellery | AIVX',
-    description: 'Create fashion and jewellery product photos without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot',
+    description: 'Create AI product photography for fashion and jewellery brands without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot',
     images: ['/image/bangle-ai-generated-image.png'],
   },
   robots: {
@@ -69,7 +69,7 @@ export default function Home() {
             "url": "https://aivx.in",
             "applicationCategory": "PhotographyApplication",
             "operatingSystem": "Web",
-            "description": "AI-powered photography platform for fashion and jewellery brands. Generate product photos, AI model images, and lookbooks without booking a studio.",
+            "description": "AI product photography platform for fashion and jewellery brands. Generate product photos, AI model images, and lookbooks without booking a studio.",
             "offers": { "@type": "Offer", "price": "999", "priceCurrency": "INR", "description": "Trial plan starting at ₹999. Base and Pro plans available at ₹4,999 and ₹9,999. Custom Enterprise pricing available." },
             "provider": { "@type": "Organization", "name": "AIVX", "url": "https://aivx.in" }
           })

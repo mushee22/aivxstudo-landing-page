@@ -22,7 +22,7 @@ export default function BuiltFor() {
                     <div>
                         <p className="text-xs font-semibold text-neon-green uppercase tracking-[0.2em] mb-3">Who It Is Built For</p>
                         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                            Built for Fashion and<br />Jewellery Brands
+                            AI Product Photography,<br />Built for Fashion and Jewellery Brands
                         </h2>
                     </div>
                     <p className="text-gray-400 text-base md:text-right md:max-w-xs leading-relaxed">

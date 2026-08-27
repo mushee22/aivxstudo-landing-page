@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://aivx.in'),
   title: "AI Product Photography for Fashion and Jewellery | AIVX",
-  description: "Create fashion and jewellery product photos without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot.",
+  description: "Create AI product photography for fashion and jewellery brands without a studio. Generate AI model photos, lookbooks, and marketplace-ready images for your brand — faster and for less cost than a traditional shoot.",
   keywords: 'AI jewellery photography · AI fashion photography · product photos without studio · AI model photos · jewellery photo editing · fashion lookbook generator',
   icons: {
     icon: '/favicon.ico',

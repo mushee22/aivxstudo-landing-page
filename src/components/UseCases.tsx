@@ -22,7 +22,7 @@ export default function UseCases() {
                     <div className="lg:col-span-1">
                         <p className="text-xs font-semibold text-neon-green uppercase tracking-[0.2em] mb-3">Use Cases</p>
                         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                            What You Can<br />Create with AIVX
+                            AI Product Photography<br />You Can Create with AIVX
                         </h2>
                     </div>
                     <div className="lg:col-span-2 flex items-end">
