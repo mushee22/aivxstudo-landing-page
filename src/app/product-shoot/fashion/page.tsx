@@ -8,7 +8,7 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
     title: 'AI Fashion Product Photography | AIVX Studio',
-    description: 'AI-powered fashion product shoot studio for clothing, sarees, kurtas, lehengas, ethnic wear, and accessories. Generate premium ecommerce images and short videos without booking a model.',
+    description: 'AI fashion photography studio for clothing, sarees, kurtas, lehengas, ethnic wear, and accessories. Generate premium ecommerce images and short videos without booking a model.',
     alternates: {
         canonical: 'https://aivx.in/product-shoot/fashion',
     },

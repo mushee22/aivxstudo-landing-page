@@ -10,7 +10,7 @@ export default function FashionHero() {
     const [isAnimating, setIsAnimating] = useState(false);
 
     const categories = [
-        { src: '/image/hero/fashion/slider-image-new-six.webp', alt: "Men's Topwear" },
+        { src: '/image/hero/fashion/slider-image-new-six.webp', alt: "AI fashion photography of men's topwear" },
         { src: '/image/hero/fashion/slider-image-new-one.webp', alt: "Men's Ethnic Wear" },
         { src: '/image/hero/fashion/slider-image-new-two.webp', alt: "Women's Ethnic Wear" },
         { src: '/image/hero/fashion/slider-image-five.webp', alt: "Garment Only" },
@@ -51,7 +51,7 @@ export default function FashionHero() {
                     {/* Heading */}
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-[1.1]">
                         AI Fashion <br />
-                        <span className="text-neutral-500">Product Shoot Studio</span>
+                        <span className="text-neutral-500">Photography Studio</span>
                     </h1>
 
                     {/* Subheading */}

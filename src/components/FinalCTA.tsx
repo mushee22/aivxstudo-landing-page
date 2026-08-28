@@ -11,11 +11,11 @@ export default function FinalCTA() {
 
                 <div className="w-full h-px bg-linear-to-r from-transparent via-neon-green/30 to-transparent mb-14" />
 
-                <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-10">
+                <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10">
                     {/* Statement */}
                     <div className="max-w-2xl">
                         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-                            Start Creating Product Photos<br />
+                            Start Creating AI Product Photos<br />
                             <span className="text-neon-green">Without a Studio</span>
                         </h2>
                         <p className="text-gray-400 text-base leading-relaxed mb-2">

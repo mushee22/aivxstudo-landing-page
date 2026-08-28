@@ -1,8 +1,11 @@
 'use client';
 
-const intents = [
+import Link from 'next/link';
+
+const intents: (string | React.ReactNode)[] = [
     "An AI fashion photography tool for clothing brands and boutiques",
     "AI jewellery photography software for rings, necklaces, earrings, and sets",
+    <><Link href="/product-shoot" className="hover:text-neon-green transition-colors">AI product photography</Link> for both fashion and jewellery brands</>,
     "A way to create product photos without a studio or photographer",
     "An AI model photo generator for fashion and jewellery",
     "Jewellery photo editing and background replacement using AI",

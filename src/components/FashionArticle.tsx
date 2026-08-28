@@ -15,7 +15,7 @@ export default function FashionArticle() {
                             Fashion product photography demands more than just a clean background — it requires models, styling, lighting coordination, and post-production editing to accurately present how a garment looks, drapes, and fits. These requirements make traditional photoshoots expensive, time-consuming, and difficult to scale.
                         </p>
                         <p>
-                            At AIVX, our AI-powered fashion product shoot studio removes every bottleneck. Upload a flat-lay or hanger image of your garment, and our system generates realistic, studio-quality photos of your product on AI models in curated settings — ready for ecommerce, social media, and marketing.
+                            At AIVX, our AI-powered fashion photography studio removes every bottleneck. Upload a flat-lay or hanger image of your garment, and our system generates realistic, studio-quality photos of your product on AI models in curated settings — ready for ecommerce, social media, and marketing.
                         </p>
                         <p>
                             Whether you sell ethnic wear, western apparel, accessories, or activewear, our platform adapts to your category, delivering consistent, brand-aligned visuals across your entire catalog.
