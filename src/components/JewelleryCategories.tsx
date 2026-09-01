@@ -7,7 +7,7 @@ const jewelleryCategories = [
         name: 'Ring',
         href: '/product-shoot/jewellery/ai-ring-product-photography',
         image: '/theme/ring/cream-theme.jpg',
-        alt: 'AI generated ring product photography'
+        alt: 'Jewellery product photoshoot of an AI ring'
     },
     {
         name: 'Earring',
@@ -17,7 +17,7 @@ const jewelleryCategories = [
     },
     {
         name: 'Pendant Set',
-        href: '/product-shoot/jewellery/ai-necklace-product-photography',
+        href: '/product-shoot/jewellery/ai-pendant-set-product-photography',
         image: '/theme/pendant-set/navy-blue-theme.png',
         alt: 'AI generated pendant set product photography'
     },
@@ -102,11 +102,11 @@ export default function JewelleryCategories() {
                     </p>
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                            AI Photography for Every<br />
+                            AI Jewellery Photography for Every<br />
                             Jewellery and Fashion Category
                         </h2>
                         <p className="text-gray-400 text-base md:text-right md:max-w-xs leading-relaxed">
-                            One platform that covers rings to sarees, earrings to lehengas — with the same quality on every shot.
+                            One platform that covers rings to sarees, earrings to lehengas, with the same quality on every shot.
                         </p>
                     </div>
                 </div>

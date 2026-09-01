@@ -13,11 +13,11 @@ export default function JewelleryOverview() {
                 {/* Body Copy */}
                 <div className="space-y-6 text-lg text-neutral-400 font-light leading-relaxed">
                     <p>
-                        AIVX is an AI-powered studio designed specifically for jewellery product shoots.
+                        AIVX is an AI jewellery photoshoot studio designed specifically for jewellery product shoots.
                     </p>
                     <p>
                         From intricate rings to detailed bangles, our system understands reflections,
-                        materials, lighting, and proportions — delivering studio-quality images and
+                        materials, lighting, and proportions, delivering studio-quality images and
                         short videos without the need for physical setups.
                     </p>
                     <p>

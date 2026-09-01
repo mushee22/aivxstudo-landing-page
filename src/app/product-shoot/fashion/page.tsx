@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         title: 'AI Fashion Product Photography | AIVX Studio',
-        description: 'Create studio-quality fashion images and videos using AI models. Built for ecommerce and modern fashion brands.',
+        description: 'Create AI fashion photography for ecommerce brands with studio-quality images and videos using AI models.',
         url: 'https://aivx.in/product-shoot/fashion',
         siteName: 'AIVX',
         images: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
                 url: '/image/fashion-photography-example.png',
                 width: 1200,
                 height: 630,
-                alt: 'AI Fashion Product Shoot Studio',
+                alt: 'AI Fashion Photography Studio',
             },
         ],
         locale: 'en_US',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'AI Fashion Product Photography | AIVX Studio',
-        description: 'AI-powered fashion product shoots for ecommerce-ready images and videos — no models needed.',
+        description: 'AI fashion photography for ecommerce-ready images and videos, no models needed.',
         images: ['/image/fashion-photography-example.png'],
     },
     robots: {

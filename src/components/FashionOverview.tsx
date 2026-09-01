@@ -7,7 +7,7 @@ export default function FashionOverview() {
                     What Is AI Fashion Photography?
                 </h2>
                 <p className="text-lg text-neutral-400 font-light leading-relaxed">
-                    AI fashion photography uses artificial intelligence to generate studio-quality clothing and apparel images without a physical photoshoot. You upload a flat-lay or hanger photo of your garment, and AIVX places it on a realistic AI model — ready for ecommerce listings, lookbooks, and social media.
+                    AI fashion photography uses artificial intelligence to generate studio-quality clothing and apparel images without a physical photoshoot. You upload a flat-lay or hanger photo of your garment, and AIVX places it on a realistic AI model, ready for ecommerce listings, lookbooks, and social media.
                 </p>
             </div>
 
@@ -26,7 +26,7 @@ export default function FashionOverview() {
                         AIVX is an AI fashion photography studio designed specifically for fashion product shoots.
                     </p>
                     <p>
-                        From ethnic sarees to contemporary streetwear, our system places your apparel on realistic AI fashion models — Indian and international — without booking a single model or arranging a studio.
+                        From ethnic sarees to contemporary streetwear, our system places your apparel on realistic AI fashion models, both Indian and international, without booking a single model or arranging a studio.
                     </p>
                     <p>
                         Every output is optimized for ecommerce listings, social media reels, and brand storytelling at scale.

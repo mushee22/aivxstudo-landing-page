@@ -80,11 +80,11 @@ export default function FashionCategories() {
                     </p>
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                         <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                            AI Photography for Every<br />
+                            AI Fashion Photography for Every<br />
                             Fashion Category
                         </h2>
                         <p className="text-gray-400 text-base md:text-right md:max-w-xs leading-relaxed">
-                            From men's topwear to women's ethnic wear — consistent, studio-quality AI product photos on virtual models.
+                            From men's topwear to women's ethnic wear, consistent, studio-quality AI product photos on virtual fashion models.
                         </p>
                     </div>
                 </div>

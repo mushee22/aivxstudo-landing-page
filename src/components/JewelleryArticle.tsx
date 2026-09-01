@@ -33,7 +33,7 @@ export default function JewelleryArticle() {
                     </h2>
                     <div className="space-y-6 text-lg text-gray-300 font-light leading-relaxed">
                         <p>
-                            Each jewellery category presents unique visual challenges. Our AI workflows are optimized to handle the specific detailing requirements of every product type.
+                            Each jewellery category presents unique visual challenges. Our AI workflows are optimized to handle the specific detailing requirements of professional jewelry photography for every product type.
                         </p>
                         <ul className="space-y-5 bg-[#0a0a0a] p-8 rounded-2xl border border-white/10 shadow-lg">
                             <li className="flex gap-4">

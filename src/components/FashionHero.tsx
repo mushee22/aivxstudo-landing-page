@@ -11,9 +11,9 @@ export default function FashionHero() {
 
     const categories = [
         { src: '/image/hero/fashion/slider-image-new-six.webp', alt: "AI fashion photography of men's topwear" },
-        { src: '/image/hero/fashion/slider-image-new-one.webp', alt: "Men's Ethnic Wear" },
-        { src: '/image/hero/fashion/slider-image-new-two.webp', alt: "Women's Ethnic Wear" },
-        { src: '/image/hero/fashion/slider-image-five.webp', alt: "Garment Only" },
+        { src: '/image/hero/fashion/slider-image-new-one.webp', alt: "AI fashion photography of men's ethnic wear kurta" },
+        { src: '/image/hero/fashion/slider-image-new-two.webp', alt: "AI fashion photography of women's ethnic wear saree" },
+        { src: '/image/hero/fashion/slider-image-five.webp', alt: "AI fashion photography of a flat-lay garment" },
     ];
 
     useEffect(() => {
@@ -50,13 +50,13 @@ export default function FashionHero() {
 
                     {/* Heading */}
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-[1.1]">
-                        AI Fashion <br />
+                        AI Fashion<br />
                         <span className="text-neutral-500">Photography Studio</span>
                     </h1>
 
                     {/* Subheading */}
                     <p className="text-lg text-neutral-400 max-w-xl leading-relaxed font-light">
-                        Create studio-quality fashion images and reel videos using AI — on virtual models, without booking anyone.
+                        Create studio-quality fashion images and reel videos using AI on virtual models, without booking anyone.
                     </p>
 
                     {/* Buttons */}
@@ -99,7 +99,7 @@ export default function FashionHero() {
                                             alt={item.alt}
                                             fill
                                             className="object-cover object-center"
-                                            sizes="(max-width: 768px) 15vw, 10vw"
+                                            sizes="(max-width: 768px) 25vw, (max-width: 1280px) 10vw, 120px"
                                         />
                                         <div className="absolute inset-0 bg-black/40" />
                                     </div>
@@ -125,7 +125,7 @@ export default function FashionHero() {
                                             alt={item.alt}
                                             fill
                                             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                                            sizes="(max-width: 768px) 60vw, 40vw"
+                                            sizes="(max-width: 768px) 70vw, (max-width: 1280px) 40vw, 500px"
                                             priority={index === 0}
                                         />
                                         <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
@@ -152,7 +152,7 @@ export default function FashionHero() {
                                             alt={item.alt}
                                             fill
                                             className="object-cover object-center"
-                                            sizes="(max-width: 768px) 20vw, 15vw"
+                                            sizes="(max-width: 768px) 30vw, (max-width: 1280px) 15vw, 150px"
                                         />
                                         <div className="absolute inset-0 bg-black/30" />
                                     </div>

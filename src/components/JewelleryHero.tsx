@@ -29,13 +29,13 @@ export default function JewelleryHero() {
 
                     {/* Heading */}
                     <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-[1.1]">
-                        AI Jewellery <br />
-                        <span className="text-neutral-500">Product Shoot Studio</span>
+                        AI Jewellery<br />
+                        <span className="text-neutral-500">Photography Studio</span>
                     </h1>
 
                     {/* Subheading */}
                     <p className="text-lg text-neutral-400 max-w-xl leading-relaxed font-light">
-                        Create studio-quality jewellery images and reel videos using AI — faster, scalable, and cost-effective.
+                        Create studio-quality jewellery images and reel videos using AI, faster, scalable, and cost-effective.
                     </p>
 
                     {/* Buttons */}
@@ -59,7 +59,7 @@ export default function JewelleryHero() {
                 {/* Right Visual - Grid of Categories */}
                 <div className="relative h-[350px] sm:h-[450px] md:h-[600px]  w-full grid grid-cols-2 gap-4 order-1 lg:order-2">
                     {[
-                        { src: "/theme/ring/cream-theme.jpg", alt: "Ring", delay: "0" },
+                        { src: "/theme/ring/cream-theme.jpg", alt: "AI jewellery ring", delay: "0" },
                         { src: "/theme/earring/rose-amber-theme.png", alt: "Earring", delay: "100" },
                         { src: "/theme/pendant-set/navy-blue-theme.png", alt: "Pendant Set", delay: "200" },
                         { src: "/theme/necklace/white-theme.png", alt: "Necklace", delay: "300" },
